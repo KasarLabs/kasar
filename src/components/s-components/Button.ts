@@ -9,10 +9,10 @@ export const Button = styled.button`
   background-color: ${({ theme }) => theme.colors.bgChange};
   box-shadow: ${({ theme }) => theme.colors.boxShadow};
   color: ${({ theme }) => theme.colors.text};
-  font-size: ${defaultTheme.fontSize.m};
+  font-size: ${defaultTheme.fontSize.s};
   font-weight: ${defaultTheme.fontWeight.normal};
   padding: ${defaultTheme.spacing['3xs']} ${defaultTheme.spacing.s};
-  border-radius: ${defaultTheme.radius.l};
+  border-radius: ${defaultTheme.radius.m};
   border: none;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
@@ -26,10 +26,10 @@ export const ButtonPrimary = styled.button`
   background-color: ${({ theme }) => theme.colors.primary};
   box-shadow: ${({ theme }) => theme.colors.boxShadow};
   color: ${({ theme }) => theme.colors.white};
-  font-size: ${defaultTheme.fontSize.m};
+  font-size: ${defaultTheme.fontSize.s};
   font-weight: ${defaultTheme.fontWeight.normal};
   padding: ${defaultTheme.spacing['3xs']} ${defaultTheme.spacing.s};
-  border-radius: ${defaultTheme.radius.l};
+  border-radius: ${defaultTheme.radius.m};
   border: none;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
@@ -44,10 +44,10 @@ export const ButtonOutline = styled.button<IParamsStyled>`
   border: 1px solid ${({ theme }) => theme.colors.black};
   box-shadow: ${({ theme }) => theme.colors.boxShadow};
   color: ${props => props.pressed ? ({ theme }) => theme.colors.white : ({ theme }) => theme.colors.text};
-  font-size: ${defaultTheme.fontSize.m};
+  font-size: ${defaultTheme.fontSize.s};
   font-weight: ${defaultTheme.fontWeight.normal};
   padding: ${defaultTheme.spacing['3xs']} ${defaultTheme.spacing.s};
-  border-radius: ${defaultTheme.radius.l};
+  border-radius: ${defaultTheme.radius.m};
   border: none;
   cursor: pointer;
   transition: all 0.2s ease-in-out;

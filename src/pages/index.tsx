@@ -3,16 +3,17 @@ import styled from 'styled-components';
 import { useMediaQuery } from "react-responsive";
 // import Header from '../components/Header'
 import { defaultTheme } from '../theme';
+import Hero from '@/components/homepage/Hero';
+import Header from '../components/Header';
+import DropdownSm from '@/components/starknode/DropdownSm';
 
 const MainContainer = styled.div`
   position: relative;
   width: 100%;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: ${defaultTheme.spacing['4xs']};
 
 `
 
@@ -28,7 +29,10 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Header />
+      {isMobile && <DropdownSm />}
       <MainContainer>
+        <Hero />
       </MainContainer>
     </>
   )

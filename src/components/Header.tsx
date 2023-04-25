@@ -1,18 +1,18 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
-import logo from '../../assets/images/myOsirisLogo.png'
-import { Button } from '../s-components/Button';
+import logo from '../assets/images/kasarLogo.png'
+import { Button, ButtonPrimary } from './s-components/Button';
 import { MenuOutlined, EllipsisOutlined, BulbOutlined } from '@ant-design/icons';
 import { useMediaQuery } from "react-responsive";
-import { defaultTheme } from '../../theme';
-import { H1 } from '../s-components/Titles';
-import { Flex, FlexSm } from '../s-components/SFlex';
+import { defaultTheme } from '../theme';
+import { H3 } from './s-components/Titles';
+import { Flex, FlexSm } from './s-components/SFlex';
 import Image from 'next/image'
-import { UserContext } from "../../context";
+import { UserContext } from "../context";
 import { useContext } from "react";
 import useDarkMode from 'use-dark-mode'
-import { Text, TextClickable } from '../s-components/Titles';
-import ButtonConnect from './ButtonConnect';
+import { Text, TextClickable } from './s-components/Titles';
+import ButtonConnect from './starknode/ButtonConnect';
 
 const SHeader = styled.div`
   position: fixed;
@@ -29,9 +29,8 @@ const Container = styled.div`
   justify-content: space-between;
   padding: ${defaultTheme.spacing['4xs']} ${defaultTheme.spacing.xs};
 
-  h1 {
+  H3 {
     margin: 0;
-    font-family: 'DynaPuff';
     text-shadow: ${({ theme }) => theme.colors.boxShadow};
   }
 `
@@ -63,8 +62,8 @@ const Dropdown = styled.div`
   }
 `
 const LogoHeader = styled(Image)`
-  height: 30px;
-  width: 30px;
+  height: 47px;
+  width: 100%;
 `
 
 export default function Header() {
@@ -77,20 +76,18 @@ export default function Header() {
     <SHeader>
       {isMobile ? (
         <ContainerSm>
-          <LogoHeader src={logo} alt="MyOsiris Logo" />
+          <LogoHeader src={logo} alt="Kasar Logo" />
           <MenuOutlined style={darkmode.value ? { color: 'white', fontSize: '30px' } : { fontSize: '30px', color: 'black' }} onClick={() => setShowNavMobile(!showNavMobile)} />
         </ContainerSm>
       ) : (
         <Container>
           <FlexSm>
-            <LogoHeader src={logo} alt="MyOsiris Logo" />
-            <H1>
-              Starknode
-            </H1>
+            <LogoHeader src={logo} alt="Kasar Logo" />
           </FlexSm>
           <Flex>
             <>
-              <ButtonConnect />
+              {/* <ButtonConnect /> */}
+              <ButtonPrimary>Starknode</ButtonPrimary>
               <Links>
                 <Button onClick={() => setLinks(!links)}>
                   <EllipsisOutlined />

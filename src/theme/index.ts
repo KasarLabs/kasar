@@ -3,16 +3,17 @@ import { DefaultTheme } from 'styled-components';
 export const defaultTheme = {
   radius: {
     s: '3px',
-    m: '5px',
+    m: '0.25rem',
     l: '15px',
     xl: '20px'
   },
   fontSize: {
     xs: '9px',
-    s: '12px',
-    m: '18px',
-    l: '22px',
-    xl: '28px'
+    s: '20px',
+    m: '32px',
+    l: '42px',
+    ml: '52px',
+    xl: '88px'
   },
   fontWeight: {
     thin: '400',

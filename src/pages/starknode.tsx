@@ -1,8 +1,7 @@
 import Head from 'next/head'
-import { Inter } from 'next/font/google'
 import styled from 'styled-components';
 import { useMediaQuery } from "react-responsive";
-import Header from '../components/starknode/Header'
+import Header from '../components/Header'
 import { UserContext } from "../context";
 import { useContext, useEffect, useState } from "react";
 import DropdownSm from '../components/starknode/DropdownSm';

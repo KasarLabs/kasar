@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Button } from '../s-components/Button';
 import { EllipsisOutlined } from '@ant-design/icons';
 import { defaultTheme } from '../../theme';
-import { Text } from '../s-components/Titles';
+import { TextSm } from '../s-components/Titles';
 import ButtonConnect from './ButtonConnect';
 
 const Links = styled.div`
@@ -38,9 +38,9 @@ function DropdownSm() {
       </Button>
       {links && (
         <Dropdown>
-          <Text>Hello</Text>
-          <Text>Hello</Text>
-          <Text>Hello</Text>
+          <TextSm>Hello</TextSm>
+          <TextSm>Hello</TextSm>
+          <TextSm>Hello</TextSm>
         </Dropdown>
       )}
     </Links>
