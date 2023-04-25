@@ -6,3 +6,16 @@ export const GradientText = styled.span`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 `;
+
+export const SeparatorSM = styled.div`
+  padding-top: 20px;
+`;
+
+
+export const SeparatorXL = styled.div`
+  padding-top: 100px;
+`;
+
+export const Separator = styled.div`
+  padding-top: 50px;
+`;

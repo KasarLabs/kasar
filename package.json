@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.13",
     "@ant-design/icons": "^5.0.1",
     "@starknet-react/core": "^0.15.1",
     "@types/chart.js": "^2.9.37",

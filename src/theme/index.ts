@@ -5,7 +5,8 @@ export const defaultTheme = {
     s: '3px',
     m: '0.25rem',
     l: '15px',
-    xl: '20px'
+    xl: '20px',
+    xxl: '50px'
   },
   fontSize: {
     xs: '9px',
