@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { ButtonOutline, ButtonPrimary } from './s-components/Button'
-import { UserContext } from "../context";
+import { ButtonOutline, ButtonPrimary } from '../s-components/Button'
+import { UserContext } from "../../context";
 import styled from 'styled-components';
-import { defaultTheme } from '../theme';
-import { Flex } from './s-components/SFlex';
+import { defaultTheme } from '../../theme';
+import { Flex } from '../s-components/SFlex';
 import Cart from './Cart';
 
 

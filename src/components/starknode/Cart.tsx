@@ -1,8 +1,8 @@
 import React, { useState, useContext } from 'react'
 import styled from 'styled-components';
-import { defaultTheme } from '../theme';
-import { UserContext } from "../context";
-import { ButtonPrimary } from './s-components/Button';
+import { defaultTheme } from '../../theme';
+import { UserContext } from "../../context";
+import { ButtonPrimary } from '../s-components/Button';
 import Checkout from './Checkout'
 
 const MainContainer = styled.div`

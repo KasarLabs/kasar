@@ -1,17 +1,17 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
-import logo from '../assets/images/myOsirisLogo.png'
-import { Button } from './s-components/Button';
+import logo from '../../assets/images/myOsirisLogo.png'
+import { Button } from '../s-components/Button';
 import { MenuOutlined, EllipsisOutlined, BulbOutlined } from '@ant-design/icons';
 import { useMediaQuery } from "react-responsive";
-import { defaultTheme } from '../theme';
-import { H1 } from './s-components/Titles';
-import { Flex, FlexSm } from './s-components/SFlex';
+import { defaultTheme } from '../../theme';
+import { H1 } from '../s-components/Titles';
+import { Flex, FlexSm } from '../s-components/SFlex';
 import Image from 'next/image'
-import { UserContext } from "../context";
+import { UserContext } from "../../context";
 import { useContext } from "react";
 import useDarkMode from 'use-dark-mode'
-import { Text, TextClickable } from './s-components/Titles';
+import { Text, TextClickable } from '../s-components/Titles';
 import ButtonConnect from './ButtonConnect';
 
 const SHeader = styled.div`

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useConnectors, useAccount } from "@starknet-react/core";
-import { Button, ButtonPrimary } from './s-components/Button';
+import { Button, ButtonPrimary } from '../s-components/Button';
 
 function ButtonConnect() {
   const { connect, connectors, disconnect } = useConnectors()

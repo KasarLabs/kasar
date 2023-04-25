@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components';
-import { defaultTheme } from '../theme';
-import { UserContext } from "../context";
+import { defaultTheme } from '../../theme';
+import { UserContext } from "../../context";
 
 const MainContainer = styled.div`
   border-radius: ${defaultTheme.radius.xl};

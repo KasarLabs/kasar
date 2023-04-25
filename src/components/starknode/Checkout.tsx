@@ -1,9 +1,9 @@
 import React, { useContext, useState } from 'react'
 import styled from 'styled-components';
-import { UserContext } from "../context";
-import { ButtonPrimary } from './s-components/Button';
-import { Input } from './s-components/Input';
-import { Flex } from './s-components/SFlex';
+import { UserContext } from "../../context";
+import { ButtonPrimary } from '../s-components/Button';
+import { Input } from '../s-components/Input';
+import { Flex } from '../s-components/SFlex';
 
 const MainContainer = styled.div`
   display: flex;

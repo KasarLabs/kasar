@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
-import { Button } from './s-components/Button';
+import { Button } from '../s-components/Button';
 import { EllipsisOutlined } from '@ant-design/icons';
-import { defaultTheme } from '../theme';
-import { Text } from './s-components/Titles';
+import { defaultTheme } from '../../theme';
+import { Text } from '../s-components/Titles';
 import ButtonConnect from './ButtonConnect';
 
 const Links = styled.div`
