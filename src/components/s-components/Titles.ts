@@ -30,6 +30,16 @@ export const H3 = styled.h3`
   }
 `
 
+export const H4 = styled.h4`
+  font-size: ${defaultTheme.fontSize.s};
+  font-weight: ${defaultTheme.fontWeight.bold};
+  color: ${({ theme }) => theme.colors.text};
+  margin: 0;
+  @media (max-width: 900px) {
+		font-size: ${defaultTheme.fontSize.s};
+  }
+`
+
 export const TextSm = styled.p`
   font-size: ${defaultTheme.fontSize.xs};
   font-weight: ${defaultTheme.fontWeight.thin};

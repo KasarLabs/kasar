@@ -6,8 +6,9 @@ import { defaultTheme } from '../theme';
 import Hero from '@/components/homepage/Hero';
 import Header from '../components/Header';
 import DropdownSm from '@/components/starknode/DropdownSm';
-import Features from '@/components/homepage/features';
+import Features from '@/components/homepage/Features';
 import { Separator } from '@/components/s-components/utils';
+import Laboratory from '@/components/homepage/Laboratory';
 
 const MainContainer = styled.div`
   position: relative;
@@ -16,7 +17,6 @@ const MainContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
 `
 
 export default function Home() {
@@ -37,6 +37,7 @@ export default function Home() {
         <Hero />
         <Separator />
         <Features />
+        <Laboratory />
       </MainContainer>
     </>
   )
