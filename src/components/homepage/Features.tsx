@@ -34,7 +34,7 @@ const CardWrapper = styled.div<CardProps>`
   padding:${defaultTheme.spacing['2xs']};
   cursor: pointer;
   gap: ${defaultTheme.spacing['4xs']};
-  background-color: ${(props) => (props.active ? "#EAEAEA" : "white")};
+  background-color: ${({ active, theme }) => (active ? theme.colors.bgChange : theme.colors.background)};
   box-shadow: ${({ theme }) => theme.colors.boxShadow};
 `
 
