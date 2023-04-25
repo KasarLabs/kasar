@@ -1,0 +1,38 @@
+[
+  {
+    "id": 0,
+    "src": "https://media0.giphy.com/media/26xBPrFMgG0vhbyj6/giphy.gif?cid=ecf05e47hqys2g57vc405myd9ktay6b5psvn3538m7ayauku&rid=giphy.gif&ct=g",
+    "alt": "React",
+    "name": "Pathfinder"
+  },
+  {
+    "id": 1,
+    "src": "https://media0.giphy.com/media/26xBPrFMgG0vhbyj6/giphy.gif?cid=ecf05e47hqys2g57vc405myd9ktay6b5psvn3538m7ayauku&rid=giphy.gif&ct=g",
+    "alt": "typescript",
+    "name": "Papyrus"
+  },
+  {
+    "id": 2,
+    "src": "https://media0.giphy.com/media/26xBPrFMgG0vhbyj6/giphy.gif?cid=ecf05e47hqys2g57vc405myd9ktay6b5psvn3538m7ayauku&rid=giphy.gif&ct=g",
+    "alt": "javascript",
+    "name": "Other"
+  },
+  {
+    "id": 3,
+    "src": "https://media0.giphy.com/media/26xBPrFMgG0vhbyj6/giphy.gif?cid=ecf05e47hqys2g57vc405myd9ktay6b5psvn3538m7ayauku&rid=giphy.gif&ct=g",
+    "alt": "vue",
+    "name": "Pathfinder"
+  },
+  {
+    "id": 4,
+    "src": "https://media0.giphy.com/media/26xBPrFMgG0vhbyj6/giphy.gif?cid=ecf05e47hqys2g57vc405myd9ktay6b5psvn3538m7ayauku&rid=giphy.gif&ct=g",
+    "alt": "scss",
+    "name": "Pathfinder%"
+  },
+  {
+    "id": 5,
+    "src": "https://media0.giphy.com/media/26xBPrFMgG0vhbyj6/giphy.gif?cid=ecf05e47hqys2g57vc405myd9ktay6b5psvn3538m7ayauku&rid=giphy.gif&ct=g",
+    "alt": "ethersjs",
+    "name": "Pathfinder"
+  }
+]
