@@ -33,6 +33,7 @@ const Container = styled.div`
     margin: 0;
     text-shadow: ${({ theme }) => theme.colors.boxShadow};
   }
+
 `
 
 const ContainerSm = styled.div`
@@ -64,6 +65,10 @@ const Dropdown = styled.div`
 const LogoHeader = styled(Image)`
   height: 47px;
   width: 100%;
+  @media (max-width: 800px) {
+    height: 30px;
+    width: auto;
+  }
 `
 
 export default function Header() {

@@ -6,6 +6,8 @@ import { defaultTheme } from '../theme';
 import Hero from '@/components/homepage/Hero';
 import Header from '../components/Header';
 import DropdownSm from '@/components/starknode/DropdownSm';
+import Features from '@/components/homepage/features';
+import { Separator } from '@/components/s-components/utils';
 
 const MainContainer = styled.div`
   position: relative;
@@ -33,6 +35,8 @@ export default function Home() {
       {isMobile && <DropdownSm />}
       <MainContainer>
         <Hero />
+        <Separator />
+        <Features />
       </MainContainer>
     </>
   )

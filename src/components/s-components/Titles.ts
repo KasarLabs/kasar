@@ -10,8 +10,18 @@ export const H1 = styled.h1`
   }
 `
 
+export const H2 = styled.h3`
+  font-size: ${defaultTheme.fontSize.l};
+  font-weight: ${defaultTheme.fontWeight.bold};
+  color: ${({ theme }) => theme.colors.text};
+  margin: 0;
+  @media (max-width: 900px) {
+		font-size: ${defaultTheme.fontSize.s};
+  }
+`
+
 export const H3 = styled.h3`
-  font-size: ${defaultTheme.fontSize.s};
+  font-size: ${defaultTheme.fontSize.m};
   font-weight: ${defaultTheme.fontWeight.bold};
   color: ${({ theme }) => theme.colors.text};
   margin: 0;
@@ -35,7 +45,20 @@ export const Text = styled.p`
   font-weight: ${defaultTheme.fontWeight.thin};
   color: ${({ theme }) => theme.colors.text};
   margin: 0;
- 
+`
+
+export const TextGrey = styled.p`
+  font-size: ${defaultTheme.fontSize.s};
+  font-weight: ${defaultTheme.fontWeight.thin};
+  color: ${({ theme }) => theme.colors.textGrey};
+  margin: 0;
+`
+
+export const TextBold = styled.p`
+  font-size: ${defaultTheme.fontSize.s};
+  font-weight: ${defaultTheme.fontWeight.bold};
+  color: ${({ theme }) => theme.colors.text};
+  margin: 0;
 `
 
 export const TextClickable = styled.h3`

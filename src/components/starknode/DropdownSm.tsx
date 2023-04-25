@@ -12,6 +12,7 @@ const Links = styled.div`
   right: 10px;
   display: flex;
   gap: ${defaultTheme.spacing['4xs']};
+  z-index: 100;
 `
 
 const Dropdown = styled.div`

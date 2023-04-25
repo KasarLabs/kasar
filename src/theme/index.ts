@@ -58,6 +58,7 @@ export const lightTheme: DefaultTheme = {
     green: '#93D788',
     background: '#FFF',
     text: '#000',
+    textGrey: "#666",
     bgChange: '#F5F5F5',
     boxShadow: '0px 2px 6px rgba(0, 0, 0, 0.1)'
   }
@@ -75,6 +76,7 @@ export const darkTheme: DefaultTheme = {
     green: '#93D788',
     background: '#03001C',
     text: '#FFF',
+    textGrey: "#666",
     bgChange: '#000023',
     boxShadow: '0px 2px 6px rgba(255, 255, 255, 0.5)'
   }
