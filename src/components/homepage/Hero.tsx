@@ -68,16 +68,16 @@ function Hero() {
   return (
     <MainContainer>
       <SeparatorXL />
-      <H1>Web3 powered by the <GradientText> users</GradientText> for the <GradientText>users</GradientText></H1>
+      <H1 data-aos="zoom-y-out">Web3 powered by the <GradientText> users</GradientText> for the <GradientText>users</GradientText></H1>
       <Box>
         <Text>Setup and deploy blockchain infrastructure in one click.</Text>
       </Box>
-      <Flex>
+      <Flex data-aos="zoom-y-out">
         <ButtonPrimary>Starknode</ButtonPrimary>
         <ButtonOutline>Learn more</ButtonOutline>
       </Flex>
       <SeparatorSM />
-      <VideoBox>
+      <VideoBox data-aos="zoom-y-out">
         <Image src={HeroImage} width={isMobile ? 358 : 768} height={isMobile ? 201 : 432} priority alt="Hero" />
         <ButtonVideo onClick={(e) => { e.preventDefault(); e.stopPropagation(); setVideoModalOpen(true); }}>
           Watch the full video (2 min)

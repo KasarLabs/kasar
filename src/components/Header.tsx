@@ -83,7 +83,9 @@ export default function Header() {
     <SHeader>
       {isMobile ? (
         <ContainerSm>
-          <LogoHeader src={logo} alt="Kasar Logo" />
+          <Link href="/">
+            {darkmode.value ? <LogoHeader src={logo} alt="Kasar Logo" /> : <LogoHeader src={logoDark} alt="Kasar Logo" />}
+          </Link>
           <MenuOutlined style={darkmode.value ? { color: 'white', fontSize: '30px' } : { fontSize: '30px', color: 'black' }} onClick={() => setShowNavMobile(!showNavMobile)} />
         </ContainerSm>
       ) : (

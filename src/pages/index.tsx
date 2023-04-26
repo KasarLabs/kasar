@@ -9,6 +9,9 @@ import DropdownSm from '@/components/starknode/DropdownSm';
 import Features from '@/components/homepage/Features';
 import { Separator } from '@/components/s-components/utils';
 import Laboratory from '@/components/homepage/Laboratory';
+import { useEffect } from 'react';
+import AOS from 'aos';
+import "aos/dist/aos.css";
 
 const MainContainer = styled.div`
   position: relative;
@@ -23,6 +26,12 @@ export default function Home() {
 
   const isMobile = useMediaQuery({ maxWidth: 900 })
 
+  useEffect(() => {
+    AOS.init({
+      once: true,
+      duration: 2000
+    });
+  }, [])
   return (
     <>
       <Head>

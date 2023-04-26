@@ -63,7 +63,7 @@ function Laboratory() {
   return (
     <MainContainer>
       <H2>Laboratory</H2>
-      <FlexXL>
+      <FlexXL data-aos="zoom-y-out">
         <CardWrapper>
           <ExclamationCircleTwoTone style={{ fontSize: '56px' }} />
           <H4>Headless CMS</H4>
@@ -80,7 +80,7 @@ function Laboratory() {
           <TextGrey>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</TextGrey>
         </CardWrapper>
       </FlexXL>
-      <FlexXL>
+      <FlexXL data-aos="zoom-y-out">
         <CardWrapper>
           <ExclamationCircleTwoTone style={{ fontSize: '56px' }} />
           <H4>Headless CMS</H4>
@@ -99,14 +99,14 @@ function Laboratory() {
       </FlexXL>
       <Separator />
       <Box>
-        <H2>Trusted by over 20,000 companies all over the world</H2>
+        <H2 data-aos="zoom-y-out">Trusted by over 20,000 companies all over the world</H2>
         <Separator />
         <TextGrey>
           Arcu cursus vitae congue mauris rhoncus viverra nibh
           cras pulvinar mattis blandit libero cursus mattis.
         </TextGrey>
         <Separator />
-        <CardQuote>
+        <CardQuote data-aos="zoom-y-out">
           <ImageTestimony src={TestimonialImage} width={96} height={96} alt="Testimonial 01" />
           <SeparatorSM />
           <Text>

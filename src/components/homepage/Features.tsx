@@ -57,9 +57,9 @@ function Features() {
 
   return (
     <MainContainer>
-      <H2>Explore the solutions</H2>
+      <H2 data-aos="zoom-y-out"> Explore the solutions</H2>
       <SeparatorSM />
-      <Box>
+      <Box data-aos="zoom-y-out">
         <TextGrey>
           Duis aute irure dolor in reprehenderit in voluptate
           velit esse cillum dolore eu fugiat nulla pariatur excepteur
@@ -69,7 +69,7 @@ function Features() {
       <Separator />
 
       <FlexXL style={isMobile ? { padding: '10px' } : { padding: '50px' }}>
-        <FlexCol>
+        <FlexCol data-aos="zoom-y-out">
           <FlexCol>
             <H2>Powerful suite of tools</H2>
             <SeparatorSM />
@@ -116,7 +116,7 @@ function Features() {
           </Card>
 
         </FlexCol>
-        {active === 0 && <Image src={FeaturesBg} width={isMobile ? 358 : 500} alt="Features bg" />}
+        {active === 0 && <Image src={FeaturesBg} width={isMobile ? 358 : 500} alt="Features bg" data-aos="zoom-y-out" />}
         {active === 1 && <Image src={FeaturesBg} width={isMobile ? 358 : 500} alt="Features bg" />}
         {active === 2 && <Image src={FeaturesBg} width={isMobile ? 358 : 500} alt="Features bg" />}
       </FlexXL>
