@@ -22,57 +22,70 @@ interface ICart {
 
 function Checkout({ setPage }: ICart) {
   const {
-    name,
-    id,
-    description,
     setCheckout,
     checkout,
     client
   } = useContext(UserContext);
-  const [email, setEmail] = useState('');
 
-  // const[shippingAddress, setShippingAddress]
-  const shippingAddress = {
-    address1: 'Chestnut Street 92',
-    address2: 'Apartment 2',
-    city: 'Louisville',
-    company: null,
-    country: 'United States',
-    firstName: 'Bob',
-    lastName: 'Norman',
-    phone: '555-625-1199',
-    province: 'Kentucky',
-    zip: '40202'
-  };
-
-  const updateShippingAddress = () => {
-    client.checkout.updateEmail(checkout.id, "email").then((res: any) => {
-      setCheckout(res)
-    });
-    client.checkout.updateShippingAddress(checkout.id, shippingAddress).then((res: any) => {
-      setCheckout(res)
-    });
-  }
-  console.log('update', checkout)
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    client.checkout.updateEmail(checkout.id, "email").then((res: any) => {
+    //set mail to checkout
+    const mail = e.target.email.value;
+    if (!mail) {
+      window.alert('no email')
+      return;
+    }
+    client.checkout.updateEmail(checkout.id, mail).then((res: any) => {
       setCheckout(res)
     });
+
+    //set shipping address to checkout
+    const shippingAddress = {
+      address1: e.target.address1.value,
+      address2: e.target.address2.value,
+      city: e.target.city.value,
+      company: e.target.company.value,
+      country: e.target.country.value,
+      firstName: e.target.firstName.value,
+      lastName: e.target.lastName.value,
+      phone: e.target.phone.value,
+      province: e.target.province.value,
+      zip: e.target.zip.value,
+    };
+
+    if (
+      !shippingAddress.address1
+      || !shippingAddress.phone
+      || !shippingAddress.city
+      || !shippingAddress.country
+      || !shippingAddress.firstName
+      || !shippingAddress.lastName
+      || !shippingAddress.zip
+    ) {
+      window.alert('Please fill in the form')
+      return;
+    }
+    client.checkout.updateShippingAddress(checkout.id, shippingAddress).then((res: any) => {
+      setCheckout(res);
+    });
+    setPage(3);
   }
+  console.log('update', checkout)
+  console.log('update', checkout.id)
+
   return (
     <MainContainer>
       <H2>Shipping address</H2>
       <SeparatorSM />
       <form onSubmit={handleSubmit}>
         <FlexCol style={{ gap: '10px' }} >
-          <Flex><Input value={email} onChange={e => setEmail(e.target.value)} placeholder='email' type='text' /></Flex>
-          <Flex><Input placeholder='phone' type='text' /></Flex>
-          <Flex><Input placeholder='address1' type='text' /><Input placeholder='city' type='text' /></Flex>
-          <Flex><Input placeholder='company' type='text' /><Input placeholder='country' type='text' /></Flex>
-          <Flex><Input placeholder='firstName' type='text' /><Input placeholder='lastName' type='text' /></Flex>
-          <Flex><Input placeholder='zip' type='text' /><Input placeholder='province' type='text' /></Flex>
-          <ButtonPrimary onClick={updateShippingAddress}>Pay</ButtonPrimary>
+          <Flex><Input name="email" placeholder='email*' type='text' /></Flex>
+          <Flex><Input name="phone" placeholder='phone*' type='text' /><Input name="address1" placeholder='address1*' type='text' /></Flex>
+          <Flex><Input name="address2" placeholder='address2' type='text' /><Input name="city" placeholder='city*' type='text' /></Flex>
+          <Flex><Input name="company" placeholder='company' type='text' /><Input name="country" placeholder='country*' type='text' /></Flex>
+          <Flex><Input name="firstName" placeholder='firstName*' type='text' /><Input name="lastName" placeholder='lastName*' type='text' /></Flex>
+          <Flex><Input name="zip" placeholder='zip*' type='text' /><Input name="province" placeholder='province' type='text' /></Flex>
+          <ButtonPrimary type='submit'>Pay</ButtonPrimary>
           <ButtonOutline onClick={() => setPage(1)}>Back</ButtonOutline>
         </FlexCol>
       </form>

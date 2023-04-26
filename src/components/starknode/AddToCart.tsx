@@ -42,7 +42,6 @@ interface ICart {
 function AddToCart({ setPage }: ICart) {
   const { client, id, setCheckout, checkout, image, setClient, name } = useContext(UserContext);
   const [number, setNumber] = useState(1)
-  const [showCart, setShowCart] = useState(false)
   const [memory, setMemory] = useState(1)
 
   const pressPlus = () => {
@@ -63,19 +62,23 @@ function AddToCart({ setPage }: ICart) {
   const checkoutOrder = () => {
 
     // const totalPrice = number * Number(price)
+    console.log("lol")
+    const typeMemory = memory === 1 ? '512' : '256'
     const checkoutId = checkout.id
+
     const lineItemsToAdd = [
       {
         variantId: id,
         quantity: number,
+        customAttributes: [{ key: "sizeMemory", value: typeMemory }]
       }
     ];
-    client?.checkout?.addLineItems(checkoutId, lineItemsToAdd).then((res: any) => {
+    client.checkout.addLineItems(checkoutId, lineItemsToAdd).then((res: any) => {
       setCheckout(res);
+      console.log('coucou', res);
     });
-    setShowCart(true)
+    ; setPage(2)
   }
-
   // console.log("CLIENT", client)
   // console.log("CHECKKK", checkout)
   return (
@@ -106,7 +109,7 @@ function AddToCart({ setPage }: ICart) {
             <ButtonPrimary>{number}</ButtonPrimary>
             <ButtonOutline onClick={pressPlus}>+</ButtonOutline>
           </Flex>
-          <ButtonPrimary style={{ width: '100%' }} onClick={() => { checkoutOrder; setPage(2) }}>Add to cart</ButtonPrimary>
+          <ButtonPrimary style={{ width: '100%' }} onClick={checkoutOrder}>Add to cart</ButtonPrimary>
           <ButtonOutline style={{ width: '100%' }} onClick={() => setPage(0)}>Back</ButtonOutline>
         </Col>
       </FlexCol>

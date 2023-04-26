@@ -9,6 +9,7 @@ import Client from "shopify-buy"
 import CardProduct from '../components/starknode/CardProduct';
 import AddToCart from '../components/starknode/AddToCart';
 import Checkout from '../components/starknode/Checkout';
+import Pay from '../components/starknode/Pay';
 import { defaultTheme } from '../theme';
 
 const MainContainer = styled.div`
@@ -69,6 +70,7 @@ export default function Home() {
         {page === 0 && <CardProduct setPage={setPage} />}
         {page === 1 && <AddToCart setPage={setPage} />}
         {page === 2 && <Checkout setPage={setPage} />}
+        {page === 3 && <Pay setPage={setPage} />}
       </MainContainer>
     </>
   )
