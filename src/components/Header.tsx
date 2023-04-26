@@ -19,7 +19,6 @@ const SHeader = styled.div`
   position: fixed;
   top: 0;
   background-color:  ${({ theme }) => theme.colors.background};
-  box-shadow: ${({ theme }) => theme.colors.boxShadow};
   width: 100%;
   z-index: 100;
 `
@@ -29,7 +28,6 @@ const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: ${defaultTheme.spacing['4xs']} ${defaultTheme.spacing.xs};
-
   H3 {
     margin: 0;
     text-shadow: ${({ theme }) => theme.colors.boxShadow};
