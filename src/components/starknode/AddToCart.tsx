@@ -19,8 +19,8 @@ const MainContainer = styled.div`
 `
 
 const ImageStark = styled.img`
-  width:400px;
-  height:400px;
+  width:350px;
+  height:350px;
   @media (max-width: 800px) {
 		width:250px;
     height:250px;
@@ -43,6 +43,7 @@ function AddToCart({ setPage }: ICart) {
   const { client, id, setCheckout, checkout, image, setClient, name } = useContext(UserContext);
   const [number, setNumber] = useState(1)
   const [showCart, setShowCart] = useState(false)
+  const [memory, setMemory] = useState(1)
 
   const pressPlus = () => {
     number < 10 ? setNumber(number + 1) : setNumber(number)
@@ -84,6 +85,22 @@ function AddToCart({ setPage }: ICart) {
         <ImageStark src={image} alt='starknode' />
         <SeparatorSM />
         <Col>
+          <Flex>
+            <div onClick={() => setMemory(1)}>
+              {memory === 1 ?
+                <ButtonPrimary>512</ButtonPrimary>
+                :
+                <ButtonOutline>512</ButtonOutline>
+              }
+            </div>
+            <div onClick={() => setMemory(0)}>
+              {memory === 0 ?
+                <ButtonPrimary>256</ButtonPrimary>
+                :
+                <ButtonOutline>256</ButtonOutline>
+              }
+            </div>
+          </Flex>
           <Flex>
             <ButtonOutline onClick={pressLess}>-</ButtonOutline>
             <ButtonPrimary>{number}</ButtonPrimary>
