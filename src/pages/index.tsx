@@ -12,6 +12,7 @@ import { useEffect } from 'react';
 import AOS from 'aos';
 import "aos/dist/aos.css";
 import useDarkMode from 'use-dark-mode'
+import Footer from '@/components/Footer';
 
 const MainContainer = styled.div`
   position: relative;
@@ -107,6 +108,7 @@ export default function Home() {
         <Separator />
         <Features />
         <Laboratory />
+        <Footer />
       </MainContainer>
     </>
   )
