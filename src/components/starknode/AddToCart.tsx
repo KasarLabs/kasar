@@ -29,9 +29,11 @@ function AddToCart() {
   }
 
   useEffect(() => {
-    client?.checkout?.create().then((checkout: any) => {
-      setCheckout(checkout);
-    });
+    if (client) {
+      client?.checkout?.create().then((checkout: any) => {
+        setCheckout(checkout);
+      });
+    }
   }, [client])
 
   const checkoutOrder = () => {

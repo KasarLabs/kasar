@@ -45,6 +45,7 @@ const ButtonVideo = styled.div`
   transform: translate(-50%, 50%);
   color: ${({ theme }) => theme.colors.text};
   font-family: 'Inter', sans-serif;
+  cursor: pointer;
 `
 
 const Video = styled.video`
@@ -54,7 +55,10 @@ const Video = styled.video`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
+  @media (max-width: 900px) {
+    width: 120%;
+    height: 50%;
+  }
 `
 
 function Hero() {
@@ -81,12 +85,10 @@ function Hero() {
       </VideoBox>
 
       <Modal id="modal" ariaLabel="modal-headline" show={videoModalOpen} handleClose={() => setVideoModalOpen(false)}>
-        <div className="relative pb-9/16">
-          <Video width="1920" height="1080" loop controls>
-            <source src="/videos/video.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </Video>
-        </div>
+        <Video width="1920" height="1080" loop controls>
+          <source src="/videos/video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </Video>
       </Modal>
     </MainContainer>
   )

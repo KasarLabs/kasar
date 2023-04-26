@@ -50,7 +50,7 @@ export default function Home() {
     setClient(shopifyClient)
     const productId = 'gid://shopify/Product/8389143003465';
     shopifyClient.product.fetch(productId).then((product) => {
-      // console.log(product)
+      console.log(product)
       setName(product.title)
       setDescription(product.description)
       setImage(product.images[0].src)
@@ -72,7 +72,6 @@ export default function Home() {
       <MainContainer>
         {isMobile && <DropdownSm />}
         <CardProduct />
-        <AddToCart />
       </MainContainer>
     </>
   )
