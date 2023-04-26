@@ -6,6 +6,7 @@ import Image from 'next/image';
 import StarkGif from '../../assets/gif/stark.gif'
 import { H2 } from '../s-components/Titles';
 import { ButtonOutline, ButtonPrimary } from '../s-components/Button';
+import { Dispatch, SetStateAction } from 'react';
 
 const MainContainer = styled.div`
   border-radius: ${defaultTheme.radius.xl};
@@ -27,8 +28,11 @@ const FlexJustify = styled.div`
   align-items: center;  
   width: 100%;
 `
+interface ICart {
+  setPage: Dispatch<SetStateAction<number>>;
+}
 
-function CardProduct() {
+function CardProduct({ setPage }: ICart) {
   const {
     name,
     id,
@@ -42,9 +46,8 @@ function CardProduct() {
     <MainContainer>
       <ImageItem src={StarkGif} alt="Starknode" />
       <H2>{name}</H2>
-      {/* <p>{description}{" "}{price}{" "}euros</p> */}
       <FlexJustify>
-        <ButtonPrimary>Buy</ButtonPrimary>
+        <ButtonPrimary onClick={() => setPage(1)}>Buy</ButtonPrimary>
         <ButtonOutline>Learn more</ButtonOutline>
       </FlexJustify>
     </MainContainer>

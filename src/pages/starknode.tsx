@@ -8,13 +8,13 @@ import DropdownSm from '../components/starknode/DropdownSm';
 import Client from "shopify-buy"
 import CardProduct from '../components/starknode/CardProduct';
 import AddToCart from '../components/starknode/AddToCart';
-
+import Checkout from '../components/starknode/Checkout';
 import { defaultTheme } from '../theme';
 
 const MainContainer = styled.div`
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: calc(100vh);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,24 +23,17 @@ const MainContainer = styled.div`
 
 `
 
-
-
 export default function Home() {
   const {
-    name,
     setName,
-    id,
     setId,
-    description,
     setDescription,
-    image,
     setImage,
-    date,
     setDate,
     setPrice,
     setClient
   } = useContext(UserContext);
-
+  const [page, setPage] = useState(0)
   const isMobile = useMediaQuery({ maxWidth: 900 })
 
   useEffect(() => {
@@ -73,7 +66,9 @@ export default function Home() {
       <Header />
       <MainContainer>
         {isMobile && <DropdownSm />}
-        <CardProduct />
+        {page === 0 && <CardProduct setPage={setPage} />}
+        {page === 1 && <AddToCart setPage={setPage} />}
+        {page === 2 && <Checkout setPage={setPage} />}
       </MainContainer>
     </>
   )

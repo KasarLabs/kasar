@@ -1,18 +1,26 @@
 import React, { useContext, useState } from 'react'
 import styled from 'styled-components';
 import { UserContext } from "../../context";
-import { ButtonPrimary } from '../s-components/Button';
+import { ButtonPrimary, ButtonOutline } from '../s-components/Button';
 import { Input } from '../s-components/Input';
-import { Flex } from '../s-components/SFlex';
+import { Flex, FlexCol } from '../s-components/SFlex';
+import { Dispatch, SetStateAction } from 'react';
+import { H2 } from '../s-components/Titles';
+import { SeparatorSM } from '../s-components/utils';
 
 const MainContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 800px;
 `
 
-function Checkout() {
+interface ICart {
+  setPage: Dispatch<SetStateAction<number>>;
+}
+
+function Checkout({ setPage }: ICart) {
   const {
     name,
     id,
@@ -38,7 +46,9 @@ function Checkout() {
   };
 
   const updateShippingAddress = () => {
-
+    client.checkout.updateEmail(checkout.id, "email").then((res: any) => {
+      setCheckout(res)
+    });
     client.checkout.updateShippingAddress(checkout.id, shippingAddress).then((res: any) => {
       setCheckout(res)
     });
@@ -46,19 +56,25 @@ function Checkout() {
   console.log('update', checkout)
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    client.checkout.updateEmail(checkout.id, email).then((res: any) => {
+    client.checkout.updateEmail(checkout.id, "email").then((res: any) => {
       setCheckout(res)
     });
   }
   return (
     <MainContainer>
+      <H2>Shipping address</H2>
+      <SeparatorSM />
       <form onSubmit={handleSubmit}>
-        <Flex><Input value={email} onChange={e => setEmail(e.target.value)} placeholder='email' type='text' /><Input placeholder='phone' type='text' /></Flex>
-        <Flex><Input placeholder='address1' type='text' /><Input placeholder='city' type='text' /></Flex>
-        <Flex><Input placeholder='company' type='text' /><Input placeholder='country' type='text' /></Flex>
-        <Flex><Input placeholder='firstName' type='text' /><Input placeholder='lastName' type='text' /></Flex>
-        <Flex><Input placeholder='zip' type='text' /><Input placeholder='province' type='text' /></Flex>
-        <ButtonPrimary onClick={updateShippingAddress}>Pay</ButtonPrimary>
+        <FlexCol style={{ gap: '10px' }} >
+          <Flex><Input value={email} onChange={e => setEmail(e.target.value)} placeholder='email' type='text' /></Flex>
+          <Flex><Input placeholder='phone' type='text' /></Flex>
+          <Flex><Input placeholder='address1' type='text' /><Input placeholder='city' type='text' /></Flex>
+          <Flex><Input placeholder='company' type='text' /><Input placeholder='country' type='text' /></Flex>
+          <Flex><Input placeholder='firstName' type='text' /><Input placeholder='lastName' type='text' /></Flex>
+          <Flex><Input placeholder='zip' type='text' /><Input placeholder='province' type='text' /></Flex>
+          <ButtonPrimary onClick={updateShippingAddress}>Pay</ButtonPrimary>
+          <ButtonOutline onClick={() => setPage(1)}>Back</ButtonOutline>
+        </FlexCol>
       </form>
     </MainContainer>
   )
