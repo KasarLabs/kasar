@@ -21,7 +21,6 @@ const CardWrapper = styled.div`
   flex-direction: column;
   border-radius: ${defaultTheme.radius.s};
   padding:${defaultTheme.spacing['2xs']};
-  cursor: pointer;
   gap: ${defaultTheme.spacing['4xs']};
   box-shadow: ${({ theme }) => theme.colors.boxShadow};
   max-width: 350px;
@@ -46,7 +45,7 @@ const CardQuote = styled.div`
   gap: ${defaultTheme.spacing.m};
   border: 1px solid ${({ theme }) => theme.colors.grey};
   position: relative;
-@media (max-width: 800px) {
+  @media (max-width: 800px) {
     margin: 0px 0px;
   }
 `

@@ -38,6 +38,15 @@ const CardWrapper = styled.div<CardProps>`
   box-shadow: ${({ theme }) => theme.colors.boxShadow};
 `
 
+const ImageWrapper = styled.div<{ showImage: boolean; isMobile: boolean }>`
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: ${({ isMobile }) => (isMobile ? '358px' : '500px')};
+  transition: transform 0.5s ease-in-out;
+  transform: translateX(${({ showImage }) => (showImage ? 0 : '-100%')});
+`;
+
 const Card = ({ active, onClick, children }: CardProps) => {
   return <CardWrapper active={active} onClick={onClick}>{children}</CardWrapper>;
 };
