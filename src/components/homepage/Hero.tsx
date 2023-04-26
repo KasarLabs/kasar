@@ -55,6 +55,7 @@ const Video = styled.video`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 1000;
   @media (max-width: 900px) {
     width: 120%;
     height: 50%;

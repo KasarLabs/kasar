@@ -17,6 +17,7 @@ const MainContainer = styled.div`
   transform: translate(-50%, -50%);
   width: 70%;
   height: 70%;
+  z-index: 10;
 `
 
 export default function Modal({
