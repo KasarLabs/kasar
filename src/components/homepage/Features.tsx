@@ -18,12 +18,13 @@ const MainContainer = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+
 `
 
 const Box = styled.div`
   width: 70%;
   @media (max-width: 800px) {
-		width: 70%;
+		width: 90%;
   }
 `
 
@@ -71,15 +72,13 @@ function Features() {
       <FlexXL style={isMobile ? { padding: '10px' } : { padding: '50px' }}>
         <FlexCol data-aos="zoom-y-out">
           <FlexCol>
-            <H2>Powerful suite of tools</H2>
+            <H2 style={isMobile ? { textAlign: 'center' } : { textAlign: 'start' }}>Powerful suite of tools</H2>
             <SeparatorSM />
-            <Box>
-              <TextGrey>
-                Duis aute irure dolor in reprehenderit in voluptate
-                velit esse cillum dolore eu fugiat nulla pariatur excepteur
-                sint occaecat cupidatat.
-              </TextGrey>
-            </Box>
+            <TextGrey>
+              Duis aute irure dolor in reprehenderit in voluptate
+              velit esse cillum dolore eu fugiat nulla pariatur excepteur
+              sint occaecat cupidatat.
+            </TextGrey>
           </FlexCol>
           <SeparatorSM />
 

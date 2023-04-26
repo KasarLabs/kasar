@@ -23,6 +23,8 @@ const MainContainer = styled.div`
 
 `
 
+
+
 export default function Home() {
   const {
     name,

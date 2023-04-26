@@ -18,6 +18,7 @@ const MainContainer = styled.div`
   text-align: center;
   width: 70%;
   gap: ${defaultTheme.spacing['4xs']};
+  overflow: hidden;
   @media (max-width: 800px) {
 		width: 100%;
   }
@@ -32,6 +33,7 @@ const Box = styled.div`
 
 const VideoBox = styled.div`
   position: relative;
+
 `
 
 const ButtonVideo = styled.div`
@@ -40,6 +42,7 @@ const ButtonVideo = styled.div`
   border-radius:${defaultTheme.radius.xxl};
   bottom: 0;
   left: 50%;
+  z-index:100;
   padding:${defaultTheme.spacing['2xs']};
   white-space: nowrap;
   transform: translate(-50%, 50%);
@@ -62,6 +65,8 @@ const Video = styled.video`
   }
 `
 
+
+
 function Hero() {
   const [videoModalOpen, setVideoModalOpen] = useState<boolean>(false)
   const isMobile = useMediaQuery({ maxWidth: 900 })
@@ -78,6 +83,7 @@ function Hero() {
         <ButtonOutline>Learn more</ButtonOutline>
       </Flex>
       <SeparatorSM />
+
       <VideoBox data-aos="zoom-y-out">
         <Image src={HeroImage} width={isMobile ? 358 : 768} height={isMobile ? 201 : 432} priority alt="Hero" />
         <ButtonVideo onClick={(e) => { e.preventDefault(); e.stopPropagation(); setVideoModalOpen(true); }}>
