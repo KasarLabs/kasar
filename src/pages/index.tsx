@@ -21,7 +21,6 @@ const MainContainer = styled.div`
   align-items: center;
   flex-direction: column;
   overflow: hidden;
-
 `
 
 const SvgContainer = styled.div`
