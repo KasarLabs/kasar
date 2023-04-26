@@ -14,16 +14,16 @@ const MainContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  gap: ${defaultTheme.spacing.xs};
 `
 
 const ImageItem = styled(Image)`
-  width: 100%;
   border-radius: ${defaultTheme.radius.xl};
 `
 
-const FlesJustify = styled.div`
+const FlexJustify = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;  
   width: 100%;
 `
@@ -43,10 +43,10 @@ function CardProduct() {
       <ImageItem src={StarkGif} alt="Starknode" />
       <H2>{name}</H2>
       {/* <p>{description}{" "}{price}{" "}euros</p> */}
-      <FlesJustify>
+      <FlexJustify>
         <ButtonPrimary>Buy</ButtonPrimary>
         <ButtonOutline>Learn more</ButtonOutline>
-      </FlesJustify>
+      </FlexJustify>
     </MainContainer>
   )
 }

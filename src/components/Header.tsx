@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
-import logo from '../assets/images/kasarLogo.png'
+import logo from '../assets/images/KasarlabsBanner.png'
+import logoDark from '../assets/images/KasarBlackLogo.png'
 import { Button, ButtonPrimary } from './s-components/Button';
 import { MenuOutlined, EllipsisOutlined, BulbOutlined } from '@ant-design/icons';
 import { useMediaQuery } from "react-responsive";
@@ -89,7 +90,7 @@ export default function Header() {
         <Container>
           <FlexSm>
             <Link href="/">
-              <LogoHeader src={logo} alt="Kasar Logo" />
+              {darkmode.value ? <LogoHeader src={logo} alt="Kasar Logo" /> : <LogoHeader src={logoDark} alt="Kasar Logo" />}
             </Link>
           </FlexSm>
           <Flex>
