@@ -68,6 +68,10 @@ function Checkout({ setPage }: ICart) {
     client.checkout.updateShippingAddress(checkout.id, shippingAddress).then((res: any) => {
       setCheckout(res);
     });
+    if (!checkout.shippingAddress) {
+      window.alert('Please fill in the form correctly')
+      return;
+    }
     setPage(3);
   }
   console.log('update', checkout)
@@ -89,6 +93,7 @@ function Checkout({ setPage }: ICart) {
           <ButtonOutline onClick={() => setPage(1)}>Back</ButtonOutline>
         </FlexCol>
       </form>
+
     </MainContainer>
   )
 }

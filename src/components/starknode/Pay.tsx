@@ -50,6 +50,15 @@ function Pay({ setPage }: ICart) {
           <Text>item x{numberOfProducts}</Text>
           <Text>total: {amount}</Text>
           <Text>type: {name}{' '}{memory}{' '}Go</Text>
+          <Text>address1: {shippingAddress.address1}</Text>
+          <Text>address2: {shippingAddress.address2}</Text>
+          <Text>city: {shippingAddress.city}</Text>
+          <Text>country: {shippingAddress.country}</Text>
+          <Text>ZIP: {shippingAddress.zip}</Text>
+          <Text>name: {shippingAddress.name}</Text>
+          <Text>phone: {shippingAddress.phone}</Text>
+
+
         </FlexCol>
         <FlexCol>
           <H2>Pay</H2>
