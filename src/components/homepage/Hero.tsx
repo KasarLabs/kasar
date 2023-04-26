@@ -43,6 +43,8 @@ const ButtonVideo = styled.div`
   padding:${defaultTheme.spacing['2xs']};
   white-space: nowrap;
   transform: translate(-50%, 50%);
+  color: ${({ theme }) => theme.colors.text};
+  font-family: 'Inter', sans-serif;
 `
 
 const Video = styled.video`
