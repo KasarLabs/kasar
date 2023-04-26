@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
-import { Button } from '../s-components/Button';
+import { Button, ButtonPrimary } from '../s-components/Button';
 import { EllipsisOutlined } from '@ant-design/icons';
 import { defaultTheme } from '../../theme';
 import { TextSm } from '../s-components/Titles';
-import ButtonConnect from './ButtonConnect';
+import Link from 'next/link'
 
 const Links = styled.div`
   position: fixed;
@@ -33,7 +33,10 @@ function DropdownSm() {
   const [links, setLinks] = useState(false)
   return (
     <Links>
-      <ButtonConnect />
+      {/* <ButtonConnect /> */}
+      <Link href="/starknode">
+        <ButtonPrimary>Starknode</ButtonPrimary>
+      </Link>
       <Button onClick={() => setLinks(!links)}>
         <EllipsisOutlined />
       </Button>

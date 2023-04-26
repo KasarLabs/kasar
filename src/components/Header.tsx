@@ -13,7 +13,6 @@ import { UserContext } from "../context";
 import { useContext } from "react";
 import useDarkMode from 'use-dark-mode'
 import { Text, TextClickable } from './s-components/Titles';
-import ButtonConnect from './starknode/ButtonConnect';
 import Link from 'next/link'
 
 const SHeader = styled.div`

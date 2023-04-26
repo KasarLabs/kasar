@@ -90,6 +90,7 @@ function Hero() {
           Watch the full video (2 min)
         </ButtonVideo>
       </VideoBox>
+      <SeparatorSM />
 
       <Modal id="modal" ariaLabel="modal-headline" show={videoModalOpen} handleClose={() => setVideoModalOpen(false)}>
         <Video width="1920" height="1080" loop controls>

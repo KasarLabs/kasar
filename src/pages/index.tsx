@@ -2,7 +2,6 @@ import Head from 'next/head'
 import styled from 'styled-components';
 import { useMediaQuery } from "react-responsive";
 // import Header from '../components/Header'
-import { defaultTheme } from '../theme';
 import Hero from '@/components/homepage/Hero';
 import Header from '../components/Header';
 import DropdownSm from '@/components/starknode/DropdownSm';
@@ -12,6 +11,7 @@ import Laboratory from '@/components/homepage/Laboratory';
 import { useEffect } from 'react';
 import AOS from 'aos';
 import "aos/dist/aos.css";
+import useDarkMode from 'use-dark-mode'
 
 const MainContainer = styled.div`
   position: relative;
@@ -39,6 +39,7 @@ const SvgContainer2 = styled.div`
 export default function Home() {
 
   const isMobile = useMediaQuery({ maxWidth: 900 })
+  const darkmode = useDarkMode(false)
 
   useEffect(() => {
     AOS.init({
@@ -60,11 +61,19 @@ export default function Home() {
         <SvgContainer>
           <svg width="1360" height="578" viewBox="0 0 1360 578" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="illustration-01">
-                <stop stopColor="#FFF" offset="0%" />
-                <stop stopColor="#EAEAEA" offset="77.402%" />
-                <stop stopColor="#DFDFDF" offset="100%" />
-              </linearGradient>
+              {darkmode.value ?
+                <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="illustration-01">
+                  <stop stopColor="#000" offset="0%" />
+                  <stop stopColor="#12184d" offset="77.402%" />
+                  <stop stopColor="#1b0ab8" offset="100%" />
+                </linearGradient>
+                :
+                <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="illustration-01">
+                  <stop stopColor="#FFF" offset="0%" />
+                  <stop stopColor="#EAEAEA" offset="77.402%" />
+                  <stop stopColor="#DFDFDF" offset="100%" />
+                </linearGradient>
+              }
             </defs>
             <g fill="url(#illustration-01)" fillRule="evenodd">
               <circle cx="1232" cy="128" r="128" />
@@ -75,11 +84,19 @@ export default function Home() {
         <SvgContainer2>
           <svg width="1360" height="578" viewBox="0 0 1360 578" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="illustration-01">
-                <stop stopColor="#FFF" offset="0%" />
-                <stop stopColor="#EAEAEA" offset="77.402%" />
-                <stop stopColor="#DFDFDF" offset="100%" />
-              </linearGradient>
+              {darkmode.value ?
+                <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="illustration-01">
+                  <stop stopColor="#000" offset="0%" />
+                  <stop stopColor="#12184d" offset="77.402%" />
+                  <stop stopColor="#1b0ab8" offset="100%" />
+                </linearGradient>
+                :
+                <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="illustration-01">
+                  <stop stopColor="#FFF" offset="0%" />
+                  <stop stopColor="#EAEAEA" offset="77.402%" />
+                  <stop stopColor="#DFDFDF" offset="100%" />
+                </linearGradient>
+              }
             </defs>
             <g fill="url(#illustration-01)" fillRule="evenodd">
               <circle cx="1232" cy="128" r="128" />
