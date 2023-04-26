@@ -3,7 +3,7 @@ import { defaultTheme } from '../../theme';
 
 export const H1 = styled.h1`
   font-size: ${defaultTheme.fontSize.xl};
-  font-weight: ${defaultTheme.fontWeight.bold};
+  font-weight: ${defaultTheme.fontWeight.normal};
   color: ${({ theme }) => theme.colors.text};
   @media (max-width: 900px) {
 		font-size: ${defaultTheme.fontSize.ml};

@@ -19,3 +19,10 @@ export const SeparatorXL = styled.div`
 export const Separator = styled.div`
   padding-top: 50px;
 `;
+
+export const VericalLine = styled.div`
+  left: 50%;
+  height: 100px;
+  border-left: 2px solid #EAEAEA;
+  margin-left: -1px; /* half of the border width */
+`

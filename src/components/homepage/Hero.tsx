@@ -4,7 +4,7 @@ import { ButtonOutline, ButtonPrimary } from '../s-components/Button';
 import { Flex } from '../s-components/SFlex';
 import { H1, Text } from '../s-components/Titles';
 import { defaultTheme } from '../../theme';
-import { GradientText, SeparatorXL, SeparatorSM } from '../s-components/utils';
+import { GradientText, SeparatorXL, SeparatorSM, VericalLine } from '../s-components/utils';
 import Image from 'next/image'
 import HeroImage from '../../assets/images/hero-image.png'
 import { useMediaQuery } from "react-responsive";
@@ -16,7 +16,6 @@ const MainContainer = styled.div`
   align-items: center;
   flex-direction: column;
   text-align: center;
-  width: 70%;
   gap: ${defaultTheme.spacing['4xs']};
   overflow: hidden;
   max-width: 1200px;
@@ -92,6 +91,7 @@ function Hero() {
         </ButtonVideo>
       </VideoBox>
       <SeparatorSM />
+      <VericalLine />
 
       <Modal id="modal" ariaLabel="modal-headline" show={videoModalOpen} handleClose={() => setVideoModalOpen(false)}>
         <Video width="1920" height="1080" loop controls>
