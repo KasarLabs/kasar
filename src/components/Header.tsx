@@ -13,6 +13,7 @@ import { useContext } from "react";
 import useDarkMode from 'use-dark-mode'
 import { Text, TextClickable } from './s-components/Titles';
 import ButtonConnect from './starknode/ButtonConnect';
+import Link from 'next/link'
 
 const SHeader = styled.div`
   position: fixed;
@@ -65,7 +66,7 @@ const Dropdown = styled.div`
 const LogoHeader = styled(Image)`
   height: 47px;
   width: 100%;
-  @media (max-width: 800px) {
+  @media (max-width: 900px) {
     height: 30px;
     width: auto;
   }
@@ -91,8 +92,9 @@ export default function Header() {
           </FlexSm>
           <Flex>
             <>
-              {/* <ButtonConnect /> */}
-              <ButtonPrimary>Starknode</ButtonPrimary>
+              <Link href="/starknode">
+                <ButtonPrimary>Starknode</ButtonPrimary>
+              </Link>
               <Links>
                 <Button onClick={() => setLinks(!links)}>
                   <EllipsisOutlined />
