@@ -88,7 +88,9 @@ export default function Header() {
       ) : (
         <Container>
           <FlexSm>
-            <LogoHeader src={logo} alt="Kasar Logo" />
+            <Link href="/">
+              <LogoHeader src={logo} alt="Kasar Logo" />
+            </Link>
           </FlexSm>
           <Flex>
             <>
