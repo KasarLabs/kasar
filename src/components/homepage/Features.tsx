@@ -48,6 +48,7 @@ const ImageWrapper = styled.div<{ showImage: boolean; isMobile: boolean }>`
   transform: translateX(${({ showImage }) => (showImage ? 0 : '-100%')});
 `;
 
+
 const Card = ({ active, onClick, children }: CardProps) => {
   return <CardWrapper active={active} onClick={onClick}>{children}</CardWrapper>;
 };

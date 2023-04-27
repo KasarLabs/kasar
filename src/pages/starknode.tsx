@@ -8,7 +8,7 @@ import DropdownSm from '../components/starknode/DropdownSm';
 import Client from "shopify-buy"
 import CardProduct from '../components/starknode/CardProduct';
 import AddToCart from '../components/starknode/AddToCart';
-import Checkout from '../components/starknode/Checkout';
+import Checkout from '../components/starknode/ShippingForm';
 import Pay from '../components/starknode/Pay';
 import { defaultTheme } from '../theme';
 
@@ -21,7 +21,6 @@ const MainContainer = styled.div`
   align-items: center;
   flex-direction: column;
   gap: ${defaultTheme.spacing['4xs']};
-
 `
 
 export default function Home() {
@@ -46,7 +45,7 @@ export default function Home() {
     setClient(shopifyClient)
     const productId = 'gid://shopify/Product/8389143003465';
     shopifyClient.product.fetch(productId).then((product) => {
-      console.log(product)
+      // console.log(product)
       setName(product.title)
       setDescription(product.description)
       setImage(product.images[0].src)

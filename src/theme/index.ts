@@ -60,6 +60,7 @@ export const lightTheme: DefaultTheme = {
     text: '#000',
     textGrey: "#666",
     bgChange: '#F5F5F5',
+    alert: "#D0342C",
     boxShadow: '0px 2px 6px rgba(0, 0, 0, 0.1)'
   }
 };
@@ -78,6 +79,7 @@ export const darkTheme: DefaultTheme = {
     text: '#FFF',
     textGrey: "#666",
     bgChange: '#000023',
+    alert: "#D0342C",
     boxShadow: '0px 2px 6px rgba(255, 255, 255, 0.5)'
   }
 };

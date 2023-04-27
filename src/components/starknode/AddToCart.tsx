@@ -60,12 +60,8 @@ function AddToCart({ setPage }: ICart) {
   }, [client])
 
   const checkoutOrder = () => {
-
-    // const totalPrice = number * Number(price)
-    console.log("lol")
     const typeMemory = memory === 1 ? '512' : '256'
     const checkoutId = checkout.id
-
     const lineItemsToAdd = [
       {
         variantId: id,
@@ -75,7 +71,6 @@ function AddToCart({ setPage }: ICart) {
     ];
     client.checkout.addLineItems(checkoutId, lineItemsToAdd).then((res: any) => {
       setCheckout(res);
-      console.log('coucou', res);
     });
     ; setPage(2)
   }
@@ -113,7 +108,6 @@ function AddToCart({ setPage }: ICart) {
           <ButtonOutline style={{ width: '100%' }} onClick={() => setPage(0)}>Back</ButtonOutline>
         </Col>
       </FlexCol>
-      {/* {showCart && <Cart />} */}
     </MainContainer>
   )
 }

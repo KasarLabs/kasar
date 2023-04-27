@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { defaultTheme } from '../../theme';
 import { UserContext } from "../../context";
 import { ButtonPrimary } from '../s-components/Button';
-import Checkout from './Checkout'
+import ShippingForm from './ShippingForm'
 
 const MainContainer = styled.div`
   display: flex;
@@ -31,7 +31,7 @@ function Cart() {
       <p>nombre d'achat: {checkout?.lineItems[0]?.quantity}</p>
       <p>total: {checkout?.lineItemsSubtotalPrice?.amount}</p>
       <ButtonPrimary onClick={() => setShowCheckout(true)}>Checkout</ButtonPrimary>
-      {showCheckout && <Checkout />}
+      {showCheckout && <ShippingForm />}
     </MainContainer>
   )
 }

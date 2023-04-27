@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import styled from 'styled-components';
 import { UserContext } from "../../context";
-import { ButtonPrimary, ButtonOutline } from '../s-components/Button';
+import { ButtonPrimary, ButtonOutline, ButtonAlert } from '../s-components/Button';
 import { Input } from '../s-components/Input';
 import { Flex, FlexCol } from '../s-components/SFlex';
 import { Dispatch, SetStateAction } from 'react';
@@ -13,22 +13,34 @@ const MainContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 800px;
+  @media (max-width: 900px) {
+    padding: 0px 10px;
+  }
 `
 
 interface ICart {
   setPage: Dispatch<SetStateAction<number>>;
 }
 
-function Checkout({ setPage }: ICart) {
+function ShippingForm({ setPage }: ICart) {
   const {
     setCheckout,
     checkout,
     client
   } = useContext(UserContext);
+  const [clicked, setClicked] = useState(0)
+  // function delay(time: number) {
+  //   return new Promise(resolve => setTimeout(resolve, time));
+  // }
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
+    if (clicked < 2) {
+      setClicked(clicked + 1)
+    } else {
+      setClicked(0)
+
+    }
     //set mail to checkout
     const mail = e.target.email.value;
     if (!mail) {
@@ -68,14 +80,18 @@ function Checkout({ setPage }: ICart) {
     client.checkout.updateShippingAddress(checkout.id, shippingAddress).then((res: any) => {
       setCheckout(res);
     });
-    if (!checkout.shippingAddress) {
-      window.alert('Please fill in the form correctly')
-      return;
+    // if (!checkout.shippingAddress) {
+    //   console.log(shippingAddress)
+    //   console.log(checkout)
+    //   window.alert('Address not recognized')
+    //   return;
+    // }
+    if (checkout.shippingAddress) {
+      setPage(3);
     }
-    setPage(3);
   }
-  console.log('update', checkout)
-  console.log('update', checkout.id)
+  // console.log('update', checkout)
+  // console.log('update', checkout.id)
 
   return (
     <MainContainer>
@@ -89,7 +105,11 @@ function Checkout({ setPage }: ICart) {
           <Flex><Input name="company" placeholder='company' type='text' /><Input name="country" placeholder='country*' type='text' /></Flex>
           <Flex><Input name="firstName" placeholder='firstName*' type='text' /><Input name="lastName" placeholder='lastName*' type='text' /></Flex>
           <Flex><Input name="zip" placeholder='zip*' type='text' /><Input name="province" placeholder='province' type='text' /></Flex>
-          <ButtonPrimary type='submit'>Pay</ButtonPrimary>
+
+          {(clicked === 0 || clicked > 2) && <ButtonPrimary type='submit'>Pay</ButtonPrimary>}
+          {clicked === 1 && <ButtonPrimary type='submit'>Are you sure your address is correct?</ButtonPrimary>}
+          {clicked === 2 && <ButtonAlert type='submit'>Address is not reconized</ButtonAlert>}
+
           <ButtonOutline onClick={() => setPage(1)}>Back</ButtonOutline>
         </FlexCol>
       </form>
@@ -98,4 +118,4 @@ function Checkout({ setPage }: ICart) {
   )
 }
 
-export default Checkout
+export default ShippingForm

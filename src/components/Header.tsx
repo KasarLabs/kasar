@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
 import logo from '../assets/images/KasarlabsBanner.png'
+import logoSolo from '../assets/images/kasarLogo.png'
 import logoDark from '../assets/images/KasarBlackLogo.png'
 import { Button, ButtonPrimary } from './s-components/Button';
 import { MenuOutlined, EllipsisOutlined, BulbOutlined } from '@ant-design/icons';
@@ -87,11 +88,9 @@ export default function Header() {
         </ContainerSm>
       ) : (
         <Container>
-          <FlexSm>
-            <Link href="/">
-              {darkmode.value ? <LogoHeader src={logo} alt="Kasar Logo" /> : <LogoHeader src={logoDark} alt="Kasar Logo" />}
-            </Link>
-          </FlexSm>
+          <Link href="/">
+            {darkmode.value ? <LogoHeader src={logo} alt="Kasar Logo" /> : <LogoHeader src={logoDark} alt="Kasar Logo" />}
+          </Link>
           <Flex>
             <>
               <Link href="/starknode">

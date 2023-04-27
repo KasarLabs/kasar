@@ -60,3 +60,20 @@ export const ButtonOutline = styled.button<IParamsStyled>`
     padding: ${defaultTheme.spacing['3xs']};
   }
 `
+
+export const ButtonAlert = styled.button`
+  background-color: ${({ theme }) => theme.colors.alert};
+  box-shadow: ${({ theme }) => theme.colors.boxShadow};
+  color: ${({ theme }) => theme.colors.white};
+  font-size: ${defaultTheme.fontSize.s};
+  font-weight: ${defaultTheme.fontWeight.normal};
+  padding: ${defaultTheme.spacing['3xs']} ${defaultTheme.spacing.s};
+  border-radius: ${defaultTheme.radius.m};
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.black};
+    color: ${({ theme }) => theme.colors.grey};
+  }
+`

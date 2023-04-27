@@ -12,7 +12,7 @@ export const H1 = styled.h1`
 
 export const H2 = styled.h3`
   font-size: ${defaultTheme.fontSize.l};
-  font-weight: ${defaultTheme.fontWeight.bold};
+  font-weight: ${defaultTheme.fontWeight.normal};
   color: ${({ theme }) => theme.colors.text};
   margin: 0;
   @media (max-width: 900px) {

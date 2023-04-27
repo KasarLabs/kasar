@@ -20,6 +20,10 @@ const MainContainer = styled.div`
 
 const ImageItem = styled(Image)`
   border-radius: ${defaultTheme.radius.xl};
+  @media (max-width: 800px) {
+		width: 200px;
+		height: 200px;
+  }
 `
 
 const FlexJustify = styled.div`

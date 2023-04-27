@@ -5,6 +5,7 @@ import { UserContext } from "../../context";
 import { Dispatch, SetStateAction } from 'react';
 import { Flex, FlexCol } from '../s-components/SFlex';
 import { H2, Text } from '../s-components/Titles';
+import { defaultTheme } from '../../theme';
 
 interface ICart {
   setPage: Dispatch<SetStateAction<number>>;
@@ -25,6 +26,13 @@ const ImageStark = styled.img`
     height:150px;
   }
 `
+const FlexToCol = styled.div`
+  display: flex;
+  gap: ${defaultTheme.spacing['4xs']};
+  @media (max-width: 800px) {
+		flex-direction: column;
+  }
+`
 
 function Pay({ setPage }: ICart) {
   const {
@@ -36,14 +44,16 @@ function Pay({ setPage }: ICart) {
   const amount = checkout.subtotalPrice.amount
   const memory = checkout.lineItems[0].customAttributes[0].value
   const shippingAddress = checkout.shippingAddress
-  console.log('numberOfProducts', numberOfProducts)
-  console.log('amount', amount)
-  console.log('memory', memory)
-  console.log('shippingAddress', shippingAddress)
+  // console.log('numberOfProducts', numberOfProducts)
+  // console.log('amount', amount)
+  // console.log('memory', memory)
+  // console.log('shippingAddress', shippingAddress)
+  console.log('Checkout', checkout)
+
 
   return (
     <MainContainer>
-      <Flex>
+      <FlexToCol>
         <FlexCol>
           <H2>Recap</H2>
           <ImageStark src={image} alt='starknode' />
@@ -57,8 +67,6 @@ function Pay({ setPage }: ICart) {
           <Text>ZIP: {shippingAddress.zip}</Text>
           <Text>name: {shippingAddress.name}</Text>
           <Text>phone: {shippingAddress.phone}</Text>
-
-
         </FlexCol>
         <FlexCol>
           <H2>Pay</H2>
@@ -67,9 +75,9 @@ function Pay({ setPage }: ICart) {
             <ButtonOutline>Fiat</ButtonOutline>
           </Flex>
         </FlexCol>
-      </Flex>
+      </FlexToCol>
 
-      <ButtonOutline onClick={() => setPage(2)}>Back</ButtonOutline>
+      <ButtonOutline onClick={() => setPage(1)}>Back</ButtonOutline>
     </MainContainer>
   )
 }
