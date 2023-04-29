@@ -31,7 +31,7 @@ function Cart() {
       <p>nombre d'achat: {checkout?.lineItems[0]?.quantity}</p>
       <p>total: {checkout?.lineItemsSubtotalPrice?.amount}</p>
       <ButtonPrimary onClick={() => setShowCheckout(true)}>Checkout</ButtonPrimary>
-      {showCheckout && <ShippingForm />}
+      {/* {showCheckout && <ShippingForm />} */}
     </MainContainer>
   )
 }

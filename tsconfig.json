@@ -28,7 +28,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "src/context/index.ts"
+    "src/context/index.ts",
   ],
   "exclude": [
     "node_modules"

@@ -13,6 +13,7 @@ import AOS from 'aos';
 import "aos/dist/aos.css";
 import useDarkMode from 'use-dark-mode'
 import Footer from '@/components/Footer';
+import Stripe from '@/components/starknode/Stripe';
 
 const MainContainer = styled.div`
   position: relative;

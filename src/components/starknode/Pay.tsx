@@ -6,9 +6,11 @@ import { Dispatch, SetStateAction } from 'react';
 import { Flex, FlexCol } from '../s-components/SFlex';
 import { H2, Text } from '../s-components/Titles';
 import { defaultTheme } from '../../theme';
+import StripePage from './StripePage';
 
 interface ICart {
   setPage: Dispatch<SetStateAction<number>>;
+  page: number;
 }
 
 const MainContainer = styled.div`
@@ -34,12 +36,13 @@ const FlexToCol = styled.div`
   }
 `
 
-function Pay({ setPage }: ICart) {
+function Pay({ setPage, page }: ICart) {
   const {
     name,
     checkout,
     image
   } = useContext(UserContext);
+  const [payment, setPayment] = useState(0)
   const numberOfProducts = checkout.lineItems[0].quantity
   const amount = checkout.subtotalPrice.amount
   const memory = checkout.lineItems[0].customAttributes[0].value
@@ -71,9 +74,11 @@ function Pay({ setPage }: ICart) {
         <FlexCol>
           <H2>Pay</H2>
           <Flex>
-            <ButtonOutline>Crypto</ButtonOutline>
-            <ButtonOutline>Fiat</ButtonOutline>
+            <ButtonOutline onClick={() => setPage(4)}>Crypto</ButtonOutline>
+            <ButtonOutline onClick={() => setPage(5)}>Fiat</ButtonOutline>
+            <ButtonOutline onClick={() => window.open(checkout.webUrl)}>Pay shopify</ButtonOutline>
           </Flex>
+
         </FlexCol>
       </FlexToCol>
 

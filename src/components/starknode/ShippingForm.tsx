@@ -93,6 +93,25 @@ function ShippingForm({ setPage }: ICart) {
   // console.log('update', checkout)
   // console.log('update', checkout.id)
 
+  const tryFunc = () => {
+    const shippingAddress = {
+      address1: 'Chestnut Street 92',
+      address2: 'Apartment 2',
+      city: 'Louisville',
+      company: null,
+      country: 'United States',
+      firstName: 'Bob',
+      lastName: 'Norman',
+      phone: '555-625-1199',
+      province: 'Kentucky',
+      zip: '40202'
+    };
+
+    client.checkout.updateShippingAddress(checkout.id, shippingAddress).then(res => {
+      setCheckout(res);
+    });
+    setPage(3);
+  }
   return (
     <MainContainer>
       <H2>Shipping address</H2>
@@ -111,6 +130,8 @@ function ShippingForm({ setPage }: ICart) {
           {clicked === 2 && <ButtonAlert type='submit'>Address is not reconized</ButtonAlert>}
 
           <ButtonOutline onClick={() => setPage(1)}>Back</ButtonOutline>
+          <ButtonOutline onClick={tryFunc}>TRY</ButtonOutline>
+
         </FlexCol>
       </form>
 

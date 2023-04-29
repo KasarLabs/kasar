@@ -11,6 +11,7 @@ import AddToCart from '../components/starknode/AddToCart';
 import Checkout from '../components/starknode/ShippingForm';
 import Pay from '../components/starknode/Pay';
 import { defaultTheme } from '../theme';
+import StripePage from '@/components/starknode/StripePage';
 
 const MainContainer = styled.div`
   position: relative;
@@ -43,6 +44,8 @@ export default function Home() {
       apiVersion: '2023-04'
     })
     setClient(shopifyClient)
+    console.log(shopifyClient)
+
     const productId = 'gid://shopify/Product/8389143003465';
     shopifyClient.product.fetch(productId).then((product) => {
       // console.log(product)
@@ -54,7 +57,6 @@ export default function Home() {
       setPrice(product.variants[0].price.amount)
     });
   }, [])
-
   return (
     <>
       <Head>
@@ -69,7 +71,9 @@ export default function Home() {
         {page === 0 && <CardProduct setPage={setPage} />}
         {page === 1 && <AddToCart setPage={setPage} />}
         {page === 2 && <Checkout setPage={setPage} />}
-        {page === 3 && <Pay setPage={setPage} />}
+        {page === 3 && <Pay setPage={setPage} page={page} />}
+        {page === 5 && <StripePage />}
+
       </MainContainer>
     </>
   )
