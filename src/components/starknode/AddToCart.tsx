@@ -72,10 +72,26 @@ function AddToCart({ setPage }: ICart) {
     client.checkout.addLineItems(checkoutId, lineItemsToAdd).then((res: any) => {
       setCheckout(res);
     });
-    ; setPage(2)
+    setPage(2)
+  }
+
+  const goToShopify = () => {
+    const typeMemory = memory === 1 ? '512' : '256'
+    const checkoutId = checkout.id
+    const lineItemsToAdd = [
+      {
+        variantId: id,
+        quantity: number,
+        customAttributes: [{ key: "sizeMemory", value: typeMemory }]
+      }
+    ];
+    client.checkout.addLineItems(checkoutId, lineItemsToAdd).then((res: any) => {
+      setCheckout(res);
+      window.open(res.webUrl)
+    });
   }
   // console.log("CLIENT", client)
-  // console.log("CHECKKK", checkout)
+  console.log("CHECKKK", checkout)
   return (
     <MainContainer>
       <FlexCol style={{ textAlign: 'center', alignItems: 'center' }}>
@@ -105,6 +121,8 @@ function AddToCart({ setPage }: ICart) {
             <ButtonOutline onClick={pressPlus}>+</ButtonOutline>
           </Flex>
           <ButtonPrimary style={{ width: '100%' }} onClick={checkoutOrder}>Add to cart</ButtonPrimary>
+          <ButtonPrimary style={{ width: '100%' }} onClick={goToShopify}>Go to shopify</ButtonPrimary>
+
           <ButtonOutline style={{ width: '100%' }} onClick={() => setPage(0)}>Back</ButtonOutline>
         </Col>
       </FlexCol>
