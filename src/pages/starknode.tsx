@@ -46,21 +46,8 @@ export default function Home() {
       apiVersion: '2023-04'
     })
     setClient(shopifyClient)
-    console.log(shopifyClient)
-
-    // const productId = 'gid://shopify/Product/8389143003465';
-    // shopifyClient.product.fetch(productId).then((product) => {
-    //   console.log(product)
-    //   setName(product.title)
-    //   setDescription(product.description)
-    //   setImage(product.images[0].src)
-    //   setDate(product.createdAt)
-    //   setId256(product.variants[0].id)
-    //   setPrice(product.variants[0].price.amount)
-    // });
 
     shopifyClient.product.fetchAll().then((product) => {
-      console.log(product)
       setName(product[0].title)
       setDescription(product[0].description)
       setImage(product[0].images[0].src)
@@ -72,6 +59,7 @@ export default function Home() {
 
     });
   }, [])
+
   return (
     <>
       <Head>

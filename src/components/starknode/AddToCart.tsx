@@ -4,7 +4,6 @@ import { UserContext } from "../../context";
 import styled from 'styled-components';
 import { defaultTheme } from '../../theme';
 import { Flex, FlexCol, FlexXL } from '../s-components/SFlex';
-import Cart from './Cart';
 import { Dispatch, SetStateAction } from 'react';
 import { SeparatorSM } from '../s-components/utils';
 import { H2, Text } from '../s-components/Titles';
@@ -12,7 +11,6 @@ import { DeleteOutlined } from '@ant-design/icons';
 
 const MainContainer = styled.div`
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   gap: ${defaultTheme.spacing['4xs']};
@@ -59,20 +57,6 @@ function AddToCart({ setPage }: ICart) {
     }
   }, [client])
 
-  // const checkoutOrder = () => {
-  //   const typeMemory = memory === 1 ? id512 : id256
-  //   const checkoutId = checkout.id
-  //   const lineItemsToAdd = [
-  //     {
-  //       variantId: typeMemory,
-  //       quantity: number,
-  //     }
-  //   ];
-  //   client.checkout.addLineItems(checkoutId, lineItemsToAdd).then((res: any) => {
-  //     setCheckout(res);
-  //   });
-  //   setPage(2)
-  // }
   const AddItem = () => {
     const typeMemory = memory === 1 ? id512 : id256
     const checkoutId = checkout.id
@@ -89,26 +73,36 @@ function AddToCart({ setPage }: ICart) {
 
   const deleteItem = (lineItemIdsToRemove: any) => {
     const checkoutId = checkout.id
-    console.log(lineItemIdsToRemove)
     client.checkout.removeLineItems(checkoutId, lineItemIdsToRemove).then((res: any) => {
       setCheckout(res);
-      console.log(res.lineItems)
     });
   }
 
   const goToShopify = () => {
     window.open(checkout.webUrl)
   }
-  useEffect(() => {
-    checkout?.lineItems && checkout.lineItems.map(({ product, index }: any) => console.log(product, index))
-  }, [])
-  console.log("CHECKKK", checkout)
+
+  // console.log("CHECKKK", checkout)
   return (
     <MainContainer>
-      <FlexCol style={{ textAlign: 'center', alignItems: 'center' }}>
-        <H2>{name}</H2>
+      <FlexCol style={{ textAlign: 'center', alignItems: 'center', width: '50%' }}>
+        <H2>Starknode</H2>
         <ImageStark src={image} alt='starknode' />
         <SeparatorSM />
+
+        {checkout?.lineItems && checkout.lineItems.map((product: any) => {
+          return (
+            <Flex key={product.id}>
+              <Text>{product.title}</Text>
+              <Text>x{product.quantity}</Text>
+              <DeleteOutlined onClick={() => deleteItem(product.id)} />
+            </Flex>
+          )
+        })}
+      </FlexCol>
+      <SeparatorSM />
+      <FlexCol style={{ textAlign: 'center', alignItems: 'center', width: '50%' }}>
+
         <Col>
           <Flex>
             <div onClick={() => setMemory(1)}>
@@ -126,22 +120,12 @@ function AddToCart({ setPage }: ICart) {
               }
             </div>
           </Flex>
-          {checkout?.lineItems && checkout.lineItems.map((product: any) => {
-            console.log("heyy", product)
-            return (
-              <Flex key={product.id}>
-                <Text>{product.title}</Text>
-                <Text>x{product.quantity}</Text>
-                <DeleteOutlined onClick={() => deleteItem(product.id)} />
-              </Flex>
-            )
-          })}
+
           <Flex>
             <ButtonOutline onClick={pressLess}>-</ButtonOutline>
             <ButtonPrimary>{number}</ButtonPrimary>
             <ButtonOutline onClick={pressPlus}>+</ButtonOutline>
           </Flex>
-          {/* <ButtonPrimary style={{ width: '100%' }} onClick={checkoutOrder}>Add to cart</ButtonPrimary> */}
           <ButtonPrimary style={{ width: '100%' }} onClick={AddItem}>Add to cart</ButtonPrimary>
           <ButtonPrimary disabled={checkout?.lineItems?.length === 0 ? true : false} style={{ width: '100%' }} onClick={goToShopify}>Proceed</ButtonPrimary>
           <ButtonOutline style={{ width: '100%' }} onClick={() => setPage(0)}>Back</ButtonOutline>

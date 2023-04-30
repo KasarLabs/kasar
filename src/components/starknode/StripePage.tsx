@@ -43,7 +43,7 @@ const StripePage = () => {
           },
         },
       };
-      console.log(orderData)
+      // console.log(orderData)
       // client.checkout.fetch(checkout.id).then((product) => {
       //   // console.log(product) 
       //   console.log(product)

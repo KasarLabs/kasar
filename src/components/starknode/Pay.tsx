@@ -51,7 +51,7 @@ function Pay({ setPage, page }: ICart) {
   // console.log('amount', amount)
   // console.log('memory', memory)
   // console.log('shippingAddress', shippingAddress)
-  console.log('Checkout', checkout)
+  // console.log('Checkout', checkout)
 
 
   return (
