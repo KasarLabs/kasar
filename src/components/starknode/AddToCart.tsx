@@ -8,6 +8,7 @@ import { Dispatch, SetStateAction } from 'react';
 import { SeparatorSM, VerticalLineBig } from '../s-components/utils';
 import { H2, Text } from '../s-components/Titles';
 import { DeleteOutlined } from '@ant-design/icons';
+import { useMediaQuery } from "react-responsive";
 
 const MainContainer = styled.div`
   display: flex;
@@ -21,6 +22,7 @@ const MainContainer = styled.div`
     flex-direction: column;
     padding: ${defaultTheme.spacing.xs};
     width: 90%;
+    height: 80vh;
   }
 `
 
@@ -49,6 +51,7 @@ function AddToCart({ setPage }: ICart) {
   const { client, id256, setCheckout, checkout, image, setClient, name, id512 } = useContext(UserContext);
   const [number, setNumber] = useState(1)
   const [memory, setMemory] = useState(1)
+  const isMobile = useMediaQuery({ maxWidth: 900 })
 
   const pressPlus = () => {
     number < 10 ? setNumber(number + 1) : setNumber(number)
@@ -108,23 +111,22 @@ function AddToCart({ setPage }: ICart) {
           )
         })}
       </FlexCol>
-      <VerticalLineBig />
+      {!isMobile && <VerticalLineBig />}
       <FlexCol style={{ textAlign: 'center', alignItems: 'center', width: '50%' }}>
-
         <Col>
           <Flex>
             <div onClick={() => setMemory(1)}>
               {memory === 1 ?
-                <ButtonPrimary>512 Go</ButtonPrimary>
+                <ButtonPrimary style={{ whiteSpace: 'nowrap' }}>512 Go</ButtonPrimary>
                 :
-                <ButtonOutline>512 Go</ButtonOutline>
+                <ButtonOutline style={{ whiteSpace: 'nowrap' }}>512 Go</ButtonOutline>
               }
             </div>
             <div onClick={() => setMemory(0)}>
               {memory === 0 ?
-                <ButtonPrimary>256 Go</ButtonPrimary>
+                <ButtonPrimary style={{ whiteSpace: 'nowrap' }}>256 Go</ButtonPrimary>
                 :
-                <ButtonOutline>256 Go</ButtonOutline>
+                <ButtonOutline style={{ whiteSpace: 'nowrap' }}>256 Go</ButtonOutline>
               }
             </div>
           </Flex>
@@ -134,9 +136,21 @@ function AddToCart({ setPage }: ICart) {
             <ButtonPrimary>{number}</ButtonPrimary>
             <ButtonOutline onClick={pressPlus}>+</ButtonOutline>
           </Flex>
-          <ButtonPrimary style={{ width: '100%' }} onClick={AddItem}>Add to cart</ButtonPrimary>
-          <ButtonPrimary disabled={checkout?.lineItems?.length === 0 ? true : false} style={{ width: '100%' }} onClick={goToShopify}>Proceed</ButtonPrimary>
-          <ButtonOutline style={{ width: '100%' }} onClick={() => setPage(0)}>Back</ButtonOutline>
+          {isMobile ? (
+            <>
+              <Flex>
+                <ButtonPrimary style={{ width: '100%', whiteSpace: 'nowrap' }} onClick={AddItem}>Add to cart</ButtonPrimary>
+                <ButtonPrimary disabled={checkout?.lineItems?.length === 0 ? true : false} style={{ width: '100%' }} onClick={goToShopify}>Proceed</ButtonPrimary>
+              </Flex>
+              <ButtonOutline style={{ width: '100%' }} onClick={() => setPage(0)}>Back</ButtonOutline>
+            </>
+          ) : (
+            <>
+              <ButtonPrimary style={{ width: '100%' }} onClick={AddItem}>Add to cart</ButtonPrimary>
+              <ButtonPrimary disabled={checkout?.lineItems?.length === 0 ? true : false} style={{ width: '100%' }} onClick={goToShopify}>Proceed</ButtonPrimary>
+              <ButtonOutline style={{ width: '100%' }} onClick={() => setPage(0)}>Back</ButtonOutline>
+            </>
+          )}
         </Col>
       </FlexCol>
     </MainContainer>
