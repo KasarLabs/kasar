@@ -104,7 +104,7 @@ function AddToCart({ setPage }: ICart) {
         {checkout?.lineItems && checkout.lineItems.map((product: any) => {
           return (
             <Flex key={product.id}>
-              <Text>{product.title}</Text>
+              <Text style={{ whiteSpace: 'nowrap' }}>{product.title}</Text>
               <Text>x{product.quantity}</Text>
               <DeleteOutlined onClick={() => deleteItem(product.id)} />
             </Flex>
