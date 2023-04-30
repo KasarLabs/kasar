@@ -13,11 +13,13 @@ const UserProvider = ({ children }) => {
   const [showDelete, setShowDelete] = useState(false)
   const [showNavMobile, setShowNavMobile] = useState(false)
   const [name, setName] = useState('')
-  const [id, setId] = useState('')
+  const [id256, setId256] = useState('')
+  const [id512, setId512] = useState('')
   const [description, setDescription] = useState('')
   const [image, setImage] = useState('')
   const [date, setDate] = useState('')
   const [price, setPrice] = useState('')
+  const [price512, setPrice512] = useState('')
   const [client, setClient] = useState()
   const [checkout, setCheckout] = useState()
 
@@ -33,8 +35,12 @@ const UserProvider = ({ children }) => {
       data,
       name,
       setName,
-      id,
-      setId,
+      id256,
+      setId256,
+      id512,
+      setId512,
+      price512,
+      setPrice512,
       description,
       setDescription,
       image,

@@ -27,8 +27,10 @@ const MainContainer = styled.div`
 export default function Home() {
   const {
     setName,
-    setId,
+    setId256,
+    setId512,
     setDescription,
+    setPrice512,
     setImage,
     setDate,
     setPrice,
@@ -46,15 +48,28 @@ export default function Home() {
     setClient(shopifyClient)
     console.log(shopifyClient)
 
-    const productId = 'gid://shopify/Product/8389143003465';
-    shopifyClient.product.fetch(productId).then((product) => {
-      // console.log(product)
-      setName(product.title)
-      setDescription(product.description)
-      setImage(product.images[0].src)
-      setDate(product.createdAt)
-      setId(product.variants[0].id)
-      setPrice(product.variants[0].price.amount)
+    // const productId = 'gid://shopify/Product/8389143003465';
+    // shopifyClient.product.fetch(productId).then((product) => {
+    //   console.log(product)
+    //   setName(product.title)
+    //   setDescription(product.description)
+    //   setImage(product.images[0].src)
+    //   setDate(product.createdAt)
+    //   setId256(product.variants[0].id)
+    //   setPrice(product.variants[0].price.amount)
+    // });
+
+    shopifyClient.product.fetchAll().then((product) => {
+      console.log(product)
+      setName(product[0].title)
+      setDescription(product[0].description)
+      setImage(product[0].images[0].src)
+      setDate(product[0].createdAt)
+      setId256(product[0].variants[0].id)
+      setId512(product[1].variants[0].id)
+      setPrice(product[0].variants[0].price.amount)
+      setPrice512(product[1].variants[0].price.amount)
+
     });
   }, [])
   return (

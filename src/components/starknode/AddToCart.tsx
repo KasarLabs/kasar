@@ -6,9 +6,9 @@ import { defaultTheme } from '../../theme';
 import { Flex, FlexCol, FlexXL } from '../s-components/SFlex';
 import Cart from './Cart';
 import { Dispatch, SetStateAction } from 'react';
-import Image from 'next/image';
 import { SeparatorSM } from '../s-components/utils';
-import { H2 } from '../s-components/Titles';
+import { H2, Text } from '../s-components/Titles';
+import { DeleteOutlined } from '@ant-design/icons';
 
 const MainContainer = styled.div`
   display: flex;
@@ -40,7 +40,7 @@ interface ICart {
 }
 
 function AddToCart({ setPage }: ICart) {
-  const { client, id, setCheckout, checkout, image, setClient, name } = useContext(UserContext);
+  const { client, id256, setCheckout, checkout, image, setClient, name, id512 } = useContext(UserContext);
   const [number, setNumber] = useState(1)
   const [memory, setMemory] = useState(1)
 
@@ -59,38 +59,49 @@ function AddToCart({ setPage }: ICart) {
     }
   }, [client])
 
-  const checkoutOrder = () => {
-    const typeMemory = memory === 1 ? '512' : '256'
+  // const checkoutOrder = () => {
+  //   const typeMemory = memory === 1 ? id512 : id256
+  //   const checkoutId = checkout.id
+  //   const lineItemsToAdd = [
+  //     {
+  //       variantId: typeMemory,
+  //       quantity: number,
+  //     }
+  //   ];
+  //   client.checkout.addLineItems(checkoutId, lineItemsToAdd).then((res: any) => {
+  //     setCheckout(res);
+  //   });
+  //   setPage(2)
+  // }
+  const AddItem = () => {
+    const typeMemory = memory === 1 ? id512 : id256
     const checkoutId = checkout.id
     const lineItemsToAdd = [
       {
-        variantId: id,
+        variantId: typeMemory,
         quantity: number,
-        customAttributes: [{ key: "sizeMemory", value: typeMemory }]
       }
     ];
     client.checkout.addLineItems(checkoutId, lineItemsToAdd).then((res: any) => {
       setCheckout(res);
     });
-    setPage(2)
+  }
+
+  const deleteItem = (lineItemIdsToRemove: any) => {
+    const checkoutId = checkout.id
+    console.log(lineItemIdsToRemove)
+    client.checkout.removeLineItems(checkoutId, lineItemIdsToRemove).then((res: any) => {
+      setCheckout(res);
+      console.log(res.lineItems)
+    });
   }
 
   const goToShopify = () => {
-    const typeMemory = memory === 1 ? '512' : '256'
-    const checkoutId = checkout.id
-    const lineItemsToAdd = [
-      {
-        variantId: id,
-        quantity: number,
-        customAttributes: [{ key: "sizeMemory", value: typeMemory }]
-      }
-    ];
-    client.checkout.addLineItems(checkoutId, lineItemsToAdd).then((res: any) => {
-      setCheckout(res);
-      window.open(res.webUrl)
-    });
+    window.open(checkout.webUrl)
   }
-  // console.log("CLIENT", client)
+  useEffect(() => {
+    checkout?.lineItems && checkout.lineItems.map(({ product, index }: any) => console.log(product, index))
+  }, [])
   console.log("CHECKKK", checkout)
   return (
     <MainContainer>
@@ -102,27 +113,37 @@ function AddToCart({ setPage }: ICart) {
           <Flex>
             <div onClick={() => setMemory(1)}>
               {memory === 1 ?
-                <ButtonPrimary>512</ButtonPrimary>
+                <ButtonPrimary>512 Go</ButtonPrimary>
                 :
-                <ButtonOutline>512</ButtonOutline>
+                <ButtonOutline>512 Go</ButtonOutline>
               }
             </div>
             <div onClick={() => setMemory(0)}>
               {memory === 0 ?
-                <ButtonPrimary>256</ButtonPrimary>
+                <ButtonPrimary>256 Go</ButtonPrimary>
                 :
-                <ButtonOutline>256</ButtonOutline>
+                <ButtonOutline>256 Go</ButtonOutline>
               }
             </div>
           </Flex>
+          {checkout?.lineItems && checkout.lineItems.map((product: any) => {
+            console.log("heyy", product)
+            return (
+              <Flex key={product.id}>
+                <Text>{product.title}</Text>
+                <Text>x{product.quantity}</Text>
+                <DeleteOutlined onClick={() => deleteItem(product.id)} />
+              </Flex>
+            )
+          })}
           <Flex>
             <ButtonOutline onClick={pressLess}>-</ButtonOutline>
             <ButtonPrimary>{number}</ButtonPrimary>
             <ButtonOutline onClick={pressPlus}>+</ButtonOutline>
           </Flex>
-          <ButtonPrimary style={{ width: '100%' }} onClick={checkoutOrder}>Add to cart</ButtonPrimary>
-          <ButtonPrimary style={{ width: '100%' }} onClick={goToShopify}>Go to shopify</ButtonPrimary>
-
+          {/* <ButtonPrimary style={{ width: '100%' }} onClick={checkoutOrder}>Add to cart</ButtonPrimary> */}
+          <ButtonPrimary style={{ width: '100%' }} onClick={AddItem}>Add to cart</ButtonPrimary>
+          <ButtonPrimary disabled={checkout?.lineItems?.length === 0 ? true : false} style={{ width: '100%' }} onClick={goToShopify}>Proceed</ButtonPrimary>
           <ButtonOutline style={{ width: '100%' }} onClick={() => setPage(0)}>Back</ButtonOutline>
         </Col>
       </FlexCol>

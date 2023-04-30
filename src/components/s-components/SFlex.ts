@@ -11,6 +11,7 @@ export const FlexXL = styled.div`
 
 export const Flex = styled.div`
   display: flex;
+  align-items: center;
   gap: ${defaultTheme.spacing['4xs']};
 `
 

@@ -22,7 +22,11 @@ export const Button = styled.button`
   }
 `
 
-export const ButtonPrimary = styled.button`
+type ButtonProps = {
+  disabled?: boolean;
+};
+
+export const ButtonPrimary = styled.button<ButtonProps>`
   background-color: ${({ theme }) => theme.colors.primary};
   box-shadow: ${({ theme }) => theme.colors.boxShadow};
   color: ${({ theme }) => theme.colors.white};
@@ -31,13 +35,19 @@ export const ButtonPrimary = styled.button`
   padding: ${defaultTheme.spacing['3xs']} ${defaultTheme.spacing.s};
   border-radius: ${defaultTheme.radius.m};
   border: none;
-  cursor: pointer;
+  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
+  opacity: ${({ disabled }) => (disabled ? 0.5 : 1)};
   transition: all 0.2s ease-in-out;
+  
   &:hover {
-    background-color: ${({ theme }) => theme.colors.black};
-    color: ${({ theme }) => theme.colors.grey};
+    ${({ disabled, theme }) =>
+    !disabled &&
+    `
+        background-color: ${theme.colors.black};
+        color: ${theme.colors.grey};
+      `}
   }
-`
+`;
 
 export const ButtonOutline = styled.button<IParamsStyled>`
   background-color: ${props => props.pressed ? ({ theme }) => theme.colors.primary : ({ theme }) => theme.colors.bgChange};
