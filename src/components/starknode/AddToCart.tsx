@@ -5,8 +5,8 @@ import styled from 'styled-components';
 import { defaultTheme } from '../../theme';
 import { Flex, FlexCol, FlexXL } from '../s-components/SFlex';
 import { Dispatch, SetStateAction } from 'react';
-import { SeparatorSM, VerticalLineBig } from '../s-components/utils';
-import { H2, Text } from '../s-components/Titles';
+import { GradientText, SeparatorSM, VerticalLineBig } from '../s-components/utils';
+import { H3, Text } from '../s-components/Titles';
 import { DeleteOutlined } from '@ant-design/icons';
 import { useMediaQuery } from "react-responsive";
 
@@ -24,6 +24,7 @@ const MainContainer = styled.div`
     width: 90%;
     height: 80vh;
   }
+  margin-top: 75px;
 `
 
 const ImageStark = styled.img`
@@ -95,24 +96,15 @@ function AddToCart({ setPage }: ICart) {
 
   // console.log("CHECKKK", checkout)
   return (
+    <>
     <MainContainer>
       <FlexCol style={{ textAlign: 'center', alignItems: 'center', width: '50%' }}>
-        <H2>Starknode</H2>
         <ImageStark src={image} alt='starknode' />
-        <SeparatorSM />
-
-        {checkout?.lineItems && checkout.lineItems.map((product: any) => {
-          return (
-            <Flex key={product.id}>
-              <Text style={{ whiteSpace: 'nowrap' }}>{product.title}</Text>
-              <Text>x{product.quantity}</Text>
-              <DeleteOutlined onClick={() => deleteItem(product.id)} />
-            </Flex>
-          )
-        })}
       </FlexCol>
       {!isMobile && <VerticalLineBig />}
       <FlexCol style={{ textAlign: 'center', alignItems: 'center', width: '50%' }}>
+      <H3>Starknode <GradientText>Mew 1.0</GradientText></H3>
+
         <Col>
           <Flex>
             <div onClick={() => setMemory(1)}>
@@ -152,8 +144,20 @@ function AddToCart({ setPage }: ICart) {
             </>
           )}
         </Col>
+        <SeparatorSM />
+      
+        {checkout?.lineItems && checkout.lineItems.map((product: any) => {
+          return (
+            <Flex key={product.id}>
+              <Text style={{ whiteSpace: 'nowrap' }}>{product.title}</Text>
+              <Text>x{product.quantity}</Text>
+              <DeleteOutlined onClick={() => deleteItem(product.id)} />
+            </Flex>
+          )
+        })}
       </FlexCol>
     </MainContainer>
+  </>
   )
 }
 

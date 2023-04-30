@@ -1,30 +1,51 @@
-import Head from 'next/head'
+import Head from 'next/head';
 import styled from 'styled-components';
-import { useMediaQuery } from "react-responsive";
-import Header from '../components/Header'
-import { UserContext } from "../context";
-import { useContext, useEffect, useState } from "react";
+import { useMediaQuery } from 'react-responsive';
+import Header from '../components/Header';
+import { UserContext } from '../context';
+import { useContext, useEffect, useState } from 'react';
 import DropdownSm from '../components/starknode/DropdownSm';
-import Client from "shopify-buy"
+import Client from 'shopify-buy';
 import CardProduct from '../components/starknode/CardProduct';
 import AddToCart from '../components/starknode/AddToCart';
 import Checkout from '../components/starknode/ShippingForm';
 import Pay from '../components/starknode/Pay';
 import { defaultTheme } from '../theme';
 import StripePage from '@/components/starknode/StripePage';
+import Hero from '@/components/homepage/Hero';
+import Features from '@/components/starknode/Features';
+import { Separator, VerticalLine } from '@/components/s-components/utils';
+import Laboratory from '@/components/homepage/Laboratory';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import useDarkMode from 'use-dark-mode';
+import Footer from '@/components/Footer';
 
 const MainContainer = styled.div`
   position: relative;
   width: 100%;
-  height: calc(100vh);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: ${defaultTheme.spacing['4xs']};
-`
+  overflow: hidden;
+`;
+
+const SvgContainer = styled.div`
+  position: absolute;
+  top: 600px;
+  z-index: -10;
+`;
+
+const SvgContainer2 = styled.div`
+  position: absolute;
+  bottom: 100px;
+  z-index: -10;
+`;
 
 export default function Home() {
+  // Combine hooks, states, and context from both pages
   const {
     setName,
     setId256,
@@ -34,31 +55,36 @@ export default function Home() {
     setImage,
     setDate,
     setPrice,
-    setClient
+    setClient,
   } = useContext(UserContext);
-  const [page, setPage] = useState(0)
-  const isMobile = useMediaQuery({ maxWidth: 900 })
+  const [page, setPage] = useState(0);
+  const isMobile = useMediaQuery({ maxWidth: 900 });
+  const darkmode = useDarkMode(false);
 
   useEffect(() => {
+    AOS.init({
+      once: true,
+      duration: 2000,
+    });
+
     const shopifyClient = Client.buildClient({
       storefrontAccessToken: process.env.PUBLIC_STOREFRONT_API_TOKEN as string,
       domain: '3c463b.myshopify.com/',
-      apiVersion: '2023-04'
-    })
-    setClient(shopifyClient)
+      apiVersion: '2023-04',
+    });
+    setClient(shopifyClient);
 
     shopifyClient.product.fetchAll().then((product) => {
-      setName(product[0].title)
-      setDescription(product[0].description)
-      setImage(product[0].images[0].src)
-      setDate(product[0].createdAt)
-      setId256(product[0].variants[0].id)
-      setId512(product[1].variants[0].id)
-      setPrice(product[0].variants[0].price.amount)
-      setPrice512(product[1].variants[0].price.amount)
-
+      setName(product[0].title);
+      setDescription(product[0].description);
+      setImage(product[0].images[0].src);
+      setDate(product[0].createdAt);
+      setId256(product[0].variants[0].id);
+      setId512(product[1].variants[0].id);
+      setPrice(product[0].variants[0].price.amount);
+      setPrice512(product[1].variants[0].price.amount);
     });
-  }, [])
+  }, []);
 
   return (
     <>
@@ -69,15 +95,25 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
+      {isMobile && <DropdownSm />}
       <MainContainer>
-        {isMobile && <DropdownSm />}
-        {page === 0 && <CardProduct setPage={setPage} />}
-        {page === 1 && <AddToCart setPage={setPage} />}
-        {page === 2 && <Checkout setPage={setPage} />}
-        {page === 3 && <Pay setPage={setPage} page={page} />}
-        {page === 5 && <StripePage />}
-
+        {page === 0 && (
+          <>
+            <CardProduct setPage={setPage} />
+              </>
+            )}
+            {page === 1 && <AddToCart setPage={setPage} />}
+            {page === 2 && <Checkout setPage={setPage} />}
+            {page === 3 && <Pay setPage={setPage} page={page} />}
+            {page === 5 && <StripePage />}
+            <Separator />
+            <VerticalLine />
+            <Separator />
+            <Features />
+            <Laboratory />
+            <Footer />
       </MainContainer>
-    </>
-  )
-}
+      </>
+      );
+      }
+
