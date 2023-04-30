@@ -4,7 +4,7 @@ import { H2, H4, TextBold, TextGrey, Text } from '../s-components/Titles';
 import { defaultTheme } from '@/theme';
 import { Flex, FlexXL } from '../s-components/SFlex';
 import { ExclamationCircleTwoTone } from '@ant-design/icons';
-import { Separator, SeparatorSM, VericalLine } from '../s-components/utils';
+import { Separator, SeparatorSM, VerticalLine } from '../s-components/utils';
 import Image from 'next/image';
 import TestimonialImage from '../../assets/images/testimonial.jpg'
 
@@ -99,7 +99,7 @@ function Laboratory() {
       </FlexXL>
 
       <Separator />
-      <VericalLine />
+      <VerticalLine />
       <Separator />
 
       <Box>

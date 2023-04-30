@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { defaultTheme } from '../../theme';
 import { Flex, FlexCol, FlexXL } from '../s-components/SFlex';
 import { Dispatch, SetStateAction } from 'react';
-import { SeparatorSM } from '../s-components/utils';
+import { SeparatorSM, VerticalLineBig } from '../s-components/utils';
 import { H2, Text } from '../s-components/Titles';
 import { DeleteOutlined } from '@ant-design/icons';
 
@@ -14,6 +14,14 @@ const MainContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   gap: ${defaultTheme.spacing['4xs']};
+  box-shadow: ${({ theme }) => theme.colors.boxShadow};
+  padding: ${defaultTheme.spacing.m};
+  border-radius: ${defaultTheme.radius.m};
+  @media (max-width: 800px) {
+    flex-direction: column;
+    padding: ${defaultTheme.spacing.xs};
+    width: 90%;
+  }
 `
 
 const ImageStark = styled.img`
@@ -100,7 +108,7 @@ function AddToCart({ setPage }: ICart) {
           )
         })}
       </FlexCol>
-      <SeparatorSM />
+      <VerticalLineBig />
       <FlexCol style={{ textAlign: 'center', alignItems: 'center', width: '50%' }}>
 
         <Col>

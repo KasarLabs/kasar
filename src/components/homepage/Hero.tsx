@@ -4,11 +4,12 @@ import { ButtonOutline, ButtonPrimary } from '../s-components/Button';
 import { Flex } from '../s-components/SFlex';
 import { H1, Text } from '../s-components/Titles';
 import { defaultTheme } from '../../theme';
-import { GradientText, SeparatorXL, SeparatorSM, VericalLine } from '../s-components/utils';
+import { GradientText, SeparatorXL, SeparatorSM, VerticalLine } from '../s-components/utils';
 import Image from 'next/image'
 import HeroImage from '../../assets/images/hero-image.png'
 import { useMediaQuery } from "react-responsive";
 import Modal from './modal';
+import { DoubleRightOutlined } from '@ant-design/icons';
 
 const MainContainer = styled.div`
   display: flex;
@@ -79,7 +80,7 @@ function Hero() {
         <Text>Setup and deploy blockchain infrastructure in one click.</Text>
       </Box>
       <Flex data-aos="zoom-y-out">
-        <ButtonPrimary>Starknode</ButtonPrimary>
+        <ButtonPrimary>Starknode <DoubleRightOutlined /></ButtonPrimary>
         <ButtonOutline>Learn more</ButtonOutline>
       </Flex>
       <SeparatorSM />
@@ -91,7 +92,7 @@ function Hero() {
         </ButtonVideo>
       </VideoBox>
       <SeparatorSM />
-      <VericalLine />
+      <VerticalLine />
 
       <Modal id="modal" ariaLabel="modal-headline" show={videoModalOpen} handleClose={() => setVideoModalOpen(false)}>
         <Video width="1920" height="1080" loop controls>

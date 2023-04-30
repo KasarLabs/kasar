@@ -9,13 +9,14 @@ import { ButtonOutline, ButtonPrimary } from '../s-components/Button';
 import { Dispatch, SetStateAction } from 'react';
 
 const MainContainer = styled.div`
-  border-radius: ${defaultTheme.radius.xl};
-  padding: ${defaultTheme.spacing['4xs']} ${defaultTheme.spacing.xs};
+  border-radius: ${defaultTheme.radius.m};
+  padding: ${defaultTheme.spacing.m};
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: ${defaultTheme.spacing.xs};
+  box-shadow: ${({ theme }) => theme.colors.boxShadow};
 `
 
 const ImageItem = styled(Image)`
