@@ -52,6 +52,7 @@ function AddToCart({ setPage }: ICart) {
   const { client, id256, setCheckout, checkout, image, setClient, name, id512 } = useContext(UserContext);
   const [number, setNumber] = useState(1)
   const [memory, setMemory] = useState(1)
+  const [url, setUrl] = useState('')
   const isMobile = useMediaQuery({ maxWidth: 900 })
 
   const pressPlus = () => {
@@ -91,73 +92,76 @@ function AddToCart({ setPage }: ICart) {
   }
 
   const goToShopify = () => {
-    window.open(checkout.webUrl)
+    window.open('https://pay.kasar.io' + url, "_self")
   }
 
-  // console.log("CHECKKK", checkout)
+  useEffect(() => {
+    setUrl(checkout?.webUrl.substring(28))
+  }, [checkout])
+
   return (
     <>
-    <MainContainer>
-      <FlexCol style={{ textAlign: 'center', alignItems: 'center', width: '50%' }}>
-        <ImageStark src={image} alt='starknode' />
-      </FlexCol>
-      {!isMobile && <VerticalLineBig />}
-      <FlexCol style={{ textAlign: 'center', alignItems: 'center', width: '50%' }}>
-      <H3>Starknode <GradientText>Mew 1.0</GradientText></H3>
+      <MainContainer>
+        <FlexCol style={{ textAlign: 'center', alignItems: 'center', width: '50%' }}>
+          <ImageStark src={image} alt='starknode' />
+        </FlexCol>
+        {!isMobile && <VerticalLineBig />}
+        <FlexCol style={{ textAlign: 'center', alignItems: 'center', width: '50%' }}>
+          <H3>Starknode <GradientText>Mew 1.0</GradientText></H3>
 
-        <Col>
-          <Flex>
-            <div onClick={() => setMemory(1)}>
-              {memory === 1 ?
-                <ButtonPrimary style={{ whiteSpace: 'nowrap' }}>512 Go</ButtonPrimary>
-                :
-                <ButtonOutline style={{ whiteSpace: 'nowrap' }}>512 Go</ButtonOutline>
-              }
-            </div>
-            <div onClick={() => setMemory(0)}>
-              {memory === 0 ?
-                <ButtonPrimary style={{ whiteSpace: 'nowrap' }}>256 Go</ButtonPrimary>
-                :
-                <ButtonOutline style={{ whiteSpace: 'nowrap' }}>256 Go</ButtonOutline>
-              }
-            </div>
-          </Flex>
-
-          <Flex>
-            <ButtonOutline onClick={pressLess}>-</ButtonOutline>
-            <ButtonPrimary>{number}</ButtonPrimary>
-            <ButtonOutline onClick={pressPlus}>+</ButtonOutline>
-          </Flex>
-          {isMobile ? (
-            <>
-              <Flex>
-                <ButtonPrimary style={{ width: '100%', whiteSpace: 'nowrap' }} onClick={AddItem}>Add to cart</ButtonPrimary>
-                <ButtonPrimary disabled={checkout?.lineItems?.length === 0 ? true : false} style={{ width: '100%' }} onClick={goToShopify}>Proceed</ButtonPrimary>
-              </Flex>
-              <ButtonOutline style={{ width: '100%' }} onClick={() => setPage(0)}>Back</ButtonOutline>
-            </>
-          ) : (
-            <>
-              <ButtonPrimary style={{ width: '100%' }} onClick={AddItem}>Add to cart</ButtonPrimary>
-              <ButtonPrimary disabled={checkout?.lineItems?.length === 0 ? true : false} style={{ width: '100%' }} onClick={goToShopify}>Proceed</ButtonPrimary>
-              <ButtonOutline style={{ width: '100%' }} onClick={() => setPage(0)}>Back</ButtonOutline>
-            </>
-          )}
-        </Col>
-        <SeparatorSM />
-      
-        {checkout?.lineItems && checkout.lineItems.map((product: any) => {
-          return (
-            <Flex key={product.id}>
-              <Text style={{ whiteSpace: 'nowrap' }}>{product.title}</Text>
-              <Text>x{product.quantity}</Text>
-              <DeleteOutlined onClick={() => deleteItem(product.id)} />
+          <Col>
+            <Flex>
+              <div onClick={() => setMemory(1)}>
+                {memory === 1 ?
+                  <ButtonPrimary style={{ whiteSpace: 'nowrap' }}>512 Go</ButtonPrimary>
+                  :
+                  <ButtonOutline style={{ whiteSpace: 'nowrap' }}>512 Go</ButtonOutline>
+                }
+              </div>
+              <div onClick={() => setMemory(0)}>
+                {memory === 0 ?
+                  <ButtonPrimary style={{ whiteSpace: 'nowrap' }}>256 Go</ButtonPrimary>
+                  :
+                  <ButtonOutline style={{ whiteSpace: 'nowrap' }}>256 Go</ButtonOutline>
+                }
+              </div>
             </Flex>
-          )
-        })}
-      </FlexCol>
-    </MainContainer>
-  </>
+
+            <Flex>
+              <ButtonOutline onClick={pressLess}>-</ButtonOutline>
+              <ButtonPrimary>{number}</ButtonPrimary>
+              <ButtonOutline onClick={pressPlus}>+</ButtonOutline>
+            </Flex>
+            {isMobile ? (
+              <>
+                <Flex>
+                  <ButtonPrimary style={{ width: '100%', whiteSpace: 'nowrap' }} onClick={AddItem}>Add to cart</ButtonPrimary>
+                  <ButtonPrimary disabled={checkout?.lineItems?.length === 0 ? true : false} style={{ width: '100%' }} onClick={goToShopify}>Proceed</ButtonPrimary>
+                </Flex>
+                <ButtonOutline style={{ width: '100%' }} onClick={() => setPage(0)}>Back</ButtonOutline>
+              </>
+            ) : (
+              <>
+                <ButtonPrimary style={{ width: '100%' }} onClick={AddItem}>Add to cart</ButtonPrimary>
+                <ButtonPrimary disabled={checkout?.lineItems?.length === 0 ? true : false} style={{ width: '100%' }} onClick={goToShopify}>Proceed</ButtonPrimary>
+                <ButtonOutline style={{ width: '100%' }} onClick={() => setPage(0)}>Back</ButtonOutline>
+              </>
+            )}
+          </Col>
+          <SeparatorSM />
+
+          {checkout?.lineItems && checkout.lineItems.map((product: any) => {
+            return (
+              <Flex key={product.id}>
+                <Text style={{ whiteSpace: 'nowrap' }}>{product.title}</Text>
+                <Text>x{product.quantity}</Text>
+                <DeleteOutlined onClick={() => deleteItem(product.id)} />
+              </Flex>
+            )
+          })}
+        </FlexCol>
+      </MainContainer>
+    </>
   )
 }
 
