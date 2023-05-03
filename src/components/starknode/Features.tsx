@@ -63,7 +63,7 @@ function Features() {
       <SeparatorSM />
       <Box data-aos="zoom-y-out">
         <TextGrey>
-        With our plug'n'play full nodes, it has never been easier to contribute to the decentralized web.
+        With our plug'n'play full nodes, it has never been easier to contribute to the decentralised web.
         </TextGrey>
       </Box>
       <Separator />

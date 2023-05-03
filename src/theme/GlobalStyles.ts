@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { createGlobalStyle, DefaultTheme } from 'styled-components';
 import { defaultTheme } from './index';
 

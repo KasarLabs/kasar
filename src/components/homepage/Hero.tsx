@@ -34,6 +34,12 @@ const Box = styled.div`
 
 const VideoBox = styled.div`
   position: relative;
+  width: 768px; // Adjust the width according to your design preferences
+  height: 432px; // Adjust the height according to your design preferences
+  @media (max-width: 900px) {
+    width: 358px;
+    height: 201px;
+  }
 `
 
 const ButtonVideo = styled.div`
@@ -53,8 +59,8 @@ const ButtonVideo = styled.div`
 
 const Video = styled.video`
   position: absolute;
-  width: 80%;
-  height: 80%;
+  width: 100%;
+  height: 100%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -65,10 +71,7 @@ const Video = styled.video`
   }
 `
 
-
-
 function Hero() {
-  const [videoModalOpen, setVideoModalOpen] = useState<boolean>(false)
   const isMobile = useMediaQuery({ maxWidth: 900 })
 
   return (
@@ -85,20 +88,13 @@ function Hero() {
       <SeparatorSM />
 
       <VideoBox data-aos="zoom-y-out">
-        <Image src={HeroImage} width={isMobile ? 358 : 768} height={isMobile ? 201 : 432} priority alt="Hero" />
-        <ButtonVideo onClick={(e) => { e.preventDefault(); e.stopPropagation(); setVideoModalOpen(true); }}>
-          Watch the full video (2 min)
-        </ButtonVideo>
-      </VideoBox>
-      <SeparatorSM />
-      <VerticalLine />
-
-      <Modal id="modal" ariaLabel="modal-headline" show={videoModalOpen} handleClose={() => setVideoModalOpen(false)}>
-        <Video width="1920" height="1080" loop controls>
+        <Video width="1920" height="1080" loop controls autoPlay muted>
           <source src="/videos/video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </Video>
-      </Modal>
+      </VideoBox>
+      <SeparatorSM />
+      <VerticalLine />
     </MainContainer>
   )
 }

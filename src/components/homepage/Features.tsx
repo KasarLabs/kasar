@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
 import { FlexXL, FlexCol } from '../s-components/SFlex';
-import { H2, TextGrey, TextBold } from '../s-components/Titles';
+import { H2, H3, TextGrey, TextBold } from '../s-components/Titles';
 import { SeparatorSM, Separator, GradientText } from '../s-components/utils';
 import Image from 'next/image'
 import FeaturesBg from '../../assets/images/features-bg.png'
+import myOsiris from '../../assets/images/my-osiris.gif'
 import { defaultTheme } from '@/theme';
 import { useMediaQuery } from "react-responsive";
 
@@ -23,6 +24,14 @@ const MainContainer = styled.div`
 
 const Box = styled.div`
   width: 95%;
+  @media (max-width: 800px) {
+		width: 90%;
+  }
+`
+
+const BoxCenter = styled.div`
+  width: 70%;
+  text-align: center;
   @media (max-width: 800px) {
 		width: 90%;
   }
@@ -61,17 +70,17 @@ function Features() {
     <MainContainer>
       <H2 data-aos="zoom-y-out">Truly own <GradientText>web3</GradientText></H2>
       <SeparatorSM />
-      <Box data-aos="zoom-y-out">
+      <BoxCenter data-aos="zoom-y-out">
         <TextGrey>
-        Why should RPC providers have a monopoly on blockchain data access when you can communicate with Starknet from home like with your wifi router
+        Embrace Web3's true potential with a decentralized, community-driven ecosystem where everyone can effortlessly contribute to blockchain access through user-friendly infrastructure.
         </TextGrey>
-      </Box>
+      </BoxCenter>
       <Separator />
 
       <FlexXL style={isMobile ? { padding: '10px' } : { padding: '50px' }}>
         <FlexCol data-aos="zoom-y-out">
           <FlexCol>
-            <H2 style={isMobile ? { textAlign: 'center' } : { textAlign: 'start' }}>How does it works</H2>
+            <H3 style={isMobile ? { textAlign: 'center' } : { textAlign: 'start' }}> Multiple providers. One user.</H3>
             <SeparatorSM />
             <TextGrey>
             Our goal at Kasar Labs is to show you that it is possible to make every user an actor of the blockchain.
@@ -83,8 +92,8 @@ function Features() {
             <TextBold>Decentralised providers</TextBold>
             <Box>
               <TextGrey>
-              We believe in empowering individuals 👫 to contribute to the decentralized RPC ecosystem.
-              Our platform allows anyone to easily set up nodes across various blockchain clients and make it accessible to users worldwide. 🌐
+              We believe in empowering individuals to contribute to the decentralised RPC ecosystem.
+              Our platform allows anyone to easily set up nodes across various blockchain clients and make it accessible to users worldwide.
               </TextGrey>
             </Box>
           </Card>
@@ -94,7 +103,7 @@ function Features() {
             <TextBold>Fast reliability</TextBold>
             <Box>
               <TextGrey>
-              To ensure optimal user experience and fast 🏎️ reliability we've implemented a leaderboard that ranks available RPC providers based on performance criterias. This ranking system allows users to be redirected in real time to the most suitable provider. 🫡 
+              To ensure optimal user experience and fast reliability, we've implemented a leaderboard that ranks available RPC providers based on performance criterias. This ranking system allows users to be redirected in real time to the most suitable provider.
               </TextGrey>
             </Box>
           </Card>
@@ -104,13 +113,13 @@ function Features() {
             <TextBold>User friendly</TextBold>
             <Box>
               <TextGrey>
-              Users can easily create projects for any supported blockchain like a classical RPC provider. Our platform then generates an access key 🔑, that is directly linked to all the RPC providers available, which users can utilize in their applications to interact smoothly with the network.
+              Users can easily create projects for any supported blockchain like a traditional RPC provider. Our platform then generates an access key, that is directly linked to all the RPC providers available, which users can utilize in their applications to interact smoothly with the network.
               </TextGrey>
             </Box>
           </Card>
 
         </FlexCol>
-        {active === 0 && <Image src={FeaturesBg} width={isMobile ? 358 : 500} alt="Features bg" data-aos="zoom-y-out" />}
+        {active === 0 && <Image src={myOsiris} width={isMobile ? 358 : 500} alt="Features bg" data-aos="zoom-y-out" />}
         {active === 1 && <Image src={FeaturesBg} width={isMobile ? 358 : 500} alt="Features bg" />}
         {active === 2 && <Image src={FeaturesBg} width={isMobile ? 358 : 500} alt="Features bg" />}
       </FlexXL>

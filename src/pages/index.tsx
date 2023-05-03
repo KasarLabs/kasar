@@ -13,6 +13,7 @@ import AOS from 'aos';
 import "aos/dist/aos.css";
 import useDarkMode from 'use-dark-mode'
 import Footer from '@/components/Footer';
+import PlugNPlay from '@/components/homepage/plugnplay';
 
 
 const MainContainer = styled.div`
@@ -108,7 +109,9 @@ export default function Home() {
         <Hero />
         <Separator />
         <Features />
+        <Separator />
         <Laboratory />
+        <PlugNPlay />
         <Footer />
       </MainContainer>
     </>

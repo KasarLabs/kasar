@@ -107,9 +107,9 @@ function ShippingForm({ setPage }: ICart) {
       zip: '40202'
     };
 
-    client.checkout.updateShippingAddress(checkout.id, shippingAddress).then(res => {
+    client.checkout.updateShippingAddress(checkout.id, shippingAddress).then((res: any) => {
       setCheckout(res);
-    });
+    });    
     setPage(3);
   }
   return (

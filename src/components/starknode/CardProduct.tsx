@@ -125,7 +125,7 @@ function CardProduct({ setPage }: ICart) {
         <H3>Starknode <GradientText>Mew 1.0</GradientText></H3>
         <Box>
           <TextGrey>
-          With Mew, the first generation of Starknet plug'n'play full node, it has never been easier to contribute to the decentralized web.
+          With Mew, the first generation of Starknet plug'n'play full node, it has never been easier to contribute to the decentralised web.
           <br></br>
           <br></br>
           Already <GradientText>42 nodes</GradientText> contributing to Starknet
