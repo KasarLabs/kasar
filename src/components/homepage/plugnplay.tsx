@@ -1,14 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FlexCol, Flex } from '../s-components/SFlex';
-import { H2, H3, TextGrey, TextBold, Text } from '../s-components/Titles';
-import { SeparatorSM, Separator, GradientText } from '../s-components/utils';
+import { H2, H3, TextGrey, TextBold, Text, H4 } from '../s-components/Titles';
+import { SeparatorSM, Separator, GradientText, VerticalLine } from '../s-components/utils';
 import Image from 'next/image';
 import Step1Img from '../../assets/images/features-bg.png';
 import Step2Img from '../../assets/images/features-bg.png';
 import Step3Img from '../../assets/images/features-bg.png';
 import TestimonialImage from '../../assets/images/testimonial.jpg'
 import { defaultTheme } from '@/theme';
+import { FaArrowAltCircleLeft } from 'react-icons/fa';
+import { ButtonOutline, ButtonPrimary } from '../s-components/Button';
 
 const MainContainer = styled.div`
   display: flex;
@@ -32,21 +34,32 @@ const BoxCenter = styled.div`
   }
 `;
 
-const BenefitWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  border-radius: ${defaultTheme.radius.s};
-  padding: ${defaultTheme.spacing['2xs']};
-  gap: ${defaultTheme.spacing['4xs']};
-  background-color: ${props => props.theme.colors.background};
-  box-shadow: ${props => props.theme.colors.boxShadow};
-`;
 
-const ImageWrapper = styled.div`
+const TimelineWrapper = styled.div`
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   padding: ${defaultTheme.spacing.m};
+  position: relative;
+`;
+
+const Dot = styled(FaArrowAltCircleLeft)`
+  font-size: 0.5rem;
+  color: linear-gradient(to right, #338CF5, #4FD1C5);
+`;
+
+const GradientLine = styled.div`
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    ${({ theme }) => theme.colors.primary},
+    ${({ theme }) => theme.colors.secondary}
+  );
+  top: 50%;
+  transform: translateY(-50%);
 `;
 
 const CardQuote = styled.div`
@@ -77,17 +90,38 @@ function PlugNPlay() {
       <SeparatorSM />
       <BoxCenter data-aos="zoom-y-out">
         <TextGrey>
-          PlugNPlay is an innovative product that simplifies the integration of blockchain technology into your projects. Its user-friendly design and powerful features make it the perfect choice for developers looking to harness the potential of Web3.
+          Its user-friendly design and powerful features make it the perfect choice for developers looking to harness the potential of Web3.
         </TextGrey>
       </BoxCenter>
-      <Separator />
+      <SeparatorSM />
       
-      <ImageWrapper>
-        <Image src={Step1Img} width={150} alt="Step 1" data-aos="zoom-y-out" />
-        <Image src={Step2Img} width={150} alt="Step 2" data-aos="zoom-y-out" />
-        <Image src={Step3Img} width={150} alt="Step 3" data-aos="zoom-y-out" />
-      </ImageWrapper>
-
+      <TimelineWrapper>
+        <Box>
+          <Image src={Step1Img} width={300} alt="Step 1" data-aos="zoom-y-out" />
+          <H3>Config</H3>
+          <SeparatorSM />
+          <TextGrey>Use our GUI KasarOS to setup your node with your desired client in less than a minute.</TextGrey>
+        </Box>
+        <Box>
+          <Image src={Step1Img} width={300} alt="Step 2" data-aos="zoom-y-out" />
+          <H3>Plug</H3>
+          <SeparatorSM />
+          <TextGrey>Plug you home node with to the network.</TextGrey>
+        </Box>
+        <Box>
+          <Image src={Step1Img} width={300} alt="Step 3" data-aos="zoom-y-out" />
+          <H3>Manage</H3>
+          <SeparatorSM />
+          <TextGrey>Manage, track and query it with simplicity trought our user dashboard.</TextGrey>
+        </Box>
+      </TimelineWrapper>
+      <SeparatorSM />
+      <Flex data-aos="zoom-y-out">
+        <ButtonPrimary>Buy</ButtonPrimary>
+        <ButtonOutline>Learn more</ButtonOutline>
+      </Flex>
+      <Separator />
+      <VerticalLine />
       <Separator />
       <H3 data-aos="zoom-y-out">Key Benefits</H3>
       <SeparatorSM />
@@ -111,7 +145,6 @@ function PlugNPlay() {
           <TextGrey>CEO & Co-Founder @Dropbox</TextGrey>
         </CardQuote>
       </Box>
-      <Separator />
     </MainContainer>
   );
 }

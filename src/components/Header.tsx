@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
-import logo from '../assets/images/KasarlabsBanner.png'
-import logoSolo from '../assets/images/kasarLogo.png'
+// import logo from '../assets/images/KasarlabsBanner.png'
+import logo from '../assets/images/kasarLogo.png'
 import logoDark from '../assets/images/KasarBlackLogo.png'
 import { Button, ButtonPrimary } from './s-components/Button';
 import { MenuOutlined, EllipsisOutlined, BulbOutlined } from '@ant-design/icons';
@@ -18,7 +18,9 @@ import Link from 'next/link'
 
 const SHeader = styled.div`
   position: fixed;
-  top: 0;
+  top: 15px;
+  left: 10px;
+  right: 10px;
   background-color:  ${({ theme }) => theme.colors.background};
   width: 100%;
   z-index: 100;
@@ -83,14 +85,14 @@ export default function Header() {
       {isMobile ? (
         <ContainerSm>
           <Link href="/">
-            {darkmode.value ? <LogoHeader src={logo} alt="Kasar Logo" /> : <LogoHeader src={logoDark} alt="Kasar Logo" />}
+            {darkmode.value ? <LogoHeader src={logo} alt="Kasar Logo" /> : <LogoHeader src={logo} alt="Kasar Logo" />}
           </Link>
           <MenuOutlined style={darkmode.value ? { color: 'white', fontSize: '30px' } : { fontSize: '30px', color: 'black' }} onClick={() => setShowNavMobile(!showNavMobile)} />
         </ContainerSm>
       ) : (
         <Container>
           <Link href="/">
-            {darkmode.value ? <LogoHeader src={logo} alt="Kasar Logo" /> : <LogoHeader src={logoDark} alt="Kasar Logo" />}
+            {darkmode.value ? <LogoHeader src={logo} alt="Kasar Logo" /> : <LogoHeader src={logo} alt="Kasar Logo" />}
           </Link>
           <Flex>
             <>

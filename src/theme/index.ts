@@ -14,7 +14,7 @@ export const defaultTheme = {
     m: '32px',
     l: '42px',
     ml: '52px',
-    xl: '88px'
+    xl: '75px'
   },
   fontWeight: {
     thin: '400',
