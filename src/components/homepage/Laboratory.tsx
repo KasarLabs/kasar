@@ -38,7 +38,12 @@ const CardWrapper = styled.div`
   p {
     font-size: 16px;
   }
-`
+  transition: 0.15s ease-in-out;
+  &:hover {
+    transform: scale(1.05);
+  }
+`;
+
 
 const LargeCardWrapper = styled.div`
   display: flex;
@@ -54,6 +59,10 @@ const LargeCardWrapper = styled.div`
   text-align: center;
   p {
     font-size: 16px;
+  }
+  transition: 0.15s ease-in-out;
+  &:hover {
+    transform: scale(1.05);
   }
 `
 

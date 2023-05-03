@@ -18,19 +18,19 @@ import Link from 'next/link'
 
 const SHeader = styled.div`
   position: fixed;
-  top: 15px;
   left: 10px;
   right: 10px;
   background-color:  ${({ theme }) => theme.colors.background};
   width: 100%;
   z-index: 100;
+  opacity: 97%;
 `
 
 const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: ${defaultTheme.spacing['4xs']} ${defaultTheme.spacing.xs};
+  padding: ${defaultTheme.spacing['2xs']} ${defaultTheme.spacing.xs};
   H3 {
     margin: 0;
     text-shadow: ${({ theme }) => theme.colors.boxShadow};

@@ -90,7 +90,8 @@ function PlugNPlay() {
       <SeparatorSM />
       <BoxCenter data-aos="zoom-y-out">
         <TextGrey>
-          Its user-friendly design and powerful features make it the perfect choice for developers looking to harness the potential of Web3.
+        The only limitation for running a full node should be the hardware.
+        We made it simple and accessible.
         </TextGrey>
       </BoxCenter>
       <SeparatorSM />
@@ -98,19 +99,19 @@ function PlugNPlay() {
       <TimelineWrapper>
         <Box>
           <Image src={Step1Img} width={300} alt="Step 1" data-aos="zoom-y-out" />
-          <H3>Config</H3>
+          <H3><GradientText>Config</GradientText></H3>
           <SeparatorSM />
           <TextGrey>Use our GUI KasarOS to setup your node with your desired client in less than a minute.</TextGrey>
         </Box>
         <Box>
           <Image src={Step1Img} width={300} alt="Step 2" data-aos="zoom-y-out" />
-          <H3>Plug</H3>
+          <H3><GradientText>Plug</GradientText></H3>
           <SeparatorSM />
           <TextGrey>Plug you home node with to the network.</TextGrey>
         </Box>
         <Box>
           <Image src={Step1Img} width={300} alt="Step 3" data-aos="zoom-y-out" />
-          <H3>Manage</H3>
+          <H3><GradientText>Manage</GradientText></H3>
           <SeparatorSM />
           <TextGrey>Manage, track and query it with simplicity trought our user dashboard.</TextGrey>
         </Box>

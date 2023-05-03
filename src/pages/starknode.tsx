@@ -108,9 +108,6 @@ export default function Home() {
             {page === 5 && <StripePage />}
             <Separator />
             <VerticalLine />
-            <Separator />
-            <Features />
-            <Laboratory />
             <Footer />
       </MainContainer>
       </>
