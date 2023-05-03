@@ -15,7 +15,6 @@ import { useContext } from "react";
 import useDarkMode from 'use-dark-mode'
 import { Text, TextClickable } from './s-components/Titles';
 import Link from 'next/link'
-import { DoubleRightOutlined } from '@ant-design/icons';
 
 const SHeader = styled.div`
   position: fixed;
@@ -95,25 +94,18 @@ export default function Header() {
           </Link>
           <Flex>
             <>
-              <Link href="/starknode">
-                <ButtonPrimary>Starknode <DoubleRightOutlined /></ButtonPrimary>
-
-              </Link>
               <Links>
                 <Button onClick={() => setLinks(!links)}>
-                  <EllipsisOutlined />
+                  App
                 </Button>
-                {links && (
-                  <Dropdown>
-                    <TextClickable>Hello</TextClickable>
-                    <TextClickable>Hello</TextClickable>
-                    <TextClickable>Hello</TextClickable>
-                  </Dropdown>
-                )}
               </Links>
-              <Button onClick={darkmode.toggle}>
+              <Link href="/starknode">
+                <ButtonPrimary>Starknode</ButtonPrimary>
+
+              </Link>
+              {/* <Button onClick={darkmode.toggle}>
                 <BulbOutlined />
-              </Button>
+              </Button> */}
             </>
           </Flex>
         </Container>

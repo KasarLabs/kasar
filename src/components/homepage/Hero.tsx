@@ -9,7 +9,6 @@ import Image from 'next/image'
 import HeroImage from '../../assets/images/hero-image.png'
 import { useMediaQuery } from "react-responsive";
 import Modal from './modal';
-import { DoubleRightOutlined } from '@ant-design/icons';
 
 const MainContainer = styled.div`
   display: flex;
@@ -30,11 +29,11 @@ const Box = styled.div`
   @media (max-width: 800px) {
 		width: 70%;
   }
+  margin-bottom: 30px;
 `
 
 const VideoBox = styled.div`
   position: relative;
-
 `
 
 const ButtonVideo = styled.div`
@@ -80,7 +79,7 @@ function Hero() {
         <Text>Setup and deploy blockchain infrastructure in one click.</Text>
       </Box>
       <Flex data-aos="zoom-y-out">
-        <ButtonPrimary>Starknode <DoubleRightOutlined /></ButtonPrimary>
+        <ButtonPrimary>Starknode</ButtonPrimary>
         <ButtonOutline>Learn more</ButtonOutline>
       </Flex>
       <SeparatorSM />

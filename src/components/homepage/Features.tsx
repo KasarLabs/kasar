@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components';
 import { FlexXL, FlexCol } from '../s-components/SFlex';
 import { H2, TextGrey, TextBold } from '../s-components/Titles';
-import { SeparatorSM, Separator } from '../s-components/utils';
+import { SeparatorSM, Separator, GradientText } from '../s-components/utils';
 import Image from 'next/image'
 import FeaturesBg from '../../assets/images/features-bg.png'
 import { defaultTheme } from '@/theme';
@@ -22,7 +22,7 @@ const MainContainer = styled.div`
 `
 
 const Box = styled.div`
-  width: 70%;
+  width: 95%;
   @media (max-width: 800px) {
 		width: 90%;
   }
@@ -59,13 +59,11 @@ function Features() {
 
   return (
     <MainContainer>
-      <H2 data-aos="zoom-y-out"> Explore the solutions</H2>
+      <H2 data-aos="zoom-y-out">Truly own <GradientText>web3</GradientText></H2>
       <SeparatorSM />
       <Box data-aos="zoom-y-out">
         <TextGrey>
-          Duis aute irure dolor in reprehenderit in voluptate
-          velit esse cillum dolore eu fugiat nulla pariatur excepteur
-          sint occaecat cupidatat.
+        Why should RPC providers have a monopoly on blockchain data access when you can communicate with Starknet from home like with your wifi router
         </TextGrey>
       </Box>
       <Separator />
@@ -73,44 +71,40 @@ function Features() {
       <FlexXL style={isMobile ? { padding: '10px' } : { padding: '50px' }}>
         <FlexCol data-aos="zoom-y-out">
           <FlexCol>
-            <H2 style={isMobile ? { textAlign: 'center' } : { textAlign: 'start' }}>Powerful suite of tools</H2>
+            <H2 style={isMobile ? { textAlign: 'center' } : { textAlign: 'start' }}>How does it works</H2>
             <SeparatorSM />
             <TextGrey>
-              Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur excepteur
-              sint occaecat cupidatat.
+            Our goal at Kasar Labs is to show you that it is possible to make every user an actor of the blockchain.
             </TextGrey>
           </FlexCol>
           <SeparatorSM />
 
           <Card active={active === 0} onClick={() => setActive(0)}>
-            <TextBold>Building the Simple ecosystem</TextBold>
+            <TextBold>Decentralised providers</TextBold>
             <Box>
               <TextGrey>
-                Take collaboration to the next level with security
-                and administrative features built for teams.
+              We believe in empowering individuals 👫 to contribute to the decentralized RPC ecosystem.
+              Our platform allows anyone to easily set up nodes across various blockchain clients and make it accessible to users worldwide. 🌐
               </TextGrey>
             </Box>
           </Card>
           <SeparatorSM />
 
           <Card active={active === 1} onClick={() => setActive(1)}>
-            <TextBold>Building the Simple ecosystem</TextBold>
+            <TextBold>Fast reliability</TextBold>
             <Box>
               <TextGrey>
-                Take collaboration to the next level with security
-                and administrative features built for teams.
+              To ensure optimal user experience and fast 🏎️ reliability we've implemented a leaderboard that ranks available RPC providers based on performance criterias. This ranking system allows users to be redirected in real time to the most suitable provider. 🫡 
               </TextGrey>
             </Box>
           </Card>
           <SeparatorSM />
 
           <Card active={active === 2} onClick={() => setActive(2)}>
-            <TextBold>Building the Simple ecosystem</TextBold>
+            <TextBold>User friendly</TextBold>
             <Box>
               <TextGrey>
-                Take collaboration to the next level with security
-                and administrative features built for teams.
+              Users can easily create projects for any supported blockchain like a classical RPC provider. Our platform then generates an access key 🔑, that is directly linked to all the RPC providers available, which users can utilize in their applications to interact smoothly with the network.
               </TextGrey>
             </Box>
           </Card>
