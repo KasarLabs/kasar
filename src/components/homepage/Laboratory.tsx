@@ -94,7 +94,6 @@ const getLatency = async (url: string) => {
 function Laboratory() {
   const [latencies, setLatencies] = useState({
     infura: 'Loading...',
-    alchemy: 'Loading...',
     quicknode: 'Loading...',
     chainstack: 'Loading...',
     lavanet: 'Loading...',
@@ -104,14 +103,12 @@ function Laboratory() {
   useEffect(() => {
     (async () => {
       const infuraLatency = await getLatency('https://mainnet.infura.io/v3/45130e2077524a3698769595f1c91761');
-      const alchemyLatency = await getLatency('https://eth-mainnet.g.alchemy.com/v2/CDPivBjTjgi1b1Qov1IrL6bBPxGwnAgg');
       const quicknodeLatency = await getLatency('https://empty-morning-aura.discover.quiknode.pro/8f95d4037f8becf8903d7abe08382a0111d73fac/');
       const chainstackLatency = await getLatency('https://nd-639-644-088.p2pify.com/fafe3963ceb82fb9124b1254c55ff3');
       const lavanetLatency = await getLatency('https://nd-639-644-088.p2pify.com/fafe3963ceb82fb9124b1254c55ff733');
       const blastLatency = await getLatency('https://starknet-mainnet.blastapi.io/088665f8-43b6-4afa-b23e-a918ce689f4f');
       setLatencies({
         infura: infuraLatency.toString(),
-        alchemy: alchemyLatency.toString(),
         quicknode: quicknodeLatency.toString(),
         chainstack: chainstackLatency.toString(),
         lavanet: lavanetLatency.toString(),
@@ -125,7 +122,7 @@ function Laboratory() {
       <H2>Choose the <GradientText>fast</GradientText> track</H2>
       <Box data-aos="zoom-y-out">
         <TextGrey>
-        When selecting an RPC provider, it's crucial to prioritize speed. We've provided a dashboard below that compares latency between various providers for <GradientText>Starknet</GradientText>. A home node can drastically reduce execution time by several milliseconds.        </TextGrey>
+        When selecting an RPC provider, it's crucial to prioritize speed. We've provided a dashboard below that compares latency between various providers for <GradientText>Starknet</GradientText>.<br></br> A home node can drastically reduce execution time by several milliseconds.        </TextGrey>
       </Box>
       <FlexXL data-aos="zoom-y-out">
       <CardWrapper>
@@ -134,36 +131,9 @@ function Laboratory() {
         <TextGrey>Latency: {latencies.infura} ms</TextGrey>
       </CardWrapper>
       <CardWrapper>
-        <Image src={alchemyLogo} alt="Alchemy" width="60" height="60" />
-        <H4>Alchemy</H4>
-        <TextGrey>Latency: {latencies.alchemy} ms</TextGrey>
-      </CardWrapper>
-      <CardWrapper>
-        <Image src={quicknodeLogo} alt="QuickNode" width="60" height="60" />
-        <H4>QuickNode</H4>
-        <TextGrey>Latency: {latencies.quicknode} ms</TextGrey>
-      </CardWrapper>
-      <CardWrapper>
-        <Image src={chainstackLogo} alt="Chainstack" width="60" height="60" />
-        <H4>Chainstack</H4>
-        <TextGrey>Latency: {latencies.chainstack} ms</TextGrey>
-      </CardWrapper>
-      <CardWrapper>
-        <Image src={lavanetLogo} alt="Chainstack" width="60" height="60" />
-        <H4>Lavanet</H4>
-        <TextGrey>Latency: {latencies.lavanet} ms</TextGrey>
-      </CardWrapper>
-      </FlexXL>
-      <FlexXL data-aos="zoom-y-out">
-      <CardWrapper>
         <Image src={blastLogo} alt="Blast" width="60" height="60" />
-        <H4>Blast</H4>
-        <TextGrey>Latency: {latencies.blast} ms</TextGrey>
-      </CardWrapper>
-      <CardWrapper>
-        <Image src={alchemyLogo} alt="Alchemy" width="60" height="60" />
         <H4>Alchemy</H4>
-        <TextGrey>Latency: {latencies.alchemy} ms</TextGrey>
+        <TextGrey>Latency: {latencies.blast} ms</TextGrey>
       </CardWrapper>
       <CardWrapper>
         <Image src={quicknodeLogo} alt="QuickNode" width="60" height="60" />
