@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FlexCol, Flex } from '../s-components/SFlex';
+import Pulse from '../s-components/Pulse';
 import { H2, H3, TextGrey, TextBold, Text, H4 } from '../s-components/Titles';
 import { SeparatorSM, Separator, GradientText, VerticalLine } from '../s-components/utils';
 import Image from 'next/image';
@@ -11,6 +12,7 @@ import TestimonialImage from '../../assets/images/testimonial.jpg'
 import { defaultTheme } from '@/theme';
 import { FaArrowAltCircleLeft } from 'react-icons/fa';
 import { ButtonOutline, ButtonPrimary } from '../s-components/Button';
+import Link from 'next/link';
 
 const MainContainer = styled.div`
   display: flex;
@@ -97,28 +99,42 @@ function PlugNPlay() {
       <SeparatorSM />
       
       <TimelineWrapper>
-        <Box>
-          <Image src={Step1Img} width={300} alt="Step 1" data-aos="zoom-y-out" />
-          <H3><GradientText>Config</GradientText></H3>
-          <SeparatorSM />
-          <TextGrey>Use our GUI KasarOS to setup your node with your desired client in less than a minute.</TextGrey>
-        </Box>
-        <Box>
-          <Image src={Step1Img} width={300} alt="Step 2" data-aos="zoom-y-out" />
-          <H3><GradientText>Plug</GradientText></H3>
-          <SeparatorSM />
-          <TextGrey>Plug you home node with to the network.</TextGrey>
-        </Box>
-        <Box>
-          <Image src={Step1Img} width={300} alt="Step 3" data-aos="zoom-y-out" />
-          <H3><GradientText>Manage</GradientText></H3>
-          <SeparatorSM />
-          <TextGrey>Manage, track and query it with simplicity trought our user dashboard.</TextGrey>
-        </Box>
-      </TimelineWrapper>
+      <Box>
+        <Image src={Step1Img} width={300} alt="Step 1" data-aos="zoom-y-out" />
+        <H3>
+          <GradientText>Config</GradientText>
+        </H3>
+        <SeparatorSM />
+        <TextGrey>
+          Use our GUI KasarOS to setup your node with your desired client in less than a minute.
+        </TextGrey>
+      </Box>
+      <Pulse />
+      <Box>
+        <Image src={Step1Img} width={300} alt="Step 2" data-aos="zoom-y-out" />
+        <H3>
+          <GradientText>Plug</GradientText>
+        </H3>
+        <SeparatorSM />
+        <TextGrey>Plug your home node with to the network.</TextGrey>
+      </Box>
+      <Pulse />
+      <Box>
+        <Image src={Step1Img} width={300} alt="Step 3" data-aos="zoom-y-out" />
+        <H3>
+          <GradientText>Manage</GradientText>
+        </H3>
+        <SeparatorSM />
+        <TextGrey>
+          Manage, track and query it with simplicity through our user dashboard.
+        </TextGrey>
+      </Box>
+    </TimelineWrapper>
       <SeparatorSM />
       <Flex data-aos="zoom-y-out">
-        <ButtonPrimary>Buy</ButtonPrimary>
+        <Link href="/starknode">
+                <ButtonPrimary>Buy</ButtonPrimary>
+        </Link>
         <ButtonOutline>Learn more</ButtonOutline>
       </Flex>
       <Separator />
