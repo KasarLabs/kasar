@@ -33,3 +33,8 @@ export const VerticalLineBig = styled.div`
   border-left: 2px solid #EAEAEA;
   margin-left: -1px; /* half of the border width */
 `
+
+export const HorizontalLineBig = styled.div`
+  width: 100%;
+  border-top: 1px solid #EAEAEA;
+`

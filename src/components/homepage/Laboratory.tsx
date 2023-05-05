@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import { H2, H4, TextBold, TextGrey, Text } from '../s-components/Titles';
 import { defaultTheme } from '@/theme';
-import { Flex, FlexXL } from '../s-components/SFlex';
+import { Flex } from '../s-components/SFlex';
 import { ExclamationCircleTwoTone } from '@ant-design/icons';
 import { GradientText, Separator, SeparatorSM, VerticalLine } from '../s-components/utils';
 import Image from 'next/image';
@@ -24,6 +24,15 @@ const MainContainer = styled.div`
   gap: ${defaultTheme.spacing.xs};
 `
 
+export const FlexXL = styled.div`
+  display: flex;
+  gap: ${defaultTheme.spacing.xs};
+  @media (max-width: 900px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+`
+
 const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -41,6 +50,9 @@ const CardWrapper = styled.div`
   transition: 0.15s ease-in-out;
   &:hover {
     transform: scale(1.05);
+  }
+  @media (max-width: 900px) {
+    width: 33.33%; // Make each card take up one third of the width of the container for screens wider than 768px
   }
 `;
 
@@ -122,34 +134,34 @@ function Laboratory() {
       <H2>Choose the <GradientText>fast</GradientText> track</H2>
       <Box data-aos="zoom-y-out">
         <TextGrey>
-        When selecting an RPC provider, it's crucial to prioritize speed. We've provided a dashboard below that compares latency between various providers for <GradientText>Starknet</GradientText>.<br></br> A home node can drastically reduce execution time by several milliseconds.        </TextGrey>
+          When selecting an RPC provider, it's crucial to prioritize speed. We've provided a dashboard below that compares latency between various providers for <GradientText>Starknet</GradientText>.<br></br> A home node can drastically reduce execution time by several milliseconds.        </TextGrey>
       </Box>
       <FlexXL data-aos="zoom-y-out">
-      <CardWrapper>
-        <Image src={infuraLogo} alt="Infura" width="60" height="60" />
-        <H4>Infura</H4>
-        <TextGrey>Latency: {latencies.infura} ms</TextGrey>
-      </CardWrapper>
-      <CardWrapper>
-        <Image src={blastLogo} alt="Blast" width="60" height="60" />
-        <H4>Alchemy</H4>
-        <TextGrey>Latency: {latencies.blast} ms</TextGrey>
-      </CardWrapper>
-      <CardWrapper>
-        <Image src={quicknodeLogo} alt="QuickNode" width="60" height="60" />
-        <H4>QuickNode</H4>
-        <TextGrey>Latency: {latencies.quicknode} ms</TextGrey>
-      </CardWrapper>
-      <CardWrapper>
-        <Image src={chainstackLogo} alt="Chainstack" width="60" height="60" />
-        <H4>Chainstack</H4>
-        <TextGrey>Latency: {latencies.chainstack} ms</TextGrey>
-      </CardWrapper>
-      <CardWrapper>
-        <Image src={alchemyLogo} alt="Chainstack" width="60" height="60" />
-        <H4>Alchemy</H4>
-        <TextGrey>Latency: {latencies.alchemy} ms</TextGrey>
-      </CardWrapper>
+        <CardWrapper>
+          <Image src={infuraLogo} alt="Infura" width="60" height="60" />
+          <H4>Infura</H4>
+          <TextGrey>Latency: {latencies.infura} ms</TextGrey>
+        </CardWrapper>
+        <CardWrapper>
+          <Image src={blastLogo} alt="Blast" width="60" height="60" />
+          <H4>Alchemy</H4>
+          <TextGrey>Latency: {latencies.blast} ms</TextGrey>
+        </CardWrapper>
+        <CardWrapper>
+          <Image src={quicknodeLogo} alt="QuickNode" width="60" height="60" />
+          <H4>QuickNode</H4>
+          <TextGrey>Latency: {latencies.quicknode} ms</TextGrey>
+        </CardWrapper>
+        <CardWrapper>
+          <Image src={chainstackLogo} alt="Chainstack" width="60" height="60" />
+          <H4>Chainstack</H4>
+          <TextGrey>Latency: {latencies.chainstack} ms</TextGrey>
+        </CardWrapper>
+        <CardWrapper>
+          <Image src={alchemyLogo} alt="Chainstack" width="60" height="60" />
+          <H4>Alchemy</H4>
+          <TextGrey>Latency: {latencies.alchemy} ms</TextGrey>
+        </CardWrapper>
       </FlexXL>
       <FlexXL data-aos="zoom-y-out">
         <LargeCardWrapper>
@@ -160,7 +172,7 @@ function Laboratory() {
       </FlexXL>
       <VerticalLine />
       <Separator />
-   </MainContainer>
+    </MainContainer>
   )
 }
 

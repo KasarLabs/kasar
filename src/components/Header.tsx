@@ -18,8 +18,6 @@ import Link from 'next/link'
 
 const SHeader = styled.div`
   position: fixed;
-  left: 10px;
-  right: 10px;
   background-color:  ${({ theme }) => theme.colors.background};
   width: 100%;
   z-index: 100;
@@ -43,6 +41,9 @@ const ContainerSm = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  width: 100%;
+
 `
 
 const Links = styled.div`
@@ -87,7 +88,6 @@ export default function Header() {
           <Link href="/">
             {darkmode.value ? <LogoHeader src={logo} alt="Kasar Logo" /> : <LogoHeader src={logo} alt="Kasar Logo" />}
           </Link>
-          <MenuOutlined style={darkmode.value ? { color: 'white', fontSize: '30px' } : { fontSize: '30px', color: 'black' }} onClick={() => setShowNavMobile(!showNavMobile)} />
         </ContainerSm>
       ) : (
         <Container>

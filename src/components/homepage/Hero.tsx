@@ -37,8 +37,6 @@ const VideoBox = styled.div`
   width: 768px; // Adjust the width according to your design preferences
   height: 432px; // Adjust the height according to your design preferences
   @media (max-width: 900px) {
-    width: 358px;
-    height: 201px;
   }
 `
 
@@ -66,7 +64,7 @@ const Video = styled.video`
   transform: translate(-50%, -50%);
   z-index: 1000;
   @media (max-width: 900px) {
-    width: 120%;
+    width: 100%;
     height: 50%;
   }
 `
