@@ -194,10 +194,12 @@ function PlugNPlay() {
       <SeparatorSM />
       <H2 data-aos="zoom-y-out">In Starknet we trust</H2>
       <Separator />
-      <TextGrey>
-        Arcu cursus vitae congue mauris rhoncus viverra nibh
-        cras pulvinar mattis blandit libero cursus mattis.
-      </TextGrey>
+      <TimelineWrapper>
+        <TextGrey>
+          Arcu cursus vitae congue mauris rhoncus viverra nibh
+          cras pulvinar mattis blandit libero cursus mattis.
+        </TextGrey>
+      </TimelineWrapper>
       <Separator />
       <TimelineWrapper>
         <Separator />

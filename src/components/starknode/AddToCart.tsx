@@ -108,7 +108,7 @@ function AddToCart({ setPage }: ICart) {
         {!isMobile && <VerticalLineBig />}
         <FlexCol style={{ textAlign: 'center', alignItems: 'center', width: '50%' }}>
           <H3>Starknode <GradientText>Mew 1.0</GradientText></H3>
-
+          <SeparatorSM />
           <Col>
             <Flex>
               <div onClick={() => setMemory(1)}>
