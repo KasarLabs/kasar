@@ -79,7 +79,7 @@ function Hero() {
       <SeparatorXL />
       <H1 data-aos="zoom-y-out">Web3 powered by the <GradientText> users</GradientText> for the <GradientText>users</GradientText></H1>
       <Box>
-        <Text>Setup and deploy blockchain infrastructure in one click.</Text>
+        <Text>Setup and query blockchain infrastructure in one click.</Text>
       </Box>
       <Flex data-aos="zoom-y-out">
         <ButtonPrimary>Starknode</ButtonPrimary>

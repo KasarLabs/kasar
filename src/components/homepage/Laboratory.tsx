@@ -96,7 +96,7 @@ function Laboratory() {
     infura: 'Loading...',
     quicknode: 'Loading...',
     chainstack: 'Loading...',
-    lavanet: 'Loading...',
+    alchemy: 'Loading...',
     blast: 'Loading...',
   });
 
@@ -105,13 +105,13 @@ function Laboratory() {
       const infuraLatency = await getLatency('https://mainnet.infura.io/v3/45130e2077524a3698769595f1c91761');
       const quicknodeLatency = await getLatency('https://empty-morning-aura.discover.quiknode.pro/8f95d4037f8becf8903d7abe08382a0111d73fac/');
       const chainstackLatency = await getLatency('https://nd-639-644-088.p2pify.com/fafe3963ceb82fb9124b1254c55ff3');
-      const lavanetLatency = await getLatency('https://nd-639-644-088.p2pify.com/fafe3963ceb82fb9124b1254c55ff733');
+      const alchemyLatency = await getLatency('https://starknet-mainnet.g.alchemy.com/v2/Xj-rCxxzGcBnS3HwqOnBqO8TMa8NRGky');
       const blastLatency = await getLatency('https://starknet-mainnet.blastapi.io/088665f8-43b6-4afa-b23e-a918ce689f4f');
       setLatencies({
         infura: infuraLatency.toString(),
         quicknode: quicknodeLatency.toString(),
         chainstack: chainstackLatency.toString(),
-        lavanet: lavanetLatency.toString(),
+        alchemy: alchemyLatency.toString(),
         blast: blastLatency.toString(),
       });
     })();
@@ -146,9 +146,9 @@ function Laboratory() {
         <TextGrey>Latency: {latencies.chainstack} ms</TextGrey>
       </CardWrapper>
       <CardWrapper>
-        <Image src={lavanetLogo} alt="Chainstack" width="60" height="60" />
-        <H4>Lavanet</H4>
-        <TextGrey>Latency: {latencies.lavanet} ms</TextGrey>
+        <Image src={alchemyLogo} alt="Chainstack" width="60" height="60" />
+        <H4>Alchemy</H4>
+        <TextGrey>Latency: {latencies.alchemy} ms</TextGrey>
       </CardWrapper>
       </FlexXL>
       <FlexXL data-aos="zoom-y-out">
