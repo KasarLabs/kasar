@@ -107,7 +107,6 @@ interface ICart {
 function CardProduct({ setPage }: ICart) {
   const {
     name,
-    id,
     description,
     image,
     date,
