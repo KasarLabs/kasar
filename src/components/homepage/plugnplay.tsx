@@ -106,6 +106,8 @@ const ImageTestimony = styled(Image)`
   transform: translate(-50%, -50%);
 `
 
+
+
 function PlugNPlay() {
   const isMobile = useMediaQuery({ maxWidth: 900 })
 
@@ -179,7 +181,6 @@ function PlugNPlay() {
           </TextGrey>
         </Box>
       </TimelineWrapper>
-
       <SeparatorSM />
       <Flex data-aos="zoom-y-out">
         <Link href="/starknode">
@@ -190,7 +191,9 @@ function PlugNPlay() {
       <Separator />
       <VerticalLine />
       <Separator />
+
       <H3 data-aos="zoom-y-out">Key Benefits</H3>
+
       <SeparatorSM />
       <H2 data-aos="zoom-y-out">In Starknet we trust</H2>
       <Separator />
