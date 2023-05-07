@@ -6,7 +6,6 @@ import { Dispatch, SetStateAction } from 'react';
 import { Flex, FlexCol } from '../s-components/SFlex';
 import { H2, Text } from '../s-components/Titles';
 import { defaultTheme } from '../../theme';
-import StripePage from './StripePage';
 
 interface ICart {
   setPage: Dispatch<SetStateAction<number>>;

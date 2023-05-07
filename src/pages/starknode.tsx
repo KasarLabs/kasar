@@ -11,15 +11,11 @@ import AddToCart from '../components/starknode/AddToCart';
 import Checkout from '../components/starknode/ShippingForm';
 import Pay from '../components/starknode/Pay';
 import { defaultTheme } from '../theme';
-import StripePage from '@/components/starknode/StripePage';
-import Hero from '@/components/homepage/Hero';
-import Features from '@/components/starknode/Features';
 import { Separator, VerticalLine } from '@/components/s-components/utils';
-import Laboratory from '@/components/homepage/Laboratory';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import useDarkMode from 'use-dark-mode';
 import Footer from '@/components/Footer';
+import Countdown from '@/components/homepage/CountDown';
 
 const MainContainer = styled.div`
   position: relative;
@@ -32,20 +28,7 @@ const MainContainer = styled.div`
   overflow: hidden;
 `;
 
-const SvgContainer = styled.div`
-  position: absolute;
-  top: 600px;
-  z-index: -10;
-`;
-
-const SvgContainer2 = styled.div`
-  position: absolute;
-  bottom: 100px;
-  z-index: -10;
-`;
-
 export default function Home() {
-  // Combine hooks, states, and context from both pages
   const {
     setName,
     setId256,
@@ -59,7 +42,6 @@ export default function Home() {
   } = useContext(UserContext);
   const [page, setPage] = useState(0);
   const isMobile = useMediaQuery({ maxWidth: 900 });
-  const darkmode = useDarkMode(false);
 
   useEffect(() => {
     AOS.init({
@@ -86,6 +68,7 @@ export default function Home() {
     });
   }, []);
 
+  const targetDate = new Date("2023-05-15T00:00:00");
   return (
     <>
       <Head>
@@ -97,20 +80,16 @@ export default function Home() {
       <Header />
       {isMobile && <DropdownSm />}
       <MainContainer>
-        {page === 0 && (
-          <>
-            <CardProduct setPage={setPage} />
-              </>
-            )}
-            {page === 1 && <AddToCart setPage={setPage} />}
-            {page === 2 && <Checkout setPage={setPage} />}
-            {page === 3 && <Pay setPage={setPage} page={page} />}
-            {page === 5 && <StripePage />}
-            <Separator />
-            <VerticalLine />
-            <Footer />
+        {page === 0 && (<CardProduct setPage={setPage} />)}
+        {page === 1 && <AddToCart setPage={setPage} />}
+        {/* {page === 1 && <Countdown targetDate={targetDate} />} */}
+        {page === 2 && <Checkout setPage={setPage} />}
+        {page === 3 && <Pay setPage={setPage} page={page} />}
+        <Separator />
+        <VerticalLine />
+        <Footer />
       </MainContainer>
-      </>
-      );
-      }
+    </>
+  );
+}
 

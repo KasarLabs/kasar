@@ -2,8 +2,6 @@ import React from 'react'
 import styled from 'styled-components';
 import { H2, H4, TextBold, TextGrey, Text } from '../s-components/Titles';
 import { defaultTheme } from '@/theme';
-import { Flex } from '../s-components/SFlex';
-import { ExclamationCircleTwoTone } from '@ant-design/icons';
 import { GradientText, Separator, SeparatorSM, VerticalLine } from '../s-components/utils';
 import Image from 'next/image';
 import alchemyLogo from '../../assets/images/alchemy.png';
