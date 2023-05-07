@@ -16,6 +16,13 @@ const MainContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 100vh;
+`
+
+const Card = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   gap: ${defaultTheme.spacing['4xs']};
   box-shadow: ${({ theme }) => theme.colors.boxShadow};
   padding: ${defaultTheme.spacing.m};
@@ -23,10 +30,7 @@ const MainContainer = styled.div`
   @media (max-width: 800px) {
     flex-direction: column;
     padding: ${defaultTheme.spacing.xs};
-    width: 90%;
-    height: 80vh;
   }
-  margin-top: 100px;
 `
 
 const ImageItem = styled(Image)`
@@ -93,9 +97,7 @@ const Box = styled.div`
   width: 325px;
   text-align: left;
   margin-top: 25px; 
-  @media (max-width: 800px) {
-		width: 90%;
-  }
+
 `
 
 interface ICart {
@@ -115,34 +117,34 @@ function CardProduct({ setPage }: ICart) {
   const isMobile = useMediaQuery({ maxWidth: 900 })
 
   return (
-    <>
     <MainContainer>
-      <FlexCol style={{ textAlign: 'center', alignItems: 'center', width: '50%' }}>
-        <ImageStark src={image} alt='starknode' />
-      </FlexCol>
-      {!isMobile && <VerticalLineBig />}
-      <FlexCol style={{ textAlign: 'center', alignItems: 'center', width: '50%' }}>
-        <H3>Starknode <GradientText>Mew 1.0</GradientText></H3>
-        <Box>
-          <TextGrey>
-          With Mew, the first generation of Starknet plug'n'play full node, it has never been easier to contribute to the decentralised web.
-          <br></br>
-          <br></br>
-          Already <GradientText>42 nodes</GradientText> contributing to Starknet
-          </TextGrey>
-        </Box>
+      <Card>
+        <FlexCol style={{ textAlign: 'center', alignItems: 'center', width: '50%' }}>
+          <ImageStark src={image} alt='starknode' />
+        </FlexCol>
+        {!isMobile && <VerticalLineBig />}
+        <FlexCol style={{ textAlign: 'center', alignItems: 'center', width: '50%' }}>
+          <H3>Starknode <GradientText>Mew 1.0</GradientText></H3>
+          <Box>
+            <TextGrey>
+              With Mew, the first generation of Starknet plug'n'play full node, it has never been easier to contribute to the decentralised web.
+              <br></br>
+              <br></br>
+              Already <GradientText>42 nodes</GradientText> contributing to Starknet
+            </TextGrey>
+          </Box>
           <ProgressBar>
-          <ProgressValue></ProgressValue>
-        </ProgressBar>
-        <Col>
-          <Flex>
-            <ButtonPrimary onClick={() => setPage(1)}>Buy</ButtonPrimary>
-            <ButtonOutline>Learn more</ButtonOutline>
-          </Flex>
-        </Col>
-      </FlexCol>
+            <ProgressValue></ProgressValue>
+          </ProgressBar>
+          <Col>
+            <Flex>
+              <ButtonPrimary onClick={() => setPage(1)}>Buy</ButtonPrimary>
+              <ButtonOutline style={{ whiteSpace: 'nowrap' }}>Learn more</ButtonOutline>
+            </Flex>
+          </Col>
+        </FlexCol>
+      </Card>
     </MainContainer>
-    </>
   )
 }
 

@@ -81,8 +81,8 @@ export default function Home() {
       {isMobile && <DropdownSm />}
       <MainContainer>
         {page === 0 && (<CardProduct setPage={setPage} />)}
-        {page === 1 && <AddToCart setPage={setPage} />}
-        {/* {page === 1 && <Countdown targetDate={targetDate} />} */}
+        {/* {page === 1 && <AddToCart setPage={setPage} />} */}
+        {page === 1 && <Countdown targetDate={targetDate} />}
         {page === 2 && <Checkout setPage={setPage} />}
         {page === 3 && <Pay setPage={setPage} page={page} />}
         <Separator />
