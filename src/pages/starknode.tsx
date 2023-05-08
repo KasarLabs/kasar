@@ -68,7 +68,7 @@ export default function Home() {
     });
   }, []);
 
-  const targetDate = new Date("2023-05-15T00:00:00");
+  const targetDate = new Date("2023-05-17T00:00:00");
   return (
     <>
       <Head>

@@ -92,7 +92,7 @@ const BgDark = styled.div`
   position: absolute;
   background-color: black;
   z-index: -1;
-  height: 400px;
+  height: 200px;
   left: 0;
   right: 0;
   @media (max-width: 800px) {
@@ -188,7 +188,6 @@ function Laboratory() {
       </FlexXL>
       <VerticalLine />
       <BgDark />
-      <Separator />
     </MainContainer>
   )
 }

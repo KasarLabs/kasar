@@ -85,11 +85,14 @@ const CardQuote = styled.div`
   flex-direction: column;
   padding: ${defaultTheme.spacing.xs};
   gap: ${defaultTheme.spacing.m};
-  border: 1px solid ${({ theme }) => theme.colors.grey};
+  // border: 1px solid ${({ theme }) => theme.colors.grey};
   position: relative;
   @media (max-width: 800px) {
     margin: 0px 0px;
   }
+  background-color: #fff;
+  box-shadow: ${({ theme }) => theme.colors.boxShadow};
+
 `
 
 
