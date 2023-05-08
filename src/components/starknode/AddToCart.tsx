@@ -14,6 +14,13 @@ const MainContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 100vh;
+`
+
+const Card = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   gap: ${defaultTheme.spacing['4xs']};
   box-shadow: ${({ theme }) => theme.colors.boxShadow};
   padding: ${defaultTheme.spacing.m};
@@ -21,10 +28,7 @@ const MainContainer = styled.div`
   @media (max-width: 800px) {
     flex-direction: column;
     padding: ${defaultTheme.spacing.xs};
-    width: 90%;
-    height: 80vh;
   }
-  margin-top: 75px;
 `
 
 const ImageStark = styled.img`
@@ -100,8 +104,8 @@ function AddToCart({ setPage }: ICart) {
   }, [checkout])
 
   return (
-    <>
-      <MainContainer>
+    <MainContainer>
+      <Card>
         <FlexCol style={{ textAlign: 'center', alignItems: 'center', width: '50%' }}>
           <ImageStark src={image} alt='starknode' />
         </FlexCol>
@@ -160,8 +164,8 @@ function AddToCart({ setPage }: ICart) {
             )
           })}
         </FlexCol>
-      </MainContainer>
-    </>
+      </Card>
+    </MainContainer>
   )
 }
 

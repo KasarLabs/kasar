@@ -14,6 +14,7 @@ import "aos/dist/aos.css";
 import useDarkMode from 'use-dark-mode'
 import Footer from '@/components/Footer';
 import PlugNPlay from '@/components/homepage/plugnplay';
+import Countdown from '@/components/homepage/CountDown';
 
 
 const MainContainer = styled.div`
@@ -49,6 +50,7 @@ export default function Home() {
       duration: 2000
     });
   }, [])
+
   return (
     <>
       <Head>

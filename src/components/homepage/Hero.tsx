@@ -5,10 +5,8 @@ import { Flex } from '../s-components/SFlex';
 import { H1, Text } from '../s-components/Titles';
 import { defaultTheme } from '../../theme';
 import { GradientText, SeparatorXL, SeparatorSM, VerticalLine } from '../s-components/utils';
-import Image from 'next/image'
-import HeroImage from '../../assets/images/hero-image.png'
 import { useMediaQuery } from "react-responsive";
-import Modal from './modal';
+import Link from 'next/link'
 
 const MainContainer = styled.div`
   display: flex;
@@ -80,7 +78,9 @@ function Hero() {
         <Text>Setup and query blockchain infrastructure in one click.</Text>
       </Box>
       <Flex data-aos="zoom-y-out">
-        <ButtonPrimary>Starknode</ButtonPrimary>
+        <Link href="/starknode">
+          <ButtonPrimary>Starknode</ButtonPrimary>
+        </Link>
         <ButtonOutline>Learn more</ButtonOutline>
       </Flex>
       <SeparatorSM />

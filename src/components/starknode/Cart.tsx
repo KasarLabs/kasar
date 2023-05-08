@@ -15,7 +15,6 @@ const MainContainer = styled.div`
 function Cart() {
   const {
     name,
-    id,
     description,
     image,
     checkout,

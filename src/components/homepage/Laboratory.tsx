@@ -2,8 +2,6 @@ import React from 'react'
 import styled from 'styled-components';
 import { H2, H4, TextBold, TextGrey, Text } from '../s-components/Titles';
 import { defaultTheme } from '@/theme';
-import { Flex } from '../s-components/SFlex';
-import { ExclamationCircleTwoTone } from '@ant-design/icons';
 import { GradientText, Separator, SeparatorSM, VerticalLine } from '../s-components/utils';
 import Image from 'next/image';
 import alchemyLogo from '../../assets/images/alchemy.png';
@@ -42,8 +40,10 @@ const CardWrapper = styled.div`
   padding:${defaultTheme.spacing['2xs']};
   gap: ${defaultTheme.spacing['4xs']};
   box-shadow: ${({ theme }) => theme.colors.boxShadow};
+  background-color: ${({ theme }) => theme.colors.white};
   max-width: 350px;
   text-align: center;
+  z-index: 10;
   p {
     font-size: 16px;
   }
@@ -69,6 +69,8 @@ const LargeCardWrapper = styled.div`
   max-width: 100%;
   width: 300px;
   text-align: center;
+  background-color: ${({ theme }) => theme.colors.white};
+
   p {
     font-size: 16px;
   }
@@ -83,6 +85,20 @@ const Box = styled.div`
   text-align: center;
   @media (max-width: 800px) {
 		width: 90%;
+  }
+`
+
+const BgDark = styled.div`
+  position: absolute;
+  background-color: black;
+  z-index: -1;
+  height: 400px;
+  left: 0;
+  right: 0;
+  @media (max-width: 800px) {
+
+  height: 780px;
+
   }
 `
 
@@ -171,6 +187,7 @@ function Laboratory() {
         </LargeCardWrapper>
       </FlexXL>
       <VerticalLine />
+      <BgDark />
       <Separator />
     </MainContainer>
   )
