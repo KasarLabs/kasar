@@ -144,7 +144,7 @@ function Laboratory() {
         </CardWrapper>
         <CardWrapper>
           <Image src={blastLogo} alt="Blast" width="60" height="60" />
-          <H4>Alchemy</H4>
+          <H4>Blast</H4>
           <TextGrey>Latency: {latencies.blast} ms</TextGrey>
         </CardWrapper>
         <CardWrapper>

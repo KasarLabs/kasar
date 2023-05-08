@@ -74,7 +74,7 @@ const MovingDiv = styled.div`
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: #000;
+  background: linear-gradient(to right, #338CF5, #4FD1C5);
   z-index: -10;
 `;
 
@@ -188,11 +188,15 @@ function PlugNPlay() {
         <ButtonOutline>Learn more</ButtonOutline>
       </Flex>
       <Separator />
-      <VerticalLine />
       <Separator />
-      <H3 data-aos="zoom-y-out">Key Benefits</H3>
+      <H2 data-aos="zoom-y-out">Powered by <GradientText>Starknet</GradientText></H2>
       <SeparatorSM />
-      <H2 data-aos="zoom-y-out">In Starknet we trust</H2>
+      <BoxCenter data-aos="zoom-y-out">
+        <TextGrey>
+        Kasar labs is a research and engineering laboratory based on Starknet,
+        an ecosystem in which we are delegates and active contributors supported by pioneers.
+        </TextGrey>
+      </BoxCenter>
       <Separator />
       <TimelineWrapper>
         <TextGrey>

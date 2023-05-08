@@ -44,33 +44,12 @@ function Footer() {
           </TextGrey>
         </FlexCol>
         <FlexCol>
-          <TextBold>
-            Products
-          </TextBold>
-          <TextGrey>
-            Dynamic
-          </TextGrey>
-          <TextGrey>
-            Programming
-          </TextGrey>
-        </FlexCol>
-        <FlexCol>
-          <TextBold>
-            Products
-          </TextBold>
-          <TextGrey>
-            Dynamic
-          </TextGrey>
-          <TextGrey>
-            Programming
-          </TextGrey>
+          
         </FlexCol>
       </FlexDiv>
       <Separator />
-      <HorizontalLineBig />
-      <Separator />
       <FlexDiv>
-        <TextGrey>&copy; 2023 Your Company Name. All Rights Reserved.</TextGrey>
+        <TextGrey>&copy; 2023 KasarLabs. All Rights Reserved.</TextGrey>
         <Flex>
           <AiFillTwitterCircle size={30} />
           <AiFillGithub size={30} />

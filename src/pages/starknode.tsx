@@ -107,7 +107,6 @@ export default function Home() {
             {page === 3 && <Pay setPage={setPage} page={page} />}
             {page === 5 && <StripePage />}
             <Separator />
-            <VerticalLine />
             <Footer />
       </MainContainer>
       </>
