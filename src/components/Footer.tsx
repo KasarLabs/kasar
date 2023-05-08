@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { AiFillTwitterCircle, AiFillGithub } from 'react-icons/ai';
+import { AiFillTwitterSquare, AiFillGithub } from 'react-icons/ai';
 import { Flex } from './s-components/SFlex';
 import { TextGrey, TextBold } from './s-components/Titles';
 import { HorizontalLineBig, Separator } from './s-components/utils';
@@ -52,7 +52,7 @@ function Footer() {
       <FlexDiv>
         <TextGrey>&copy; 2023 KasarLabs. All Rights Reserved.</TextGrey>
         <Flex>
-          <Link href="https://twitter.com/kasarlabs" target="_blank"><AiFillTwitterCircle size={30} /></Link>
+          <Link href="https://twitter.com/kasarlabs" target="_blank"><AiFillTwitterSquare size={30} /></Link>
           <Link href="https://github.com/kasarlabs" target="_blank"><AiFillGithub size={30} /></Link>
         </Flex>
       </FlexDiv>
