@@ -12,7 +12,7 @@ export default function App({ Component, pageProps }: AppProps) {
   const connectors = [
     new InjectedConnector({ options: { id: 'argentX' } }),
   ]
-  // const darkmode = useDarkMode(false)
+  const darkmode = useDarkMode(false)
   const theme = lightTheme
   return (
     <Suspense fallback={<div>Loading...</div>}>

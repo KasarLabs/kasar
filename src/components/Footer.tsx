@@ -35,14 +35,12 @@ function Footer() {
         </FlexCol>
         <FlexCol>
           <TextBold>
-            Products
+            Contact us
           </TextBold>
-          <TextGrey>
-            Dynamic
-          </TextGrey>
-          <TextGrey>
-            Programming
-          </TextGrey>
+          <Flex>
+          <Link href="https://twitter.com/kasarlabs" target="_blank" style={{color: 'grey'}}><AiFillTwitterSquare size={30} /></Link>
+          <Link href="https://github.com/kasarlabs" target="_blank" style={{color: 'grey'}}><AiFillGithub size={30} /></Link>
+        </Flex>
         </FlexCol>
         <FlexCol>
           
@@ -51,10 +49,6 @@ function Footer() {
       <Separator />
       <FlexDiv>
         <TextGrey>&copy; 2023 KasarLabs. All Rights Reserved.</TextGrey>
-        <Flex>
-          <Link href="https://twitter.com/kasarlabs" target="_blank"><AiFillTwitterSquare size={30} /></Link>
-          <Link href="https://github.com/kasarlabs" target="_blank"><AiFillGithub size={30} /></Link>
-        </Flex>
       </FlexDiv>
       <Separator />
     </Main>

@@ -37,16 +37,6 @@ function DropdownSm() {
       <Link href="/starknode">
         <ButtonPrimary>Starknode</ButtonPrimary>
       </Link>
-      <Button onClick={() => setLinks(!links)}>
-        <EllipsisOutlined />
-      </Button>
-      {links && (
-        <Dropdown>
-          <TextSm>Hello</TextSm>
-          <TextSm>Hello</TextSm>
-          <TextSm>Hello</TextSm>
-        </Dropdown>
-      )}
     </Links>
   )
 }

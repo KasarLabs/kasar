@@ -69,7 +69,7 @@ const LogoHeader = styled(Image)`
   height: 47px;
   width: 100%;
   @media (max-width: 900px) {
-    height: 30px;
+    height: 45px;
     width: auto;
   }
 `

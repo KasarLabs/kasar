@@ -130,7 +130,7 @@ function PlugNPlay() {
         <Box>
           <ImageCard src={Step1Img} alt="Step 1" />
           <H3>
-            <GradientText>Config</GradientText>
+            Config
           </H3>
           <SeparatorSM />
           <TextGrey>
@@ -153,7 +153,7 @@ function PlugNPlay() {
         <Box>
           <ImageCard src={Step1Img} alt="Step 1" />
           <H3>
-            <GradientText>Plug</GradientText>
+            Plug
           </H3>
           <SeparatorSM />
           <TextGrey>
@@ -176,7 +176,7 @@ function PlugNPlay() {
         <Box>
           <ImageCard src={Step1Img} alt="Step 3" />
           <H3>
-            <GradientText>Manage</GradientText>
+            Manage
           </H3>
           <SeparatorSM />
           <TextGrey>

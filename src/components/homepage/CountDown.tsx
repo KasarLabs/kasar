@@ -80,7 +80,7 @@ const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
       <Card>
         <Letter>0{days.toString()}</Letter>
         <Letter>:</Letter>
-        <Letter>0{hours.toString()}</Letter>
+        <Letter>{hours.toString()}</Letter>
         <Letter>:</Letter>
         <Letter>{minutes.toString().padStart(2, "0")}</Letter>
         <Letter>:</Letter>
