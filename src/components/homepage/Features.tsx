@@ -111,7 +111,7 @@ function Features() {
             <TextBold>User friendly</TextBold>
             <Box>
               <TextGrey>
-              Like a traditional RPC providers Users can create projects for supported blockchains, receive an access key linked to all RPC providers, and seamlessly interact with the network in their applications.
+              Like a traditional RPC provider users can create projects for supported blockchains, receive an access key linked to all RPC providers, and seamlessly interact with the network in their applications.
               </TextGrey>
             </Box>
           </Card>
