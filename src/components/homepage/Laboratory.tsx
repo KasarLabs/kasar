@@ -126,6 +126,7 @@ function Laboratory() {
     chainstack: 'Loading...',
     alchemy: 'Loading...',
     blast: 'Loading...',
+    starknode: 'Loading...'
   });
 
   useEffect(() => {
@@ -135,12 +136,14 @@ function Laboratory() {
       const chainstackLatency = await getLatency('https://nd-639-644-088.p2pify.com/fafe3963ceb82fb9124b1254c55ff3');
       const alchemyLatency = await getLatency('https://starknet-mainnet.g.alchemy.com/v2/Xj-rCxxzGcBnS3HwqOnBqO8TMa8NRGky');
       const blastLatency = await getLatency('https://starknet-mainnet.blastapi.io/088665f8-43b6-4afa-b23e-a918ce689f4f');
+      const starknodeLatency = await getLatency('http://192.168.1.74:9545');
       setLatencies({
         infura: infuraLatency.toString(),
         quicknode: quicknodeLatency.toString(),
         chainstack: chainstackLatency.toString(),
         alchemy: alchemyLatency.toString(),
         blast: blastLatency.toString(),
+        starknode: starknodeLatency.toString(),
       });
     })();
   }, []);
@@ -183,7 +186,7 @@ function Laboratory() {
         <LargeCardWrapper>
           <Image src={kasarLogo} alt="Chainstack" width="70" height="70" />
           <H4>Kasar</H4>
-          <TextGrey>Starknode latency: <GradientText>35 ms</GradientText></TextGrey>
+          <TextGrey>Starknode latency: <GradientText>{latencies.starknode} ms</GradientText></TextGrey>
         </LargeCardWrapper>
       </FlexXL>
       <VerticalLine />

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { AiFillTwitterSquare, AiFillGithub } from 'react-icons/ai';
+import { BsTelegram, BsTwitter, BsGithub } from 'react-icons/bs';
 import { Flex } from './s-components/SFlex';
 import { TextGrey, TextBold } from './s-components/Titles';
 import { HorizontalLineBig, Separator } from './s-components/utils';
@@ -38,8 +38,9 @@ function Footer() {
             Contact us
           </TextBold>
           <Flex>
-          <Link href="https://twitter.com/kasarlabs" target="_blank" style={{color: 'grey'}}><AiFillTwitterSquare size={30} /></Link>
-          <Link href="https://github.com/kasarlabs" target="_blank" style={{color: 'grey'}}><AiFillGithub size={30} /></Link>
+          <Link href="https://twitter.com/kasarlabs" target="_blank" style={{color: '#129ff7'}}><BsTwitter size={30} /></Link>
+          <Link href="https://twitter.com/kasarlabs" target="_blank" style={{color: '#076bfa'}}><BsTelegram size={30} /></Link>
+          <Link href="https://github.com/kasarlabs" target="_blank" style={{color: '#075cf8'}}><BsGithub size={30} /></Link>
         </Flex>
         </FlexCol>
         <FlexCol>
