@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import { AiFillTwitterCircle, AiFillGithub } from 'react-icons/ai';
+import { BsTelegram, BsTwitter, BsGithub } from 'react-icons/bs';
 import { Flex } from './s-components/SFlex';
 import { TextGrey, TextBold } from './s-components/Titles';
 import { HorizontalLineBig, Separator } from './s-components/utils';
-import logo from '../assets/images/kasarLogo.png'
+import logo from '../assets/images/KasarBlackLogo.png'
 import Image from 'next/image';
 import { defaultTheme } from '../theme';
+import Link from 'next/link';
 
 function Footer() {
   return (
@@ -16,7 +17,7 @@ function Footer() {
       <Separator />
       <FlexDiv>
         <FlexCol>
-          <Image src={logo} width={30} alt='kasarlabs' />
+          <Image src={logo} width={125} alt='kasarlabs' />
           <TextGrey>
             Terms . Privacy Policy
           </TextGrey>
@@ -34,47 +35,21 @@ function Footer() {
         </FlexCol>
         <FlexCol>
           <TextBold>
-            Products
+            Contact us
           </TextBold>
-          <TextGrey>
-            Dynamic
-          </TextGrey>
-          <TextGrey>
-            Programming
-          </TextGrey>
+          <Flex>
+          <Link href="https://twitter.com/kasarlabs" target="_blank" style={{color: '#129ff7'}}><BsTwitter size={30} /></Link>
+          <Link href="https://twitter.com/kasarlabs" target="_blank" style={{color: '#076bfa'}}><BsTelegram size={30} /></Link>
+          <Link href="https://github.com/kasarlabs" target="_blank" style={{color: '#075cf8'}}><BsGithub size={30} /></Link>
+        </Flex>
         </FlexCol>
         <FlexCol>
-          <TextBold>
-            Products
-          </TextBold>
-          <TextGrey>
-            Dynamic
-          </TextGrey>
-          <TextGrey>
-            Programming
-          </TextGrey>
-        </FlexCol>
-        <FlexCol>
-          <TextBold>
-            Products
-          </TextBold>
-          <TextGrey>
-            Dynamic
-          </TextGrey>
-          <TextGrey>
-            Programming
-          </TextGrey>
+          
         </FlexCol>
       </FlexDiv>
       <Separator />
-      <HorizontalLineBig />
-      <Separator />
       <FlexDiv>
-        <TextGrey>&copy; 2023 Your Company Name. All Rights Reserved.</TextGrey>
-        <Flex>
-          <AiFillTwitterCircle size={30} />
-          <AiFillGithub size={30} />
-        </Flex>
+        <TextGrey>&copy; 2023 KasarLabs. All Rights Reserved.</TextGrey>
       </FlexDiv>
       <Separator />
     </Main>

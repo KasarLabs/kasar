@@ -15,6 +15,7 @@ import { ButtonOutline, ButtonPrimary } from '../s-components/Button';
 import Link from 'next/link';
 import Marquee from "react-fast-marquee";
 import { useMediaQuery } from "react-responsive";
+import Logo from '../../assets/images/alchemy.png'
 
 const MainContainer = styled.div`
   display: flex;
@@ -34,7 +35,7 @@ const BoxCenter = styled.div`
   width: 70%;
   text-align: center;
   @media (max-width: 800px) {
-    width: 100%;
+    width: 90%;
   }
 `;
 
@@ -50,6 +51,13 @@ const TimelineWrapper = styled.div`
     flex-direction: column;
     gap: ${defaultTheme.spacing['4xs']};
   }
+`;
+
+const ImgWrapper = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
 `;
 
 const moveRight = keyframes`
@@ -74,7 +82,7 @@ const MovingDiv = styled.div`
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: #000;
+  background: linear-gradient(to right, #338CF5, #4FD1C5);
   z-index: -10;
 `;
 
@@ -85,11 +93,14 @@ const CardQuote = styled.div`
   flex-direction: column;
   padding: ${defaultTheme.spacing.xs};
   gap: ${defaultTheme.spacing.m};
-  border: 1px solid ${({ theme }) => theme.colors.grey};
+  // border: 1px solid ${({ theme }) => theme.colors.grey};
   position: relative;
   @media (max-width: 800px) {
     margin: 0px 0px;
   }
+  background-color: #fff;
+  box-shadow: ${({ theme }) => theme.colors.boxShadow};
+
 `
 
 
@@ -106,6 +117,10 @@ const ImageTestimony = styled(Image)`
   transform: translate(-50%, -50%);
 `
 
+const ImagePartner = styled(Image)`
+  width: 10%;
+  height: auto; 
+`
 
 
 function PlugNPlay() {
@@ -127,7 +142,7 @@ function PlugNPlay() {
         <Box>
           <ImageCard src={Step1Img} alt="Step 1" />
           <H3>
-            <GradientText>Config</GradientText>
+            Config
           </H3>
           <SeparatorSM />
           <TextGrey>
@@ -150,7 +165,7 @@ function PlugNPlay() {
         <Box>
           <ImageCard src={Step1Img} alt="Step 1" />
           <H3>
-            <GradientText>Plug</GradientText>
+            Plug
           </H3>
           <SeparatorSM />
           <TextGrey>
@@ -173,7 +188,7 @@ function PlugNPlay() {
         <Box>
           <ImageCard src={Step1Img} alt="Step 3" />
           <H3>
-            <GradientText>Manage</GradientText>
+            Manage
           </H3>
           <SeparatorSM />
           <TextGrey>
@@ -189,20 +204,22 @@ function PlugNPlay() {
         <ButtonOutline>Learn more</ButtonOutline>
       </Flex>
       <Separator />
-      <VerticalLine />
       <Separator />
-
-      <H3 data-aos="zoom-y-out">Key Benefits</H3>
-
+      <H2 data-aos="zoom-y-out">Powered by <GradientText>Starknet</GradientText></H2>
       <SeparatorSM />
-      <H2 data-aos="zoom-y-out">In Starknet we trust</H2>
-      <Separator />
-      <TimelineWrapper>
+      <BoxCenter data-aos="zoom-y-out">
         <TextGrey>
-          Arcu cursus vitae congue mauris rhoncus viverra nibh
-          cras pulvinar mattis blandit libero cursus mattis.
+          Kasar labs is a research and engineering laboratory based on Starknet,
+          an ecosystem in which we are delegates and active contributors supported by pioneers.
         </TextGrey>
-      </TimelineWrapper>
+      </BoxCenter>
+      <Separator />
+      <ImgWrapper>
+        <ImagePartner src={TestimonialImage} alt='kasarLabs' />
+        <ImagePartner src={TestimonialImage} alt='kasarLabs' />
+        <ImagePartner src={TestimonialImage} alt='kasarLabs' />
+        <ImagePartner src={TestimonialImage} alt='kasarLabs' />
+      </ImgWrapper>
       <Separator />
       <TimelineWrapper>
         <Separator />

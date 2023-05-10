@@ -33,7 +33,7 @@ const Card = styled.div`
   background: linear-gradient(to right, #338CF5, #4FD1C5);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  box-shadow: ${({ theme }) => theme.colors.boxShadow};
+  // box-shadow: ${({ theme }) => theme.colors.boxShadow};
   padding: ${defaultTheme.spacing.m};
   border-radius: ${defaultTheme.radius.m};
   @media (max-width: 800px) {
@@ -44,6 +44,7 @@ const Card = styled.div`
 
 const Letter = styled.span`
   font-weight: ${defaultTheme.fontWeight.bold};
+  font-family: 'Inter';
   font-size: ${defaultTheme.fontSize.xl};
   @media (max-width: 800px) {
     font-size: ${defaultTheme.fontSize.l};
@@ -77,9 +78,8 @@ const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
   return (
     <MainContainer>
       <Card>
-        {days > 0 && (
-          <Letter>{days}</Letter>
-        )}
+        <Letter>0{days.toString()}</Letter>
+        <Letter>:</Letter>
         <Letter>{hours.toString()}</Letter>
         <Letter>:</Letter>
         <Letter>{minutes.toString().padStart(2, "0")}</Letter>

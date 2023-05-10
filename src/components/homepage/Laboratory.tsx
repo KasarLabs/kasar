@@ -92,7 +92,7 @@ const BgDark = styled.div`
   position: absolute;
   background-color: black;
   z-index: -1;
-  height: 400px;
+  height: 200px;
   left: 0;
   right: 0;
   @media (max-width: 800px) {
@@ -126,6 +126,7 @@ function Laboratory() {
     chainstack: 'Loading...',
     alchemy: 'Loading...',
     blast: 'Loading...',
+    starknode: 'Loading...'
   });
 
   useEffect(() => {
@@ -135,12 +136,14 @@ function Laboratory() {
       const chainstackLatency = await getLatency('https://nd-639-644-088.p2pify.com/fafe3963ceb82fb9124b1254c55ff3');
       const alchemyLatency = await getLatency('https://starknet-mainnet.g.alchemy.com/v2/Xj-rCxxzGcBnS3HwqOnBqO8TMa8NRGky');
       const blastLatency = await getLatency('https://starknet-mainnet.blastapi.io/088665f8-43b6-4afa-b23e-a918ce689f4f');
+      const starknodeLatency = await getLatency('http://192.168.1.74:9545');
       setLatencies({
         infura: infuraLatency.toString(),
         quicknode: quicknodeLatency.toString(),
         chainstack: chainstackLatency.toString(),
         alchemy: alchemyLatency.toString(),
         blast: blastLatency.toString(),
+        starknode: starknodeLatency.toString(),
       });
     })();
   }, []);
@@ -160,7 +163,7 @@ function Laboratory() {
         </CardWrapper>
         <CardWrapper>
           <Image src={blastLogo} alt="Blast" width="60" height="60" />
-          <H4>Alchemy</H4>
+          <H4>Blast</H4>
           <TextGrey>Latency: {latencies.blast} ms</TextGrey>
         </CardWrapper>
         <CardWrapper>
@@ -183,12 +186,11 @@ function Laboratory() {
         <LargeCardWrapper>
           <Image src={kasarLogo} alt="Chainstack" width="70" height="70" />
           <H4>Kasar</H4>
-          <TextGrey>Starknode latency: <GradientText>35 ms</GradientText></TextGrey>
+          <TextGrey>Starknode latency: <GradientText>{latencies.starknode} ms</GradientText></TextGrey>
         </LargeCardWrapper>
       </FlexXL>
       <VerticalLine />
       <BgDark />
-      <Separator />
     </MainContainer>
   )
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef } from 'react'
 import styled from 'styled-components';
 import { ButtonOutline, ButtonPrimary } from '../s-components/Button';
 import { Flex } from '../s-components/SFlex';
@@ -69,7 +69,11 @@ const Video = styled.video`
 
 function Hero() {
   const isMobile = useMediaQuery({ maxWidth: 900 })
+  const mySectionRef = useRef<HTMLDivElement>(null);
 
+  const handleClick = () => {
+    mySectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
   return (
     <MainContainer>
       <SeparatorXL />
@@ -81,11 +85,11 @@ function Hero() {
         <Link href="/starknode">
           <ButtonPrimary>Starknode</ButtonPrimary>
         </Link>
-        <ButtonOutline>Learn more</ButtonOutline>
+        <ButtonOutline onClick={handleClick}>Learn more</ButtonOutline>
       </Flex>
       <SeparatorSM />
 
-      <VideoBox data-aos="zoom-y-out">
+      <VideoBox data-aos="zoom-y-out" ref={mySectionRef} id="my-section">
         <Video width="1920" height="1080" loop controls autoPlay muted>
           <source src="/videos/video.mp4" type="video/mp4" />
           Your browser does not support the video tag.

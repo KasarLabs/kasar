@@ -68,7 +68,7 @@ export default function Home() {
     });
   }, []);
 
-  const targetDate = new Date("2023-05-15T00:00:00");
+  const targetDate = new Date("2023-05-17T00:00:00");
   return (
     <>
       <Head>
@@ -80,13 +80,11 @@ export default function Home() {
       <Header />
       {isMobile && <DropdownSm />}
       <MainContainer>
-        {page === 0 && (<CardProduct setPage={setPage} />)}
-        {page === 1 && <AddToCart setPage={setPage} />}
-        {/* {page === 1 && <Countdown targetDate={targetDate} />} */}
+        {/* {page === 0 && (<CardProduct setPage={setPage} />)} */}
+        {/* {page === 1 && <AddToCart setPage={setPage} />} */}
+        {page === 0 && <Countdown targetDate={targetDate} />}
         {page === 2 && <Checkout setPage={setPage} />}
         {page === 3 && <Pay setPage={setPage} page={page} />}
-        <Separator />
-        <VerticalLine />
         <Footer />
       </MainContainer>
     </>

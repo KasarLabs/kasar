@@ -92,8 +92,7 @@ function Features() {
             <TextBold>Decentralised providers</TextBold>
             <Box>
               <TextGrey>
-              We believe in empowering individuals to contribute to the decentralised RPC ecosystem.
-              Our platform allows anyone to easily set up nodes across various blockchain clients and make it accessible to users worldwide.
+              We empower individuals to contribute to the decentralized RPC ecosystem by enabling easy node setup across multiple blockchain clients for global accessibility.
               </TextGrey>
             </Box>
           </Card>
@@ -103,8 +102,7 @@ function Features() {
             <TextBold>Fast reliability</TextBold>
             <Box>
               <TextGrey>
-              To ensure optimal user experience and fast reliability, we've implemented a leaderboard that ranks available RPC providers based on performance criterias. This ranking system allows users to be redirected in real time to the most suitable provider.
-              </TextGrey>
+              For optimal user experience and reliability, we use a performance-based leaderboard to rank RPC providers, enabling real-time redirection to the most suitable provider.              </TextGrey>
             </Box>
           </Card>
           <SeparatorSM />
@@ -113,7 +111,7 @@ function Features() {
             <TextBold>User friendly</TextBold>
             <Box>
               <TextGrey>
-              Users can easily create projects for any supported blockchain like a traditional RPC provider. Our platform then generates an access key, that is directly linked to all the RPC providers available, which users can utilize in their applications to interact smoothly with the network.
+              Like a traditional RPC provider users can create projects for supported blockchains, receive an access key linked to all RPC providers, and seamlessly interact with the network in their applications.
               </TextGrey>
             </Box>
           </Card>
