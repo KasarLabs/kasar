@@ -4,7 +4,7 @@ import { useMediaQuery } from 'react-responsive';
 import Header from '../components/Header';
 import { UserContext } from '../context';
 import { useContext, useEffect, useState } from 'react';
-import DropdownSm from '../components/starknode/DropdownSm';
+import DropdownSm from '../components/DropdownSm';
 import Client from 'shopify-buy';
 import CardProduct from '../components/starknode/CardProduct';
 import AddToCart from '../components/starknode/AddToCart';

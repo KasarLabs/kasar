@@ -4,7 +4,7 @@ import { useMediaQuery } from "react-responsive";
 // import Header from '../components/Header'
 import Hero from '@/components/homepage/Hero';
 import Header from '../components/Header';
-import DropdownSm from '@/components/starknode/DropdownSm';
+import DropdownSm from '@/components/DropdownSm';
 import Features from '@/components/homepage/Features';
 import { Separator } from '@/components/s-components/utils';
 import Laboratory from '@/components/homepage/Laboratory';

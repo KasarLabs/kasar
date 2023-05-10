@@ -5,8 +5,12 @@ interface IParamsStyled {
   pressed?: boolean;
 }
 
-export const Button = styled.button`
-  background-color: ${({ theme }) => theme.colors.bgChange};
+interface ButtonPrimeProps {
+  disabled?: boolean;
+}
+
+export const Button = styled.button<ButtonPrimeProps>`
+  background-color: ${({ theme, disabled }) => (disabled ? '#D3D3D3' : theme.colors.bgChange)};
   box-shadow: ${({ theme }) => theme.colors.boxShadow};
   color: ${({ theme }) => theme.colors.text};
   font-size: ${defaultTheme.fontSize.s};
@@ -14,13 +18,18 @@ export const Button = styled.button`
   padding: ${defaultTheme.spacing['3xs']} ${defaultTheme.spacing.s};
   border-radius: ${defaultTheme.radius.m};
   border: none;
-  cursor: pointer;
+  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
   transition: all 0.2s ease-in-out;
+
   &:hover {
-    background-color: ${({ theme }) => theme.colors.primary};
-    color: ${({ theme }) => theme.colors.grey};
+    ${({ disabled, theme }) =>
+    !disabled &&
+    `
+        background-color: ${theme.colors.primary};
+        color: ${theme.colors.grey};
+      `}
   }
-`
+`;
 
 type ButtonProps = {
   disabled?: boolean;

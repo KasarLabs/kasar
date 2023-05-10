@@ -76,10 +76,7 @@ const LogoHeader = styled(Image)`
 
 export default function Header() {
   const isMobile = useMediaQuery({ maxWidth: 900 })
-  const { setShowNavMobile, showNavMobile } = useContext(UserContext);
   const darkmode = useDarkMode(false)
-  const [links, setLinks] = useState(false)
-
 
   return (
     <SHeader>
@@ -97,16 +94,13 @@ export default function Header() {
           <Flex>
             <>
               <Links>
-                <Button onClick={() => setLinks(!links)}>
+                <Button disabled>
                   App
                 </Button>
               </Links>
               <Link href="/starknode">
                 <ButtonPrimary>Starknode</ButtonPrimary>
               </Link>
-              {/* <Button onClick={darkmode.toggle}>
-                <BulbOutlined />
-              </Button> */}
             </>
           </Flex>
         </Container>

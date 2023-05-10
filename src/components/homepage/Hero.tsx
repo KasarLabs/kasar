@@ -25,7 +25,7 @@ const MainContainer = styled.div`
 const Box = styled.div`
   width: 100%;
   @media (max-width: 800px) {
-		width: 70%;
+		width: 90%;
   }
   margin-bottom: 30px;
 `
@@ -73,8 +73,8 @@ function Hero() {
   return (
     <MainContainer>
       <SeparatorXL />
-      <H1 data-aos="zoom-y-out">Web3 powered by the <GradientText> users</GradientText> for the <GradientText>users</GradientText></H1>
       <Box>
+        <H1 data-aos="zoom-y-out">Web3 powered by the <GradientText> users</GradientText> for the <GradientText>users</GradientText></H1>
         <Text>Setup and query blockchain infrastructure in one click.</Text>
       </Box>
       <Flex data-aos="zoom-y-out">
