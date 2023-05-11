@@ -96,9 +96,7 @@ const BgDark = styled.div`
   left: 0;
   right: 0;
   @media (max-width: 800px) {
-
-  height: 780px;
-
+    height: 700px;
   }
 `
 
