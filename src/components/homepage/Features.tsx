@@ -72,7 +72,7 @@ function Features() {
       <SeparatorSM />
       <BoxCenter data-aos="zoom-y-out">
         <TextGrey>
-        Embrace Web3's true potential with a decentralized, community-driven ecosystem where everyone can effortlessly contribute to blockchain access through user-friendly infrastructure.
+          Embrace Web3's true potential with a decentralized, community-driven ecosystem where everyone can effortlessly contribute to blockchain access through user-friendly infrastructure.
         </TextGrey>
       </BoxCenter>
       <Separator />
@@ -83,7 +83,7 @@ function Features() {
             <H3 style={isMobile ? { textAlign: 'center' } : { textAlign: 'start' }}> Multiple providers. One user.</H3>
             <SeparatorSM />
             <TextGrey>
-            Our goal at Kasar Labs is to show you that it is possible to make every user an actor of the blockchain.
+              Our goal at Kasar Labs is to show you that it is possible to make every user an actor of the blockchain.
             </TextGrey>
           </FlexCol>
           <SeparatorSM />
@@ -92,7 +92,7 @@ function Features() {
             <TextBold>Decentralised providers</TextBold>
             <Box>
               <TextGrey>
-              We empower individuals to contribute to the decentralized RPC ecosystem by enabling easy node setup across multiple blockchain clients for global accessibility.
+                We empower individuals to contribute to the decentralized RPC ecosystem by enabling easy node setup across multiple blockchain clients for global accessibility.
               </TextGrey>
             </Box>
           </Card>
@@ -102,7 +102,7 @@ function Features() {
             <TextBold>Fast reliability</TextBold>
             <Box>
               <TextGrey>
-              For optimal user experience and reliability, we use a performance-based leaderboard to rank RPC providers, enabling real-time redirection to the most suitable provider.              </TextGrey>
+                For optimal user experience and reliability, we use a performance-based leaderboard to rank RPC providers, enabling real-time redirection to the most suitable provider.              </TextGrey>
             </Box>
           </Card>
           <SeparatorSM />
@@ -111,15 +111,15 @@ function Features() {
             <TextBold>User friendly</TextBold>
             <Box>
               <TextGrey>
-              Like a traditional RPC provider users can create projects for supported blockchains, receive an access key linked to all RPC providers, and seamlessly interact with the network in their applications.
+                Like a traditional RPC provider users can create projects for supported blockchains, receive an access key linked to all RPC providers, and seamlessly interact with the network in their applications.
               </TextGrey>
             </Box>
           </Card>
 
         </FlexCol>
-        {active === 0 && <Image src={myOsiris} width={isMobile ? 358 : 500} alt="Features bg" data-aos="zoom-y-out" />}
-        {active === 1 && <Image src={FeaturesBg} width={isMobile ? 358 : 500} alt="Features bg" />}
-        {active === 2 && <Image src={FeaturesBg} width={isMobile ? 358 : 500} alt="Features bg" />}
+        {active === 0 && <Image src={myOsiris} width={isMobile ? 370 : 500} alt="Features bg" data-aos="zoom-y-out" />}
+        {active === 1 && <Image src={FeaturesBg} width={isMobile ? 370 : 500} alt="Features bg" />}
+        {active === 2 && <Image src={FeaturesBg} width={isMobile ? 370 : 500} alt="Features bg" />}
       </FlexXL>
     </MainContainer>
   )
