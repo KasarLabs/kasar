@@ -128,6 +128,7 @@ function PlugNPlay() {
 
   return (
     <MainContainer>
+      <Separator />
       <H2 data-aos="zoom-y-out">Introducing <GradientText>Starknode</GradientText></H2>
       <SeparatorSM />
       <BoxCenter data-aos="zoom-y-out">

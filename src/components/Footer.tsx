@@ -8,8 +8,11 @@ import logo from '../assets/images/KasarBlackLogo.png'
 import Image from 'next/image';
 import { defaultTheme } from '../theme';
 import Link from 'next/link';
+import { useMediaQuery } from "react-responsive";
 
 function Footer() {
+  const isMobile = useMediaQuery({ maxWidth: 900 })
+
   return (
     <Main>
       <Separator />
@@ -34,17 +37,17 @@ function Footer() {
           </TextGrey>
         </FlexCol>
         <FlexCol>
+          {isMobile && <Separator />}
           <TextBold>
             Contact us
           </TextBold>
           <Flex>
-          <Link href="https://twitter.com/kasarlabs" target="_blank" style={{color: '#129ff7'}}><BsTwitter size={30} /></Link>
-          <Link href="https://twitter.com/kasarlabs" target="_blank" style={{color: '#076bfa'}}><BsTelegram size={30} /></Link>
-          <Link href="https://github.com/kasarlabs" target="_blank" style={{color: '#075cf8'}}><BsGithub size={30} /></Link>
-        </Flex>
+            <Link href="https://twitter.com/kasarlabs" target="_blank" style={{ color: '#129ff7' }}><BsTwitter size={30} /></Link>
+            <Link href="https://twitter.com/kasarlabs" target="_blank" style={{ color: '#076bfa' }}><BsTelegram size={30} /></Link>
+            <Link href="https://github.com/kasarlabs" target="_blank" style={{ color: '#075cf8' }}><BsGithub size={30} /></Link>
+          </Flex>
         </FlexCol>
         <FlexCol>
-          
         </FlexCol>
       </FlexDiv>
       <Separator />
@@ -77,7 +80,13 @@ const FlexDiv = styled.div`
 `;
 
 const Bottom = styled.div`
-  
+  display: flex;
+  flex-direction: column;
+  gap: ${defaultTheme.spacing['4xs']};
+  @media (max-width: 900px) {
+    width: 33%;
+    align-items: flex-end;
+  }
 `;
 
 const FlexCol = styled.div`
