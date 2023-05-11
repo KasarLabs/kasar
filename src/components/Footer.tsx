@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { BsTelegram, BsTwitter, BsGithub } from 'react-icons/bs';
 import { Flex } from './s-components/SFlex';
 import { TextGrey, TextBold } from './s-components/Titles';
-import { HorizontalLineBig, Separator } from './s-components/utils';
+import { HorizontalLineBig, Separator, SeparatorSM } from './s-components/utils';
 import logo from '../assets/images/KasarBlackLogo.png'
 import Image from 'next/image';
 import { defaultTheme } from '../theme';
@@ -24,8 +24,10 @@ function Footer() {
           <TextGrey>
             Terms . Privacy Policy
           </TextGrey>
+          <TextGrey>&copy; 2023 KasarLabs. All Rights Reserved.</TextGrey>
         </FlexCol>
         <FlexCol>
+          {isMobile && <SeparatorSM />}
           <TextBold>
             Products
           </TextBold>
@@ -37,14 +39,14 @@ function Footer() {
           </TextGrey>
         </FlexCol>
         <FlexCol>
-          {isMobile && <Separator />}
+          {isMobile && <SeparatorSM />}
           <TextBold>
             Contact us
           </TextBold>
           <Flex>
-            <Link href="https://twitter.com/kasarlabs" target="_blank" style={{ color: '#129ff7' }}><BsTwitter size={30} /></Link>
-            <Link href="https://twitter.com/kasarlabs" target="_blank" style={{ color: '#076bfa' }}><BsTelegram size={30} /></Link>
-            <Link href="https://github.com/kasarlabs" target="_blank" style={{ color: '#075cf8' }}><BsGithub size={30} /></Link>
+            <Link href="https://twitter.com/kasarlabs" target="_blank" style={{ color: '#666' }}><BsTwitter size={30} /></Link>
+            <Link href="https://twitter.com/kasarlabs" target="_blank" style={{ color: '#666' }}><BsTelegram size={30} /></Link>
+            <Link href="https://github.com/kasarlabs" target="_blank" style={{ color: '#666' }}><BsGithub size={30} /></Link>
           </Flex>
         </FlexCol>
         <FlexCol>
@@ -52,7 +54,6 @@ function Footer() {
       </FlexDiv>
       <Separator />
       <FlexDiv>
-        <TextGrey>&copy; 2023 KasarLabs. All Rights Reserved.</TextGrey>
       </FlexDiv>
       <Separator />
     </Main>
@@ -73,7 +74,7 @@ const FlexDiv = styled.div`
   justify-content: space-between;
   align-items: center;
   @media (max-width: 900px) {
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: ${defaultTheme.spacing['4xs']};
     padding:${defaultTheme.spacing['2xs']};
   }
@@ -94,7 +95,7 @@ const FlexCol = styled.div`
   flex-direction: column;
   gap: ${defaultTheme.spacing['4xs']};
   @media (max-width: 900px) {
-    width: 33%;
+    width: 100%;
   }
 `
 

@@ -129,12 +129,12 @@ function Laboratory() {
 
   useEffect(() => {
     (async () => {
-      const infuraLatency = await getLatency('https://mainnet.infura.io/v3/45130e2077524a3698769595f1c91761');
-      const quicknodeLatency = await getLatency('https://empty-morning-aura.discover.quiknode.pro/8f95d4037f8becf8903d7abe08382a0111d73fac/');
-      const chainstackLatency = await getLatency('https://nd-639-644-088.p2pify.com/fafe3963ceb82fb9124b1254c55ff3');
-      const alchemyLatency = await getLatency('https://starknet-mainnet.g.alchemy.com/v2/Xj-rCxxzGcBnS3HwqOnBqO8TMa8NRGky');
-      const blastLatency = await getLatency('https://starknet-mainnet.blastapi.io/088665f8-43b6-4afa-b23e-a918ce689f4f');
-      const starknodeLatency = await getLatency('http://192.168.1.74:9545');
+      const infuraLatency = await getLatency(process.env.INFURA_KEY!);
+      const quicknodeLatency = await getLatency(process.env.QUICKNODE_KEY!);
+      const chainstackLatency = await getLatency(process.env.CHAINSTACK_KEY!);
+      const alchemyLatency = await getLatency(process.env.ALCHEMY_KEY!);
+      const blastLatency = await getLatency(process.env.BLAST_KEY!);
+      const starknodeLatency = await getLatency(process.env.STARKNODE_KEY!);
       setLatencies({
         infura: infuraLatency.toString(),
         quicknode: quicknodeLatency.toString(),
