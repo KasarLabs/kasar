@@ -23,6 +23,7 @@ const MainContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   height: 100vh;
+  
 `
 
 const Card = styled.div`
@@ -47,7 +48,7 @@ const Letter = styled.span`
   font-family: 'Inter';
   font-size: ${defaultTheme.fontSize.xl};
   @media (max-width: 800px) {
-    font-size: ${defaultTheme.fontSize.l};
+    font-size: ${defaultTheme.fontSize.m};
   }
 `
 
