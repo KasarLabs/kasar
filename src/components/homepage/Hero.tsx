@@ -95,7 +95,7 @@ function Hero() {
           Your browser does not support the video tag.
         </Video>
       </VideoBox>
-      <SeparatorSM />
+      {!isMobile && <SeparatorSM />}
       <VerticalLine />
     </MainContainer>
   )
