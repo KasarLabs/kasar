@@ -55,7 +55,6 @@ function Footer() {
       <Separator />
       <FlexDiv>
       </FlexDiv>
-      <Separator />
     </Main>
   );
 }
