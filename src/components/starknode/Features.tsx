@@ -63,7 +63,7 @@ function Features() {
       <SeparatorSM />
       <Box data-aos="zoom-y-out">
         <TextGrey>
-        With our plug'n'play full nodes, it has never been easier to contribute to the decentralised web.
+          With our plug'n'play full nodes, it has never been easier to contribute to the decentralised web.
         </TextGrey>
       </Box>
       <Separator />
@@ -74,7 +74,7 @@ function Features() {
             <H2 style={isMobile ? { textAlign: 'center' } : { textAlign: 'start' }}>Easy to config</H2>
             <SeparatorSM />
             <TextGrey>
-            Starknode empowers users of all technical levels to participate in the network. It is a compact yet powerful microcomputer eliminating traditional barriers to entry, providing a simplified and accessible blockchain experience with cutting-edge technology.
+              Starknode empowers users of all technical levels to participate in the network. It is a compact yet powerful microcomputer eliminating traditional barriers to entry, providing a simplified and accessible blockchain experience with cutting-edge technology.
             </TextGrey>
           </FlexCol>
           <SeparatorSM />
@@ -85,7 +85,6 @@ function Features() {
               <TextGrey>
                 Configure it through Osiris our software to ma
                 by picking a name, a client and your Ethereum RPC url.
-
               </TextGrey>
             </Box>
           </Card>
