@@ -8,7 +8,10 @@ import Image from 'next/image';
 import Step1Img from '../../assets/images/features-bg.png';
 import Step2Img from '../../assets/images/features-bg.png';
 import Step3Img from '../../assets/images/features-bg.png';
-import TestimonialImage from '../../assets/images/testimonial.jpg'
+import Starkware from '../../assets/images/starkware.png'
+// import Carbonable from '../../assets/images/carbonable.png'
+import Nethermind from '../../assets/images/nethermind.png'
+import Equilibrium from '../../assets/images/equilibrium.png'
 import { defaultTheme } from '@/theme';
 import { FaArrowAltCircleLeft } from 'react-icons/fa';
 import { ButtonOutline, ButtonPrimary } from '../s-components/Button';
@@ -118,7 +121,7 @@ const ImageTestimony = styled(Image)`
 `
 
 const ImagePartner = styled(Image)`
-  width: 10%;
+  width: 20%;
   height: auto; 
 `
 
@@ -216,16 +219,15 @@ function PlugNPlay() {
       </BoxCenter>
       <Separator />
       <ImgWrapper>
-        <ImagePartner src={TestimonialImage} alt='kasarLabs' />
-        <ImagePartner src={TestimonialImage} alt='kasarLabs' />
-        <ImagePartner src={TestimonialImage} alt='kasarLabs' />
-        <ImagePartner src={TestimonialImage} alt='kasarLabs' />
+        <ImagePartner src={Starkware} alt='kasarLabs' />
+        <ImagePartner src={Equilibrium} alt='kasarLabs' />
+        <ImagePartner src={Nethermind} alt='kasarLabs' />
+        {/* <ImagePartner src={Carbonable} alt='kasarLabs' /> */}
       </ImgWrapper>
-      <Separator />
       <TimelineWrapper>
         <Separator />
-        <CardQuote data-aos="zoom-y-out">
-          <ImageTestimony src={TestimonialImage} width={96} height={96} alt="Testimonial 01" />
+        {/* <CardQuote data-aos="zoom-y-out">
+          <ImageTestimony src={Starkware} width={96} height={96} alt="Testimonial 01" />
           <SeparatorSM />
           <Text>
             “ I love this product and would recommend it to anyone.
@@ -234,7 +236,7 @@ function PlugNPlay() {
           </Text>
           <TextBold>Darya Finger</TextBold>
           <TextGrey>CEO & Co-Founder @Dropbox</TextGrey>
-        </CardQuote>
+        </CardQuote> */}
       </TimelineWrapper>
     </MainContainer>
   );
