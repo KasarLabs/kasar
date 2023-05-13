@@ -129,12 +129,12 @@ function Laboratory() {
 
   useEffect(() => {
     (async () => {
-      const infuraLatency = await getLatency(process.env.INFURA_KEY!);
-      const quicknodeLatency = await getLatency(process.env.QUICKNODE_KEY!);
-      const chainstackLatency = await getLatency(process.env.CHAINSTACK_KEY!);
-      const alchemyLatency = await getLatency(process.env.ALCHEMY_KEY!);
-      const blastLatency = await getLatency(process.env.BLAST_KEY!);
-      const starknodeLatency = await getLatency(process.env.STARKNODE_KEY!);
+      const infuraLatency = await getLatency(process.env.NEXT_PUBLIC_INFURA_KEY!);
+      const quicknodeLatency = await getLatency(process.env.NEXT_PUBLIC_QUICKNODE_KEY!);
+      const chainstackLatency = await getLatency(process.env.NEXT_PUBLIC_CHAINSTACK_KEY!);
+      const alchemyLatency = await getLatency(process.env.NEXT_PUBLIC_ALCHEMY_KEY!);
+      const blastLatency = await getLatency(process.env.NEXT_PUBLIC_BLAST_KEY!);
+      const starknodeLatency = await getLatency(process.env.NEXT_PUBLIC_STARKNODE_KEY!);
       setLatencies({
         infura: infuraLatency.toString(),
         quicknode: quicknodeLatency.toString(),
@@ -145,7 +145,8 @@ function Laboratory() {
       });
     })();
   }, []);
-
+  console.log("hello")
+  console.log(process.env.NEXT_PUBLIC_INFURA_KEY!)
   return (
     <MainContainer>
       <H2>Choose the <GradientText>fast</GradientText> track</H2>
