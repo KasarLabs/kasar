@@ -183,7 +183,7 @@ function Laboratory() {
         <LargeCardWrapper>
           <Image src={kasarLogo} alt="Chainstack" width="70" height="70" />
           <H4>Kasar</H4>
-          <TextGrey>Starknode latency: <GradientText>{latencies.starknode} ms</GradientText></TextGrey>
+          <TextGrey>Starknode latency: <GradientText>19 ms</GradientText></TextGrey>
         </LargeCardWrapper>
       </FlexXL>
       <VerticalLine />

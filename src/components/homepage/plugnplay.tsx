@@ -233,9 +233,9 @@ function PlugNPlay() {
       </BoxCenter>
       <Separator />
       <ImgWrapper>
-        <ImagePartner src={Starkware} alt='kasarLabs' />
-        <ImagePartner src={Equilibrium} alt='kasarLabs' />
-        <ImagePartner src={Nethermind} alt='kasarLabs' />
+        <ImagePartner onClick={() => window.open('https://starkware.co/')} src={Starkware} alt='kasarLabs' />
+        <ImagePartner onClick={() => window.open('https://equilibrium.co/')} src={Equilibrium} alt='kasarLabs' />
+        <ImagePartner style={{ width: "15%" }} onClick={() => window.open('https://nethermind.io/')} src={Nethermind} alt='kasarLabs' />
         {/* <ImagePartner src={Carbonable} alt='kasarLabs' /> */}
       </ImgWrapper>
       <TimelineWrapper>
