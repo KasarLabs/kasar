@@ -33,11 +33,16 @@ function Footer() {
           <TextBold>
             Products
           </TextBold>
-          <TextGrey>
-            Dynamic
+          <TextGrey style={{ cursor: 'pointer' }} onClick={() => window.open('https://starkcet.com/')}>
+            Starkcet
           </TextGrey>
-          <TextGrey>
-            Programming
+          <Link style={{ textDecoration: 'none' }} href="/starknode">
+            <TextGrey >
+              Starknode
+            </TextGrey>
+          </Link>
+          <TextGrey style={{ cursor: 'pointer' }} onClick={() => window.open('https://github.com/KasarLabs/myOsiris')}>
+            my Osiris
           </TextGrey>
         </FlexCol>
         <FlexCol>
