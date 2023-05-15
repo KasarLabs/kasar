@@ -60,8 +60,6 @@ function Footer() {
         </FlexCol>
       </FlexDiv>
       <Separator />
-      <FlexDiv>
-      </FlexDiv>
     </Main>
   );
 }
@@ -82,7 +80,7 @@ const FlexDiv = styled.div`
   max-width: 1200px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: top;
   @media (max-width: 900px) {
     flex-direction: column;
     gap: ${defaultTheme.spacing['4xs']};
