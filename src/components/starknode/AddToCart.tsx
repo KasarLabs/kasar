@@ -9,6 +9,7 @@ import { GradientText, SeparatorSM, VerticalLineBig } from '../s-components/util
 import { H3, Text } from '../s-components/Titles';
 import { DeleteOutlined } from '@ant-design/icons';
 import { useMediaQuery } from "react-responsive";
+import posthog from 'posthog-js'
 
 const MainContainer = styled.div`
   display: flex;
@@ -96,6 +97,7 @@ function AddToCart({ setPage }: ICart) {
   }
 
   const goToShopify = () => {
+    posthog.capture('user added to cart', { property: number })
     window.open('https://pay.kasar.io' + url, "_self")
   }
 

@@ -15,7 +15,7 @@ import useDarkMode from 'use-dark-mode'
 import Footer from '@/components/Footer';
 import PlugNPlay from '@/components/homepage/plugnplay';
 import Countdown from '@/components/homepage/CountDown';
-
+import posthog from 'posthog-js'
 
 const MainContainer = styled.div`
   position: relative;
@@ -49,6 +49,11 @@ export default function Home() {
       once: true,
       duration: 2000
     });
+  }, [])
+
+  useEffect(() => {
+    posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY!, { api_host: 'https://eu.posthog.com' })
+    posthog.capture('enter site', { property: 'value' })
   }, [])
 
   return (
