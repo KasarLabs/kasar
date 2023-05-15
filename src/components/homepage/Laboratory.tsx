@@ -145,8 +145,6 @@ function Laboratory() {
       });
     })();
   }, []);
-  console.log("hello")
-  console.log(process.env.NEXT_PUBLIC_INFURA_KEY!)
   return (
     <MainContainer>
       <H2>Choose the <GradientText>fast</GradientText> track</H2>

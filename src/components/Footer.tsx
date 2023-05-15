@@ -22,7 +22,9 @@ function Footer() {
         <FlexCol>
           <Image src={logo} width={125} alt='kasarlabs' />
           <TextGrey>
-            Terms . Privacy Policy
+            <Span onClick={() => window.open('https://pay.kasar.io/pages/terms-and-conditions')}>Terms</Span>
+            . <Span onClick={() => window.open('https://pay.kasar.io/pages/general-conditions-of-sale')}>Conditions</Span>
+            . <Span onClick={() => window.open('https://pay.kasar.io/pages/legal-information')}>Legal</Span>
           </TextGrey>
           <TextGrey>&copy; 2023 KasarLabs. All Rights Reserved.</TextGrey>
         </FlexCol>
@@ -45,7 +47,7 @@ function Footer() {
           </TextBold>
           <Flex>
             <Link href="https://twitter.com/kasarlabs" target="_blank" style={{ color: '#666' }}><BsTwitter size={30} /></Link>
-            <Link href="https://twitter.com/kasarlabs" target="_blank" style={{ color: '#666' }}><BsTelegram size={30} /></Link>
+            <Link href="https://t.me/+jZZuOamlUM5lNWNk" target="_blank" style={{ color: '#666' }}><BsTelegram size={30} /></Link>
             <Link href="https://github.com/kasarlabs" target="_blank" style={{ color: '#666' }}><BsGithub size={30} /></Link>
           </Flex>
         </FlexCol>
@@ -64,6 +66,10 @@ const Main = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+`;
+
+const Span = styled.span`
+  cursor: pointer;
 `;
 
 const FlexDiv = styled.div`

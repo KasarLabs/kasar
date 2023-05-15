@@ -6,8 +6,6 @@ import { H2, H3, TextGrey, TextBold, Text, H4 } from '../s-components/Titles';
 import { SeparatorSM, Separator, GradientText, VerticalLine } from '../s-components/utils';
 import Image from 'next/image';
 import Step1Img from '../../assets/images/features-bg.png';
-import Step2Img from '../../assets/images/features-bg.png';
-import Step3Img from '../../assets/images/features-bg.png';
 import Starkware from '../../assets/images/starkware.png'
 // import Carbonable from '../../assets/images/carbonable.png'
 import Nethermind from '../../assets/images/nethermind.png'
@@ -129,6 +127,14 @@ const ImagePartner = styled(Image)`
   }
 `
 
+const Video = styled.video`
+  width: 100%;
+  height: 100%;
+  @media (max-width: 900px) {
+    width: 100%;
+    height: 50%;
+  }
+`
 
 function PlugNPlay() {
   const isMobile = useMediaQuery({ maxWidth: 900 })
@@ -171,7 +177,11 @@ function PlugNPlay() {
           </div>
         }
         <Box>
-          <ImageCard src={Step1Img} alt="Step 1" />
+          <Video loop controls autoPlay muted>
+            <source src="/videos/board.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </Video>
+          {/* <ImageCard src={Step1Img} alt="Step 1" /> */}
           <H3>
             Plug
           </H3>
