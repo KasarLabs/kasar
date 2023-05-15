@@ -1,19 +1,12 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
-// import logo from '../assets/images/KasarlabsBanner.png'
 import logo from '../assets/images/kasarLogo.png'
-import logoDark from '../assets/images/KasarBlackLogo.png'
 import { Button, ButtonPrimary } from './s-components/Button';
-import { MenuOutlined, EllipsisOutlined, BulbOutlined } from '@ant-design/icons';
 import { useMediaQuery } from "react-responsive";
 import { defaultTheme } from '../theme';
 import { H3 } from './s-components/Titles';
 import { Flex, FlexSm } from './s-components/SFlex';
 import Image from 'next/image'
-import { UserContext } from "../context";
-import { useContext } from "react";
-import useDarkMode from 'use-dark-mode'
-import { Text, TextClickable } from './s-components/Titles';
 import Link from 'next/link'
 
 const SHeader = styled.div`
@@ -76,20 +69,19 @@ const LogoHeader = styled(Image)`
 
 export default function Header() {
   const isMobile = useMediaQuery({ maxWidth: 900 })
-  const darkmode = useDarkMode(false)
 
   return (
     <SHeader>
       {isMobile ? (
         <ContainerSm>
           <Link href="/">
-            {darkmode.value ? <LogoHeader src={logo} alt="Kasar Logo" /> : <LogoHeader src={logo} alt="Kasar Logo" />}
+            <LogoHeader src={logo} alt="Kasar Logo" />
           </Link>
         </ContainerSm>
       ) : (
         <Container>
           <Link href="/">
-            {darkmode.value ? <LogoHeader src={logo} alt="Kasar Logo" /> : <LogoHeader src={logo} alt="Kasar Logo" />}
+            <LogoHeader src={logo} alt="Kasar Logo" />
           </Link>
           <Flex>
             <>
