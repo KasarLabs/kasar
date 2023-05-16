@@ -34,7 +34,7 @@ function DropdownSm() {
   return (
     <Links>
       <Link href="/starknode">
-        <ButtonPrimary>Starknode</ButtonPrimary>
+        <ButtonPrimary>Buy</ButtonPrimary>
       </Link>
     </Links>
   )

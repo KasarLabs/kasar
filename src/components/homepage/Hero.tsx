@@ -83,7 +83,7 @@ function Hero() {
       </Box>
       <Flex data-aos="zoom-y-out">
         <Link href="/starknode">
-          <ButtonPrimary>Starknode</ButtonPrimary>
+          <ButtonPrimary>Buy</ButtonPrimary>
         </Link>
         <ButtonOutline onClick={handleClick}>Learn more</ButtonOutline>
       </Flex>

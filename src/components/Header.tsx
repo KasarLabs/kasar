@@ -91,7 +91,7 @@ export default function Header() {
                 </Button>
               </Links>
               <Link href="/starknode">
-                <ButtonPrimary>Starknode</ButtonPrimary>
+                <ButtonPrimary>Buy</ButtonPrimary>
               </Link>
             </>
           </Flex>
