@@ -76,6 +76,8 @@ const ProgressValue = styled.div`
 `
 
 const ImageStark = styled.img`
+  width:300px;
+  height:auto;
   @media (max-width: 800px) {
 		width:250px;
     height:auto;
