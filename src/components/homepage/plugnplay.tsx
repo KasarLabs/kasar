@@ -5,7 +5,8 @@ import { H2, H3, TextGrey, TextBold, Text, H4 } from '../s-components/Titles';
 import { SeparatorSM, Separator, GradientText, VerticalLine } from '../s-components/utils';
 import Image from 'next/image';
 import Step1Img from '../../assets/images/features-bg.png';
-import Config from '../../assets/gif/config2.gif';
+import Config from '../../assets/gif/config3.gif';
+import Dashboard from '../../assets/gif/dashboard.gif';
 import Starkware from '../../assets/images/starkware.png'
 // import Carbonable from '../../assets/images/carbonable.png'
 import Nethermind from '../../assets/images/nethermind.png'
@@ -207,7 +208,7 @@ function PlugNPlay() {
           </div>
         }
         <Box>
-          <ImageCard src={Step1Img} alt="Step 3" />
+          <ImageCard src={Dashboard} alt="Step 3" />
           <H3>
             Manage
           </H3>
