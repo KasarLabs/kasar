@@ -6,7 +6,8 @@ import { SeparatorSM, Separator, GradientText, VerticalLine } from '../s-compone
 import Image from 'next/image';
 import Step1Img from '../../assets/images/features-bg.png';
 import Config from '../../assets/gif/config3.gif';
-import Dashboard from '../../assets/gif/dashboard.gif';
+import Dashboard from '../../assets/gif/dashboard4.gif';
+import Plug from '../../assets/gif/board.gif';
 import Starkware from '../../assets/images/starkware.png'
 // import Carbonable from '../../assets/images/carbonable.png'
 import Nethermind from '../../assets/images/nethermind.png'
@@ -16,7 +17,6 @@ import { ButtonOutline, ButtonPrimary } from '../s-components/Button';
 import Link from 'next/link';
 import Marquee from "react-fast-marquee";
 import { useMediaQuery } from "react-responsive";
-import Logo from '../../assets/images/alchemy.png'
 
 const MainContainer = styled.div`
   display: flex;
@@ -27,6 +27,11 @@ const MainContainer = styled.div`
 
 const Box = styled.div`
   width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 350px;
   @media (max-width: 800px) {
     width: 100%;
   }
@@ -61,23 +66,6 @@ const ImgWrapper = styled.div`
   width: 100%;
 `;
 
-const moveRight = keyframes`
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    opacity: 1;
-    transform: translateX(200%);
-  }
-  51% {
-    opacity: 0;
-    transform: translateX(-200%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-`;
 
 const MovingDiv = styled.div`
   width: 10px;
@@ -88,26 +76,18 @@ const MovingDiv = styled.div`
 `;
 
 
-const CardQuote = styled.div`
-  margin: 0px 50px;
-  display: flex;
-  flex-direction: column;
-  padding: ${defaultTheme.spacing.xs};
-  gap: ${defaultTheme.spacing.m};
-  // border: 1px solid ${({ theme }) => theme.colors.grey};
-  position: relative;
-  @media (max-width: 800px) {
-    margin: 0px 0px;
-  }
-  background-color: #fff;
-  box-shadow: ${({ theme }) => theme.colors.boxShadow};
-
-`
-
 
 const ImageCard = styled(Image)`
   width: 100%;
   height: auto;
+`
+
+const ImageCardVertical = styled(Image)`
+  width: 50%;
+  height: auto;
+  @media (max-width: 900px) {
+    width: 50%;
+  }
 `
 
 const ImageTestimony = styled(Image)`
@@ -154,18 +134,16 @@ function PlugNPlay() {
 
       <TimelineWrapper>
         <Box>
-          <ImageCard src={Config} alt="Step 1" />
-          {/* <Video loop controls autoPlay muted>
-            <source src="/videos/config2.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </Video> */}
-          <H3>
-            Config
-          </H3>
-          <SeparatorSM />
-          <TextGrey>
-            Use our GUI KasarOS to setup your node with your desired client in less than a minute.
-          </TextGrey>
+          <ImageCardVertical src={Config} alt="Step 1" />
+          <div>
+            <H3>
+              Config
+            </H3>
+            <SeparatorSM />
+            <TextGrey>
+              Use our GUI KasarOS to setup your node with your desired client in less than a minute.
+            </TextGrey>
+          </div>
         </Box>
         {!isMobile &&
 
@@ -181,19 +159,22 @@ function PlugNPlay() {
           </div>
         }
         <Box>
-          <Video loop controls autoPlay muted>
+          {/* <Video loop controls autoPlay muted>
             <source src="/videos/board.mp4" type="video/mp4" />
             Your browser does not support the video tag.
-          </Video>
-          {/* <ImageCard src={Step1Img} alt="Step 1" /> */}
-          <H3>
-            Plug
-          </H3>
-          <SeparatorSM />
-          <TextGrey>
-            Plug your home node with to the network.
-          </TextGrey>
-          <br />
+          </Video> */}
+          <ImageCard src={Plug} alt="Step 3" />
+
+          <div>
+            <H3>
+              Plug
+            </H3>
+            <SeparatorSM />
+            <TextGrey>
+              Plug your home node with to the network.
+            </TextGrey>
+            <br />
+          </div>
         </Box>
         {!isMobile &&
           <div style={{ position: 'absolute', left: '63.2%', width: '70px', zIndex: -10 }}>
@@ -209,13 +190,15 @@ function PlugNPlay() {
         }
         <Box>
           <ImageCard src={Dashboard} alt="Step 3" />
-          <H3>
-            Manage
-          </H3>
-          <SeparatorSM />
-          <TextGrey>
-            Manage, track and query it with simplicity through our user dashboard.
-          </TextGrey>
+          <div>
+            <H3>
+              Manage
+            </H3>
+            <SeparatorSM />
+            <TextGrey>
+              Manage, track and query it with simplicity through our user dashboard.
+            </TextGrey>
+          </div>
         </Box>
       </TimelineWrapper>
       <SeparatorSM />
