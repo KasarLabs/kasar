@@ -42,7 +42,7 @@ function Footer() {
             </TextGrey>
           </Link>
           <TextGrey style={{ cursor: 'pointer' }} onClick={() => window.open('https://github.com/KasarLabs/myOsiris')}>
-            my Osiris
+            myOsiris
           </TextGrey>
         </FlexCol>
         <FlexCol>
