@@ -56,7 +56,6 @@ export default function Home() {
     });
     setClient(shopifyClient);
     shopifyClient.product.fetchAll().then((product) => {
-      console.log(product)
       setName(product[0].title);
       setDescription(product[0].description);
       setImage(product[0].images[0].src);

@@ -173,7 +173,7 @@ function AddToCart({ setPage }: ICart) {
           </Col>
           <SeparatorSM />
           <Flex>
-            <InfoCircleOutlined color='#F5F5F5' /><TextGrey style={{ fontSize: '14px' }}>Pre-order only. Scheduled for mid-june.</TextGrey>
+            <InfoCircleOutlined color='#F5F5F5' /><TextGrey style={{ fontSize: '14px' }}>Delivery scheduled for mid-june.</TextGrey>
           </Flex>
           <SeparatorSM />
 
