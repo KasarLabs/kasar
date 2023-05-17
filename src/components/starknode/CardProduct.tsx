@@ -62,7 +62,7 @@ const ProgressBar = styled.div`
 `
 
 const ProgressValue = styled.div`
-  animation: load 3s normal forwards;
+  animation: load 1s normal forwards;
   box-shadow: 0 10px 40px -10px #fff;
   border-radius: 100px;
   background: linear-gradient(to right, #338CF5, #4FD1C5);
@@ -71,7 +71,7 @@ const ProgressValue = styled.div`
 
   @keyframes load {
     0% { width: 0; }
-    100% { width: 68%; }
+    100% { width: 25%; }
   }
 `
 
@@ -79,7 +79,7 @@ const ImageStark = styled.img`
   width:300px;
   height:auto;
   @media (max-width: 800px) {
-		width:250px;
+		width:300px;
     height:auto;
   }
 `
@@ -138,7 +138,7 @@ function CardProduct({ setPage }: ICart) {
           <Col>
             <Flex>
               <ButtonPrimary onClick={() => setPage(1)}>Buy</ButtonPrimary>
-              <ButtonOutline style={{ whiteSpace: 'nowrap' }}>Learn more</ButtonOutline>
+              <ButtonOutline onClick={() => window.open('https://docs.kasar.io')} style={{ whiteSpace: 'nowrap' }}>Learn more</ButtonOutline>
             </Flex>
           </Col>
         </FlexCol>

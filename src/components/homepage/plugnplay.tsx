@@ -213,7 +213,7 @@ function PlugNPlay() {
         <Link href="/starknode">
           <ButtonPrimary>Buy</ButtonPrimary>
         </Link>
-        <ButtonOutline>Learn more</ButtonOutline>
+        <ButtonOutline onClick={() => window.open('https://docs.kasar.io')}>Learn more</ButtonOutline>
       </Flex>
       <Separator />
       <Separator />
@@ -233,7 +233,7 @@ function PlugNPlay() {
         {/* <ImagePartner src={Carbonable} alt='kasarLabs' /> */}
       </ImgWrapper>
       <TimelineWrapper>
-        <Separator />
+        {!isMobile && <Separator />}
         {/* <CardQuote data-aos="zoom-y-out">
           <ImageTestimony src={Starkware} width={96} height={96} alt="Testimonial 01" />
           <SeparatorSM />

@@ -37,7 +37,7 @@ const ImageStark = styled.img`
     height:auto;
 
   @media (max-width: 800px) {
-		width:250px;
+		width:300px;
     height:auto;
   }
 `
@@ -48,6 +48,22 @@ const Col = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 20px;
+`
+
+const ButtonsCol = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: ${defaultTheme.spacing['4xs']};
+  width: 100%;
+`
+
+const FlexButtons = styled.div`
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  gap: ${defaultTheme.spacing['4xs']};
 `
 
 interface ICart {
@@ -113,44 +129,44 @@ function AddToCart({ setPage }: ICart) {
           <ImageStark src={image} alt='starknode' />
         </FlexCol>
         {!isMobile && <VerticalLineBig />}
-        <FlexCol style={{ textAlign: 'center', alignItems: 'center', width: '50%' }}>
+        <FlexCol style={isMobile ? { textAlign: 'center', alignItems: 'center', width: '100%' } : { textAlign: 'center', alignItems: 'center', width: '50%' }}>
           <H3>Starknode <GradientText>Mew 1.0</GradientText></H3>
           <SeparatorSM />
           <Col>
-            <Flex>
-              <div onClick={() => setMemory(1)}>
-                {memory === 1 ?
-                  <ButtonPrimary style={{ whiteSpace: 'nowrap' }}>512 Go</ButtonPrimary>
-                  :
-                  <ButtonOutline style={{ whiteSpace: 'nowrap' }}>512 Go</ButtonOutline>
-                }
-              </div>
-              <div onClick={() => setMemory(0)}>
-                {memory === 0 ?
-                  <ButtonPrimary style={{ whiteSpace: 'nowrap' }}>256 Go</ButtonPrimary>
-                  :
-                  <ButtonOutline style={{ whiteSpace: 'nowrap' }}>256 Go</ButtonOutline>
-                }
-              </div>
-            </Flex>
 
-            <Flex>
-              <ButtonOutline onClick={pressLess}>-</ButtonOutline>
-              <ButtonPrimary>{number}</ButtonPrimary>
-              <ButtonOutline onClick={pressPlus}>+</ButtonOutline>
-            </Flex>
+            <FlexButtons>
+              <div onClick={() => setMemory(1)} style={{ width: '100%' }}>
+                {memory === 1 ?
+                  <ButtonPrimary style={{ width: '100%' }}>512 Go</ButtonPrimary>
+                  :
+                  <ButtonOutline style={{ width: '100%' }}>512 Go</ButtonOutline>
+                }
+              </div>
+              <div onClick={() => setMemory(0)} style={{ width: '100%' }}>
+                {memory === 0 ?
+                  <ButtonPrimary style={{ width: '100%' }}>256 Go</ButtonPrimary>
+                  :
+                  <ButtonOutline style={{ width: '100%' }}>256 Go</ButtonOutline>
+                }
+              </div>
+            </FlexButtons>
+
+            <FlexButtons>
+              <ButtonOutline style={{ width: '100%' }} onClick={pressLess}>-</ButtonOutline>
+              <ButtonPrimary style={{ width: '100%' }}>{number}</ButtonPrimary>
+              <ButtonOutline style={{ width: '100%' }} onClick={pressPlus}>+</ButtonOutline>
+            </FlexButtons>
+
             {isMobile ? (
               <>
-                <Flex>
-                  <ButtonPrimary style={{ width: '100%', whiteSpace: 'nowrap' }} onClick={AddItem}>Add to cart</ButtonPrimary>
-                  <ButtonPrimary disabled={checkout?.lineItems?.length === 0 ? true : false} style={{ width: '100%' }} onClick={goToShopify}>Proceed</ButtonPrimary>
-                </Flex>
+                <ButtonPrimary style={{ width: '100%', whiteSpace: 'nowrap' }} onClick={AddItem}>Add to cart</ButtonPrimary>
+                <ButtonPrimary disabled={checkout?.lineItems?.length === 0 ? true : false} style={{ width: '100%' }} onClick={goToShopify}>Pay</ButtonPrimary>
                 <ButtonOutline style={{ width: '100%' }} onClick={() => setPage(0)}>Back</ButtonOutline>
               </>
             ) : (
               <>
                 <ButtonPrimary style={{ width: '100%' }} onClick={AddItem}>Add to cart</ButtonPrimary>
-                <ButtonPrimary disabled={checkout?.lineItems?.length === 0 ? true : false} style={{ width: '100%' }} onClick={goToShopify}>Proceed</ButtonPrimary>
+                <ButtonPrimary disabled={checkout?.lineItems?.length === 0 ? true : false} style={{ width: '100%' }} onClick={goToShopify}>Pay</ButtonPrimary>
                 <ButtonOutline style={{ width: '100%' }} onClick={() => setPage(0)}>Back</ButtonOutline>
               </>
             )}

@@ -118,8 +118,8 @@ function Features() {
 
         </FlexCol>
         {active === 0 && <Image src={myOsiris} width={isMobile ? 370 : 500} alt="Features bg" data-aos="zoom-y-out" />}
-        {active === 1 && <Image src={FeaturesBg} width={isMobile ? 370 : 500} alt="Features bg" />}
-        {active === 2 && <Image src={FeaturesBg} width={isMobile ? 370 : 500} alt="Features bg" />}
+        {active === 1 && <Image src={myOsiris} width={isMobile ? 370 : 500} alt="Features bg" />}
+        {active === 2 && <Image src={myOsiris} width={isMobile ? 370 : 500} alt="Features bg" />}
       </FlexXL>
     </MainContainer>
   )

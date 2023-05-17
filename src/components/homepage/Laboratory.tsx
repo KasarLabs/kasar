@@ -52,7 +52,7 @@ const CardWrapper = styled.div`
     transform: scale(1.05);
   }
   @media (max-width: 900px) {
-    width: 33.33%; // Make each card take up one third of the width of the container for screens wider than 768px
+    width: 40%; // Make each card take up one third of the width of the container for screens wider than 768px
   }
 `;
 

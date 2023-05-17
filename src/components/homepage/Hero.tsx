@@ -72,7 +72,8 @@ function Hero() {
   const mySectionRef = useRef<HTMLDivElement>(null);
 
   const handleClick = () => {
-    mySectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+    window.open('https://docs.kasar.io')
+    // mySectionRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
   return (
     <MainContainer>
