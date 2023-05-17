@@ -106,6 +106,7 @@ const ImagePartner = styled(Image)`
   width: 20%;
   height: auto; 
   transition: 0.15s ease-in-out;
+  cursor: pointer;
   &:hover {
     transform: scale(1.05);
   }
