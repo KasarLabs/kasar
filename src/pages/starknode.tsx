@@ -55,8 +55,8 @@ export default function Home() {
       apiVersion: '2023-04',
     });
     setClient(shopifyClient);
-
     shopifyClient.product.fetchAll().then((product) => {
+      console.log(product)
       setName(product[0].title);
       setDescription(product[0].description);
       setImage(product[0].images[0].src);
@@ -67,7 +67,6 @@ export default function Home() {
       setPrice512(product[1].variants[0].price.amount);
     });
   }, []);
-
   return (
     <>
       <Head>

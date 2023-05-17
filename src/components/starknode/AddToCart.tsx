@@ -6,7 +6,7 @@ import { defaultTheme } from '../../theme';
 import { Flex, FlexCol, FlexXL } from '../s-components/SFlex';
 import { Dispatch, SetStateAction } from 'react';
 import { GradientText, SeparatorSM, VerticalLineBig } from '../s-components/utils';
-import { H3, Text } from '../s-components/Titles';
+import { H3, Text, TextGrey } from '../s-components/Titles';
 import { DeleteOutlined } from '@ant-design/icons';
 import { useMediaQuery } from "react-responsive";
 import posthog from 'posthog-js'
@@ -171,6 +171,8 @@ function AddToCart({ setPage }: ICart) {
               </>
             )}
           </Col>
+          <SeparatorSM />
+          <TextGrey style={{ fontSize: '14px' }}>Pre-order only. Scheduled for mid-june</TextGrey>
           <SeparatorSM />
 
           {checkout?.lineItems && checkout.lineItems.map((product: any) => {
