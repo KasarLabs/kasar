@@ -13,7 +13,6 @@ import AOS from 'aos';
 import "aos/dist/aos.css";
 import Footer from '@/components/Footer';
 import PlugNPlay from '@/components/homepage/plugnplay';
-import Countdown from '@/components/homepage/CountDown';
 import posthog from 'posthog-js'
 
 const MainContainer = styled.div`

@@ -113,6 +113,8 @@ function AddToCart({ setPage }: ICart) {
     });
   }
 
+
+
   const goToShopify = () => {
     posthog.capture('user added to cart', { property: number })
     window.open('https://pay.kasar.io' + url, "_self")
