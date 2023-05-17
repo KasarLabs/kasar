@@ -123,7 +123,7 @@ function CardProduct({ setPage }: ICart) {
         </FlexCol>
         {!isMobile && <VerticalLineBig />}
         <FlexCol style={{ textAlign: 'center', alignItems: 'center', width: '50%' }}>
-          <H3>Starknode <GradientText>Mew 1.0</GradientText></H3>
+          <H3>Starknode <GradientText>Mew</GradientText></H3>
           <Box>
             <TextGrey>
               With Mew, the first generation of Starknet plug'n'play full node, it has never been easier to contribute to the decentralised web.
