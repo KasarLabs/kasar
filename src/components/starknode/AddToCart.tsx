@@ -3,11 +3,11 @@ import { ButtonOutline, ButtonPrimary } from '../s-components/Button'
 import { UserContext } from "../../context";
 import styled from 'styled-components';
 import { defaultTheme } from '../../theme';
-import { Flex, FlexCol, FlexXL } from '../s-components/SFlex';
+import { Flex, FlexCol, FlexSm, FlexXL } from '../s-components/SFlex';
 import { Dispatch, SetStateAction } from 'react';
 import { GradientText, SeparatorSM, VerticalLineBig } from '../s-components/utils';
 import { H3, Text, TextGrey } from '../s-components/Titles';
-import { DeleteOutlined } from '@ant-design/icons';
+import { DeleteOutlined, InfoCircleOutlined } from '@ant-design/icons';
 import { useMediaQuery } from "react-responsive";
 import posthog from 'posthog-js'
 
@@ -130,7 +130,7 @@ function AddToCart({ setPage }: ICart) {
         </FlexCol>
         {!isMobile && <VerticalLineBig />}
         <FlexCol style={isMobile ? { textAlign: 'center', alignItems: 'center', width: '100%' } : { textAlign: 'center', alignItems: 'center', width: '50%' }}>
-          <H3>Starknode <GradientText>Mew 1.0</GradientText></H3>
+          <H3>Starknode <GradientText>Mew</GradientText></H3>
           <SeparatorSM />
           <Col>
 
@@ -172,7 +172,9 @@ function AddToCart({ setPage }: ICart) {
             )}
           </Col>
           <SeparatorSM />
-          <TextGrey style={{ fontSize: '14px' }}>Pre-order only. Scheduled for mid-june</TextGrey>
+          <Flex>
+            <InfoCircleOutlined color='#F5F5F5' /><TextGrey style={{ fontSize: '14px' }}>Pre-order only. Scheduled for mid-june.</TextGrey>
+          </Flex>
           <SeparatorSM />
 
           {checkout?.lineItems && checkout.lineItems.map((product: any) => {
