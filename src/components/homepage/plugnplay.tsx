@@ -64,6 +64,10 @@ const ImgWrapper = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 100%;
+  @media (max-width: 900px) {
+    flex-direction: column;
+    gap: ${defaultTheme.spacing['4xs']};
+  }
 `;
 
 
@@ -104,6 +108,9 @@ const ImagePartner = styled(Image)`
   transition: 0.15s ease-in-out;
   &:hover {
     transform: scale(1.05);
+  }
+  @media (max-width: 900px) {
+    width: 50%;
   }
 `
 
@@ -222,7 +229,7 @@ function PlugNPlay() {
       <ImgWrapper>
         <ImagePartner onClick={() => window.open('https://starkware.co/')} src={Starkware} alt='kasarLabs' />
         <ImagePartner onClick={() => window.open('https://equilibrium.co/')} src={Equilibrium} alt='kasarLabs' />
-        <ImagePartner style={{ width: "15%" }} onClick={() => window.open('https://nethermind.io/')} src={Nethermind} alt='kasarLabs' />
+        <ImagePartner style={isMobile ? { width: "40%" } : { width: "15%" }} onClick={() => window.open('https://nethermind.io/')} src={Nethermind} alt='kasarLabs' />
         {/* <ImagePartner src={Carbonable} alt='kasarLabs' /> */}
       </ImgWrapper>
       <TimelineWrapper>
