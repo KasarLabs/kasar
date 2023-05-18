@@ -123,7 +123,7 @@ function AddToCart({ setPage }: ICart) {
   useEffect(() => {
     setUrl(checkout?.webUrl.substring(28))
   }, [checkout])
-
+  console.log(checkout?.totalPrice?.amount)
   return (
     <MainContainer>
       <Card>
@@ -162,13 +162,13 @@ function AddToCart({ setPage }: ICart) {
             {isMobile ? (
               <>
                 <ButtonPrimary style={{ width: '100%', whiteSpace: 'nowrap' }} onClick={AddItem}>Add to cart</ButtonPrimary>
-                <ButtonPrimary disabled={checkout?.lineItems?.length === 0 ? true : false} style={{ width: '100%' }} onClick={goToShopify}>Pay</ButtonPrimary>
+                <ButtonPrimary disabled={checkout?.lineItems?.length === 0 ? true : false} style={{ width: '100%' }} onClick={goToShopify}>Pay ${checkout?.totalPrice?.amount}</ButtonPrimary>
                 <ButtonOutline style={{ width: '100%' }} onClick={() => setPage(0)}>Back</ButtonOutline>
               </>
             ) : (
               <>
                 <ButtonPrimary style={{ width: '100%' }} onClick={AddItem}>Add to cart</ButtonPrimary>
-                <ButtonPrimary disabled={checkout?.lineItems?.length === 0 ? true : false} style={{ width: '100%' }} onClick={goToShopify}>Pay</ButtonPrimary>
+                <ButtonPrimary disabled={checkout?.lineItems?.length === 0 ? true : false} style={{ width: '100%' }} onClick={goToShopify}>Pay ${checkout?.totalPrice?.amount}</ButtonPrimary>
                 <ButtonOutline style={{ width: '100%' }} onClick={() => setPage(0)}>Back</ButtonOutline>
               </>
             )}
