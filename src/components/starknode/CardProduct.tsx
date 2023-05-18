@@ -71,7 +71,7 @@ const ProgressValue = styled.div`
 
   @keyframes load {
     0% { width: 0; }
-    100% { width: 25%; }
+    100% { width: 60%; }
   }
 `
 
@@ -129,7 +129,6 @@ function CardProduct({ setPage }: ICart) {
               With Mew, the first generation of Starknet plug'n'play full node, it has never been easier to contribute to the decentralised web.
               <br></br>
               <br></br>
-              Already <GradientText>42 nodes</GradientText> contributing to Starknet
             </TextGrey>
           </Box>
           <ProgressBar>
