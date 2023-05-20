@@ -78,7 +78,7 @@ function AddToCart({ setPage }: ICart) {
   const isMobile = useMediaQuery({ maxWidth: 900 })
 
   const pressPlus = () => {
-    number < 10 ? setNumber(number + 1) : setNumber(number)
+    number < 50 ? setNumber(number + 1) : setNumber(number)
   }
   const pressLess = () => {
     number > 1 ? setNumber(number - 1) : setNumber(number)
