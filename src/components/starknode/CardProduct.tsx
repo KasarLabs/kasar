@@ -71,7 +71,7 @@ const ProgressValue = styled.div`
 
   @keyframes load {
     0% { width: 0; }
-    100% { width: 60%; }
+    100% { width: 80%; }
   }
 `
 
