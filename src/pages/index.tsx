@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import styled from 'styled-components';
 import { useMediaQuery } from "react-responsive";
-// import Header from '../components/Header'
 import Hero from '@/components/homepage/Hero';
 import Header from '../components/Header';
 import DropdownSm from '@/components/DropdownSm';
