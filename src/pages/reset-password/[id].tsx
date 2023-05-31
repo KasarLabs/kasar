@@ -49,7 +49,7 @@ function Index() {
       {sent ?
         <>
           <TextBold>
-            Password is not reset. Go back to the app to login with your new password.
+            Password is now reset. Go back to the app to login with your new password.
           </TextBold>
         </>
         :
