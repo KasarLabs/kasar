@@ -44,7 +44,7 @@ const ImageItem = styled(Image)`
 const FlexJustify = styled.div`
   display: flex;
   justify-content: space-around;
-  align-items: center;  
+  align-items: center;
   width: 100%;
 `
 
@@ -96,7 +96,7 @@ const Col = styled.div`
 const Box = styled.div`
   width: 325px;
   text-align: left;
-  margin-top: 25px; 
+  margin-top: 25px;
 
 `
 
@@ -136,7 +136,9 @@ function CardProduct({ setPage }: ICart) {
           </ProgressBar>
           <Col>
             <Flex>
-              <ButtonPrimary onClick={() => setPage(1)}>Buy</ButtonPrimary>
+              {/* <ButtonPrimary onClick={() => setPage(1)}>Buy</ButtonPrimary> */}
+              <ButtonPrimary disabled>Sold out</ButtonPrimary>
+
               <ButtonOutline onClick={() => window.open('https://docs.kasar.io')} style={{ whiteSpace: 'nowrap' }}>Learn more</ButtonOutline>
             </Flex>
           </Col>
