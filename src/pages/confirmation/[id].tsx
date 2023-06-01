@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useRouter } from 'next/router'
 import styled from 'styled-components';
 import { TextBold } from '@/components/s-components/Titles';
+import Header from '@/components/Header';
 
 const Main = styled.div`
   width: 100%;
@@ -30,12 +31,14 @@ function Index() {
     sendData()
   }, [id])
   return (
-    <Main>
-      <TextBold>
-        You are now verified. You can exit this page
-      </TextBold>
-
-    </Main>
+    <>
+      <Header />
+      <Main>
+        <TextBold>
+          You are now verified. You can exit this page
+        </TextBold>
+      </Main>
+    </>
   )
 }
 

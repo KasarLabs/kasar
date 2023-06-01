@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { TextBold } from '@/components/s-components/Titles';
 import { Input } from '@/components/s-components/Input';
 import { ButtonPrimary } from '@/components/s-components/Button';
+import Header from '@/components/Header';
 
 const Main = styled.div`
   width: 100%;
@@ -17,7 +18,7 @@ const Main = styled.div`
 `;
 
 const Flex = styled.div`
-  width: 50%;
+  width: 30%;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -45,26 +46,28 @@ function Index() {
     }
   }
   return (
-    <Main>
-      {sent ?
-        <>
-          <TextBold>
-            Password is now reset. Go back to the app to login with your new password.
-          </TextBold>
-        </>
-        :
-        <>
-          <TextBold>
-            Reset your password
-          </TextBold>
-          <Flex>
-            <Input type='password' value={newPassword} onChange={e => setNewPassword(e.target.value)} placeholder='Enter your new password' />
-            <ButtonPrimary onClick={sendData}>Reset</ButtonPrimary>
-          </Flex>
-        </>
-      }
-    </Main>
-
+    <>
+      <Header />
+      <Main>
+        {sent ?
+          <>
+            <TextBold>
+              Password is now reset. Go back to the app to login with your new password.
+            </TextBold>
+          </>
+          :
+          <>
+            <TextBold>
+              Reset your password
+            </TextBold>
+            <Flex>
+              <Input type='password' value={newPassword} onChange={e => setNewPassword(e.target.value)} placeholder='Enter your new password' />
+              <ButtonPrimary style={{ height: '100%' }} onClick={sendData}>Reset</ButtonPrimary>
+            </Flex>
+          </>
+        }
+      </Main>
+    </>
   )
 }
 
