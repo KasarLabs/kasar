@@ -39,7 +39,7 @@ function Index() {
           const { data } = await axios.get(`http://localhost:8000/api/getUserFromToken/${id}`);
           console.log(data)
           await axios.post(`http://179.61.246.59:8080/provider/create`, {
-            ID: data.message.uuid,
+            ID: data.message.token,
             Address: data.message.wallet,
           })
         } catch (err) {
