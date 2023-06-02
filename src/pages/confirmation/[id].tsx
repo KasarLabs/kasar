@@ -36,11 +36,11 @@ function Index() {
       if (id) {
         try {
 
-          const { data } = await axios.get(`http://localhost:8000/api/getWalletFromToken/${id}`);
+          const { data } = await axios.get(`http://localhost:8000/api/getUserFromToken/${id}`);
           console.log(data)
           await axios.post(`http://179.61.246.59:8080/provider/create`, {
-            ID: id,
-            Address: data.message,
+            ID: data.message.uuid,
+            Address: data.message.wallet,
           })
         } catch (err) {
           console.log('error data', err)
