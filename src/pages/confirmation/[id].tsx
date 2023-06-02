@@ -39,8 +39,8 @@ function Index() {
           const { data } = await axios.get(`http://localhost:8000/api/getUserFromToken/${id}`);
           console.log(data)
           await axios.post(`http://179.61.246.59:8080/provider/create`, {
-            ID: data.message.token,
-            Address: data.message.wallet,
+            ID: data.data.token,
+            Address: data.data.wallet,
           })
         } catch (err) {
           console.log('error data', err)
