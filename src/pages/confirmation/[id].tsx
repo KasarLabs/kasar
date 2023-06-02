@@ -30,6 +30,25 @@ function Index() {
     }
     sendData()
   }, [id])
+
+  useEffect(() => {
+    const getWallet = async () => {
+      if (id) {
+        try {
+
+          const { data } = await axios.get(`http://localhost:8000/api/getWalletFromToken/${id}`);
+          console.log(data)
+          await axios.post(`http://179.61.246.59:8080/provider/create`, {
+            ID: id,
+            Address: data.message,
+          })
+        } catch (err) {
+          console.log('error data', err)
+        }
+      }
+    }
+    getWallet()
+  }, [id])
   return (
     <>
       <Header />
