@@ -13,7 +13,8 @@ const nextConfig = {
     NEXT_PUBLIC_BLAST_KEY: process.env.NEXT_PUBLIC_BLAST_KEY,
     NEXT_PUBLIC_STARKNODE_KEY: process.env.NEXT_PUBLIC_STARKNODE_KEY,
     NEXT_PUBLIC_POSTHOG_KEY: process.env.NEXT_PUBLIC_POSTHOG_KEY,
-
+    NEXT_PUBLIC_USER_API: process.env.NEXT_PUBLIC_USER_API,
+    NEXT_PUBLIC_NODE_API: process.env.NEXT_PUBLIC_NODE_API,
   },
   typescript: {
     ignoreBuildErrors: true,

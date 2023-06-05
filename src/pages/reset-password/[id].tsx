@@ -34,7 +34,7 @@ function Index() {
     if (token) {
       try {
         console.log('clicked')
-        const { data } = await axios.post(`http://localhost:8000/api/reset-password`,
+        const { data } = await axios.post(`http://89.117.37.65:8000/api/reset-password`,
           {
             resetPasswordLink: token,
             newPassword: newPassword,

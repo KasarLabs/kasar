@@ -21,7 +21,7 @@ function Index() {
     const sendData = async () => {
       if (id) {
         try {
-          const { data } = await axios.get(`http://localhost:8000/api/confirmation/${id}`);
+          const { data } = await axios.get(`http://89.117.37.65:8000/api/confirmation/${id}`);
           console.log(data)
         } catch (err) {
           console.log('error data', err)
@@ -36,11 +36,13 @@ function Index() {
       if (id) {
         try {
 
-          const { data } = await axios.get(`http://localhost:8000/api/getUserFromToken/${id}`);
+          const { data } = await axios.post(`http://89.117.37.65:8000/api/getUserFromToken/`, {
+            token: id,
+          });
           console.log(data)
           await axios.post(`http://179.61.246.59:8080/provider/create`, {
-            ID: data.data.token,
-            Address: data.data.wallet,
+            ID: data.token.token,
+            Address: data.wallet.wallet,
           })
         } catch (err) {
           console.log('error data', err)
