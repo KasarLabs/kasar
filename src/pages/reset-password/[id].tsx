@@ -33,7 +33,6 @@ function Index() {
   const sendData = async () => {
     if (token) {
       try {
-        console.log('clicked')
         const { data } = await axios.post(`${process.env.NEXT_PUBLIC_USER_API}/api/reset-password`,
           {
             resetPasswordLink: token,

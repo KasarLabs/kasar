@@ -123,7 +123,6 @@ function AddToCart({ setPage }: ICart) {
   useEffect(() => {
     setUrl(checkout?.webUrl.substring(28))
   }, [checkout])
-  console.log(checkout?.totalPrice?.amount)
   return (
     <MainContainer>
       <Card>
