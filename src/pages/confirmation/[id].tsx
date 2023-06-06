@@ -39,7 +39,10 @@ function Index() {
           const { data } = await axios.post(`${process.env.NEXT_PUBLIC_USER_API}/api/getUserFromToken/`, {
             token: id,
           });
-          // console.log(data)
+          console.log(data)
+          console.log(data.token.token)
+          console.log(data.wallet.wallet)
+
           await axios.post(`${process.env.NEXT_PUBLIC_NODE_API}/provider/create`, {
             ID: data.token.token,
             Address: data.wallet.wallet,
