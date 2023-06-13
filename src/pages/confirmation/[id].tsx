@@ -41,8 +41,7 @@ function Index() {
           });
 
           await axios.post(`${process.env.NEXT_PUBLIC_NODE_API}/provider/create`, {
-            ID: data.token,
-            Address: data.wallet,
+            ID: data.token
           })
         } catch (err) {
           console.log('error data', err)
