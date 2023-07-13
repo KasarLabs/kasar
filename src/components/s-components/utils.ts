@@ -38,3 +38,17 @@ export const HorizontalLineBig = styled.div`
   width: 100%;
   border-top: 1px solid #EAEAEA;
 `
+
+interface SizeProps {
+  size?: string;
+  maxWidth?: string;
+  smSize?: string;
+}
+
+export const BlockSize = styled.div <SizeProps>`
+  width: ${({ size }) => size ? size : '40%'};
+  max-width: ${({ maxWidth }) => (maxWidth ? maxWidth : 'none')};
+  @media(max-width: 900) {
+    width: ${({ smSize, size }) => (smSize ? smSize : size)};
+  }
+`
