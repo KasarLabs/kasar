@@ -51,7 +51,7 @@ export const TextSm = styled.p`
 `
 
 export const Text = styled.p`
-  font-size: ${defaultTheme.fontSize.s};
+  font-size: ${defaultTheme.fontSize.m};
   font-weight: ${defaultTheme.fontWeight.thin};
   color: ${({ theme }) => theme.colors.text};
   margin: 0;

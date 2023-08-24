@@ -44,6 +44,9 @@ function Footer() {
           <TextGrey style={{ cursor: 'pointer' }} onClick={() => window.open('https://github.com/KasarLabs/myOsiris')}>
             myOsiris
           </TextGrey>
+          <TextGrey style={{ cursor: 'pointer' }} onClick={() => window.open('https://github.com/kasarlabs/deoxys')}>
+            Deoxys
+          </TextGrey>
         </FlexCol>
         <FlexCol>
           {isMobile && <SeparatorSM />}

@@ -11,7 +11,7 @@ export const defaultTheme = {
   fontSize: {
     xs: '9px',
     s: '16px',
-    m: '32px',
+    m: '22px',
     l: '42px',
     ml: '52px',
     xl: '75px'

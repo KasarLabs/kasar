@@ -7,6 +7,9 @@ import { defaultTheme } from '../../theme';
 import { GradientText, SeparatorXL, SeparatorSM, VerticalLine } from '../s-components/utils';
 import { useMediaQuery } from "react-responsive";
 import Link from 'next/link'
+import Marquee from "react-fast-marquee";
+import Projects from '../../data/projects.json'
+import Image from "next/image"
 
 const MainContainer = styled.div`
   display: flex;
@@ -24,6 +27,9 @@ const MainContainer = styled.div`
 
 const Box = styled.div`
   width: 100%;
+  display: flex;
+  align-items: center;
+flex-direction: column;
   @media (max-width: 800px) {
 		width: 90%;
   }
@@ -67,37 +73,73 @@ const Video = styled.video`
   }
 `
 
+const Card = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  border: 2px solid #000;
+  background: #FFF; 
+  gap: ${defaultTheme.spacing['4xs']};
+  padding: ${defaultTheme.spacing.m};
+  width: 201px;
+  height: 257px; 
+  @media (max-width: 800px) {
+    flex-direction: column;
+    padding: ${defaultTheme.spacing.xs};
+  }
+  margin-right: 20px;
+`
+const SImage = styled(Image)`
+  width: 50px;
+  height: 50px;
+`
+
 function Hero() {
   const isMobile = useMediaQuery({ maxWidth: 900 })
   const mySectionRef = useRef<HTMLDivElement>(null);
 
   const handleClick = () => {
-    window.open('https://docs.kasar.io')
-    // mySectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+    window.open('https://t.me/kasarlabs')
   };
   return (
     <MainContainer>
       <SeparatorXL />
+      <SeparatorXL />
       <Box>
-        <H1 data-aos="zoom-y-out">Web3 powered by the <GradientText> users</GradientText> for the <GradientText>users</GradientText></H1>
-        <Text>Setup and query blockchain infrastructure in one click.</Text>
+        <H1 data-aos="zoom-y-out">Build your next gen <GradientText> Starknet</GradientText> project with Kasar<GradientText>²</GradientText></H1>
+        <Text style={{ width: '70%', textAlign: 'center' }}>
+          Join our Starknet Engineering and Research Laboratory where Starknet experts and
+          Cairo wizards converge to solve your high and low-level problems.
+        </Text>
       </Box>
       <Flex data-aos="zoom-y-out">
-        <Link href="/starknode">
-          <ButtonPrimary>Buy</ButtonPrimary>
-        </Link>
-        <ButtonOutline onClick={handleClick}>Learn more</ButtonOutline>
+        <ButtonPrimary onClick={handleClick}>Contact us</ButtonPrimary>
+        <ButtonOutline onClick={() => window.open("https://app.kasar.io")}>App</ButtonOutline>
       </Flex>
-      <SeparatorSM />
+      <SeparatorXL />
+      <SeparatorXL />
+      {/* <Marquee speed={50} gradient={false} pauseOnHover>
+        {Projects.map((project, index) => {
+          return (
+            <Card key={index}>
+              <Image width={105} height={105} src={project.src} alt={project.alt} />
+              <Text>{project.alt}</Text>
+              <Text style={{ maxWidth: '170px' }}>{project.text}</Text>
+            </Card>
+          )
+        })}
+      </Marquee> */}
 
-      <VideoBox data-aos="zoom-y-out" ref={mySectionRef} id="my-section">
+      {/* <VideoBox data-aos="zoom-y-out" ref={mySectionRef} id="my-section">
         <Video width="1920" height="1080" loop controls autoPlay muted>
           <source src="/videos/video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </Video>
       </VideoBox>
       {!isMobile && <SeparatorSM />}
-      <VerticalLine />
+      <VerticalLine /> */}
     </MainContainer>
   )
 }

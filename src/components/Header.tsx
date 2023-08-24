@@ -86,7 +86,7 @@ export default function Header() {
           <Flex>
             <>
               <Links>
-                <Button disabled>
+                <Button onClick={() => window.open("https://app.kasar.io")}>
                   App
                 </Button>
               </Links>

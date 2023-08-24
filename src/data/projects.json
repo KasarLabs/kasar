@@ -1,0 +1,38 @@
+[
+    {
+        "id": 0,
+        "src": "/images/kasar.png",
+        "alt": "Starknode",
+        "text": "Starknode Plug’n’Play Full Node"
+    },
+    {
+        "id": 1,
+        "src": "/images/deoxys.png",
+        "alt": "Deoxys",
+        "text": "Substrate Starknet Full Node client "
+    },
+    {
+        "id": 2,
+        "src": "/images/osiris.png",
+        "alt": "Osiris",
+        "text": "Starknet Full Node manager"
+    },
+    {
+        "id": 3,
+        "src": "/images/barknet.png",
+        "alt": "Barknet",
+        "text": "Bitcoin sovereign rollup powered by Starknet"
+    },
+    {
+        "id": 4,
+        "src": "/images/starkcet.png",
+        "alt": "Starkcet",
+        "text": "Starknet faucet"
+    },
+    {
+        "id": 5,
+        "src": "/images/kasar2.png",
+        "alt": "Kasar2",
+        "text": "KasarLabs Devshop"
+    }
+]

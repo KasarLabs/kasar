@@ -78,7 +78,7 @@ export default function Home() {
             </g>
           </svg>
         </SvgContainer>
-        <SvgContainer2>
+        {/* <SvgContainer2>
           <svg width="1360" height="578" viewBox="0 0 1360 578" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="illustration-01">
@@ -92,13 +92,13 @@ export default function Home() {
               <circle cx="155" cy="443" r="64" />
             </g>
           </svg>
-        </SvgContainer2>
+        </SvgContainer2> */}
         <Hero />
-        <Separator />
+        {/* <Separator />
         <Features />
         <Separator />
         <Laboratory />
-        <PlugNPlay />
+        <PlugNPlay /> */}
         <Footer />
       </MainContainer>
     </>
