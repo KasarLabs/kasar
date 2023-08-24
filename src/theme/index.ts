@@ -10,9 +10,9 @@ export const defaultTheme = {
   },
   fontSize: {
     xs: '9px',
-    s: '16px',
+    s: '14px',
     m: '22px',
-    l: '42px',
+    l: '32px',
     ml: '52px',
     xl: '75px'
   },

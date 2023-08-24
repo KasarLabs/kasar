@@ -29,11 +29,12 @@ const Box = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-flex-direction: column;
-  @media (max-width: 800px) {
-		width: 90%;
-  }
+  flex-direction: column;
   margin-bottom: 30px;
+  @media (max-width: 800px) {
+		width: 100%;
+    padding: 0 20px;
+  }
 `
 
 const VideoBox = styled.div`
@@ -108,8 +109,8 @@ function Hero() {
       <SeparatorXL />
       <SeparatorXL />
       <Box>
-        <H1 data-aos="zoom-y-out">Build your next gen <GradientText> Starknet</GradientText> project with Kasar<GradientText>²</GradientText></H1>
-        <Text style={{ width: '70%', textAlign: 'center' }}>
+        <H1 style={{ width: '100%' }} data-aos="zoom-y-out">Build your next gen <GradientText> Starknet</GradientText> project with Kasar<GradientText>²</GradientText></H1>
+        <Text style={isMobile ? { width: '100%', textAlign: 'center' } : { width: '70%', textAlign: 'center' }}>
           Join our Starknet Engineering and Research Laboratory where Starknet experts and
           Cairo wizards converge to solve your high and low-level problems.
         </Text>
@@ -118,8 +119,16 @@ function Hero() {
         <ButtonPrimary onClick={handleClick}>Contact us</ButtonPrimary>
         <ButtonOutline onClick={() => window.open("https://app.kasar.io")}>App</ButtonOutline>
       </Flex>
-      <SeparatorXL />
-      <SeparatorXL />
+      {!isMobile ?
+        <>
+          <SeparatorXL />
+          <SeparatorXL />
+        </>
+        :
+        <>
+          <SeparatorXL />
+        </>
+      }
       {/* <Marquee speed={50} gradient={false} pauseOnHover>
         {Projects.map((project, index) => {
           return (

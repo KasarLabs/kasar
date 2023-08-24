@@ -6,7 +6,7 @@ export const H1 = styled.h1`
   font-weight: ${defaultTheme.fontWeight.normal};
   color: ${({ theme }) => theme.colors.text};
   @media (max-width: 900px) {
-		font-size: ${defaultTheme.fontSize.ml};
+		font-size: ${defaultTheme.fontSize.l};
   }
 `
 
@@ -55,6 +55,9 @@ export const Text = styled.p`
   font-weight: ${defaultTheme.fontWeight.thin};
   color: ${({ theme }) => theme.colors.text};
   margin: 0;
+  @media (max-width: 900px) {
+		font-size: ${defaultTheme.fontSize.s};
+  }
 `
 
 export const TextGrey = styled.p`
